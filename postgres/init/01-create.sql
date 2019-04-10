@@ -4,11 +4,12 @@ CREATE TYPE person_type AS ENUM ('student', 'professor');
 
 CREATE TABLE person
 (
-    person_id   serial PRIMARY KEY,
-    name        VARCHAR(20) NOT NULL,
-    surname     VARCHAR(20) NOT NULL,
-    middle_name VARCHAR(20),
-    person_type person_type NOT NULL
+    person_id     serial PRIMARY KEY,
+    name          VARCHAR(20) NOT NULL,
+    surname       VARCHAR(20) NOT NULL,
+    middle_name   VARCHAR(20),
+    person_type   person_type NOT NULL,
+    speciality_id INTEGER     NOT NULL REFERENCES speciality (speciality_id)
 );
 
 CREATE TABLE university
