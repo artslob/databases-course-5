@@ -15,7 +15,6 @@ CREATE TABLE university
 (
     university_id serial PRIMARY KEY,
     name          VARCHAR(100) NOT NULL /* название университета */
-
 );
 
 
@@ -36,8 +35,6 @@ CREATE TABLE speciality
     name             VARCHAR(100) NOT NULL, /* название специальности */
     educational_form VARCHAR(100) NOT NULL, /* форма обучения */
     standard         VARCHAR(10)  NOT NULL /* тип стандарта обучения */
-
-
 );
 
 CREATE TABLE grade
