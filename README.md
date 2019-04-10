@@ -25,6 +25,7 @@ Dependencies:
 - Run admin interactively:
 
     ```bash
+    docker-compose build
     docker-compose run --rm admin bash
     # inside admin container:
     psql -U postgres -h pg -c "SELECT * FROM raiting;"
