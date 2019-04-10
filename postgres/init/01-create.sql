@@ -24,8 +24,8 @@ CREATE TABLE person
     surname       VARCHAR(20) NOT NULL,
     middle_name   VARCHAR(20),
     person_type   person_type NOT NULL,
-    /* TODO: speciality for professor? add check */
-    speciality_id INTEGER     NOT NULL REFERENCES speciality (speciality_id)
+    /* TODO: speciality for professor? add check that not null for student */
+    speciality_id INTEGER REFERENCES speciality (speciality_id)
 );
 
 CREATE TABLE discipline
