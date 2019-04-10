@@ -28,7 +28,7 @@ Dependencies:
     docker-compose build
     docker-compose run --rm admin bash
     # inside admin container:
-    psql -U postgres -h pg -c "SELECT * FROM raiting;"
+    psql -c "SELECT * FROM raiting;"  # psql - alias for 'psql -U postgres -h pg'
     # to exit container:
     exit  # or <ctrl+D>
     docker-compose down
