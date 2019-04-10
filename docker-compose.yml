@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  admin:
+    build:
+      context: ./admin
+      dockerfile: Dockerfile
+    depends_on:
+      - pg
+    restart: on-failure
+
+  pg:
+    build:
+      context: ./postgres
+      dockerfile: Dockerfile
+    restart: on-failure
