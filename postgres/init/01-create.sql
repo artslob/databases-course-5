@@ -1,4 +1,4 @@
-/* TODO: create foreign keys */
+/* TODO: check NOT NULL constraints for foreign keys (to be able to insert rows and according to domain) */
 
 CREATE TYPE person_type AS ENUM ('student', 'professor');
 
@@ -9,6 +9,7 @@ CREATE TABLE person
     surname       VARCHAR(20) NOT NULL,
     middle_name   VARCHAR(20),
     person_type   person_type NOT NULL,
+    /* TODO: speciality for professor? add check */
     speciality_id INTEGER     NOT NULL REFERENCES speciality (speciality_id)
 );
 
