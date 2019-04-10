@@ -34,7 +34,8 @@ CREATE TABLE discipline
     practical_lessons INTEGER      NOT NULL, /* практические занятия: кол-во часов */
     labs              INTEGER      NOT NULL, /* лабораторные: кол-во часов */
     control_form      VARCHAR(10)  NOT NULL, /* форма контроля */
-    semester          INTEGER      NOT NULL /* семестр */
+    semester          INTEGER      NOT NULL, /* семестр */
+    speciality_id     INTEGER      NOT NULL REFERENCES speciality (speciality_id)
 );
 
 CREATE TABLE grade
