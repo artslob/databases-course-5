@@ -40,9 +40,12 @@ CREATE TABLE discipline
 
 CREATE TABLE grade
 (
-    grade_id serial PRIMARY KEY,
-    grade    INTEGER   NOT NULL, /* баллы */
-    date     timestamp NOT NULL /* дата проставления баллов */
+    grade_id      serial PRIMARY KEY,
+    grade         INTEGER   NOT NULL, /* баллы */
+    date          timestamp NOT NULL, /* дата проставления баллов */
+    person_id     INTEGER   NOT NULL REFERENCES person (person_id),
+    discipline_id INTEGER   NOT NULL REFERENCES discipline (discipline_id),
+    UNIQUE (person_id, discipline_id)
 );
 
 INSERT INTO person(name, surname, middle_name, person_type)
