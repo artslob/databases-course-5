@@ -4,7 +4,7 @@ CREATE TYPE person_type AS ENUM ('student', 'professor');
 
 CREATE TABLE person
 (
-    student_id  serial PRIMARY KEY,
+    person_id   serial PRIMARY KEY,
     name        VARCHAR(20) NOT NULL,
     surname     VARCHAR(20) NOT NULL,
     middle_name VARCHAR(20),
