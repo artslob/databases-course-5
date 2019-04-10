@@ -1,20 +1,14 @@
-/* TODO: merge student and professor? */
 /* TODO: create foreign keys */
 
-CREATE TABLE student
+CREATE TYPE person_type AS ENUM ('student', 'professor');
+
+CREATE TABLE person
 (
     student_id  serial PRIMARY KEY,
     name        VARCHAR(20) NOT NULL,
     surname     VARCHAR(20) NOT NULL,
-    middle_name VARCHAR(20)
-);
-
-CREATE TABLE professor
-(
-    professor_id serial PRIMARY KEY,
-    name         VARCHAR(20) NOT NULL,
-    surname      VARCHAR(20) NOT NULL,
-    middle_name  VARCHAR(20)
+    middle_name VARCHAR(20),
+    person_type person_type NOT NULL
 );
 
 CREATE TABLE university
@@ -53,5 +47,5 @@ CREATE TABLE grade
     date     timestamp NOT NULL /* дата проставления баллов */
 );
 
-INSERT INTO student(name, surname, middle_name)
-VALUES ('Иван', 'Иванов', 'Иванович');
+INSERT INTO person(name, surname, middle_name, person_type)
+VALUES ('Иван', 'Иванов', 'Иванович', 'student');
