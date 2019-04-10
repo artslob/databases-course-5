@@ -17,6 +17,13 @@ CREATE TABLE university
     name          VARCHAR(100) NOT NULL /* название университета */
 );
 
+CREATE TABLE speciality
+(
+    discipline_id    serial PRIMARY KEY,
+    name             VARCHAR(100) NOT NULL, /* название специальности */
+    educational_form VARCHAR(100) NOT NULL, /* форма обучения */
+    standard         VARCHAR(10)  NOT NULL /* тип стандарта обучения */
+);
 
 CREATE TABLE discipline
 (
@@ -27,14 +34,6 @@ CREATE TABLE discipline
     labs              INTEGER      NOT NULL, /* лабораторные: кол-во часов */
     control_form      VARCHAR(10)  NOT NULL, /* форма контроля */
     semester          INTEGER      NOT NULL /* семестр */
-);
-
-CREATE TABLE speciality
-(
-    discipline_id    serial PRIMARY KEY,
-    name             VARCHAR(100) NOT NULL, /* название специальности */
-    educational_form VARCHAR(100) NOT NULL, /* форма обучения */
-    standard         VARCHAR(10)  NOT NULL /* тип стандарта обучения */
 );
 
 CREATE TABLE grade
