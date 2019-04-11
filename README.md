@@ -3,6 +3,7 @@
 Dependencies:
 - docker
 - docker-compose
+- Oracle Database 18c Express Edition for Linux x64 (see below)
 
 ## Execution
 - Default
@@ -33,3 +34,16 @@ Dependencies:
     exit  # or <ctrl+D>
     docker-compose down
     ```
+
+## Oracle
+Build image with name `oracle-xe:18c` because its required for oracle/Dockerfile.
+Follow ony of these instructions:
+- [github.com/fuzziebrain/docker-oracle-xe](https://github.com/fuzziebrain/docker-oracle-xe) (Recommended)
+
+    You need to
+    [download](https://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html)
+    oracle installer: `oracle-database-xe-18c-1.0-1.x86_64.rpm`.
+
+- [official docs](https://github.com/oracle/docker-images/tree/master/OracleDatabase/SingleInstance)
+
+    This method requires `.zip` installer.
