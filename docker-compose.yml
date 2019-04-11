@@ -8,6 +8,7 @@ services:
     depends_on:
       - pg
       - mysql
+      - mongo
     restart: on-failure
 
   pg:
@@ -22,4 +23,10 @@ services:
       dockerfile: Dockerfile
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    restart: on-failure
+
+  mongo:
+    build:
+      context: ./mongo
+      dockerfile: Dockerfile
     restart: on-failure
