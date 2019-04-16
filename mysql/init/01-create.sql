@@ -56,11 +56,19 @@ CREATE TABLE conference_participants # участники конференции
 
 CREATE TABLE project
 (
-    # TODO Участники научного проекта
     project_id INT PRIMARY KEY AUTO_INCREMENT,
     title      VARCHAR(100) NOT NULL, # Наименование научного проекта
     start      DATE         NOT NULL, # Период участия в проекте
     end        DATE         NOT NULL
+);
+
+CREATE TABLE project_participants # участники проекта
+(
+    project_id INT NOT NULL, # научный проект
+    person_id  INT NOT NULL, # участник
+    FOREIGN KEY (project_id) REFERENCES project (project_id),
+    FOREIGN KEY (person_id) REFERENCES person (person_id),
+    PRIMARY KEY (project_id, person_id)
 );
 
 CREATE TABLE publication
