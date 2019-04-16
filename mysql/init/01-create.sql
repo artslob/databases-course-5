@@ -13,7 +13,7 @@ CREATE TABLE person
 
 CREATE TABLE reader_list
 (
-    list_id           INT PRIMARY KEY AUTO_INCREMENT, # Читательский лист -- взял книгу, какую книгу, когда взял, когда вернул
+    list_id           INT PRIMARY KEY AUTO_INCREMENT, # Читательский лист
     registration_date DATE       NOT NULL,            # дата регистрации
     person_id         INT UNIQUE NOT NULL,
     FOREIGN KEY (person_id) REFERENCES person (person_id)
@@ -25,6 +25,16 @@ CREATE TABLE book
     title            VARCHAR(100) NOT NULL, # название
     author           VARCHAR(100) NOT NULL, # автор
     publication_date DATE                   # Дата публикации
+);
+
+CREATE TABLE reader_info
+(
+    reader_id   INT  NOT NULL, # человек
+    book_id     INT  NOT NULL, # взял книгу
+    obtain_date DATE NOT NULL, # когда взял
+    returned    DATE,          # когда вернул
+    FOREIGN KEY (reader_id) REFERENCES reader_list (list_id),
+    FOREIGN KEY (book_id) REFERENCES book (book_id)
 );
 
 CREATE TABLE conference
