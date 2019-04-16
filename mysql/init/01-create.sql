@@ -88,14 +88,16 @@ CREATE TABLE publication_coauthors # соавторы публикации
     PRIMARY KEY (publication_id, person_id)
 );
 
-CREATE TABLE edition
+CREATE TABLE edition # издание
 (
-    edition_id INT PRIMARY KEY AUTO_INCREMENT,
-    title      VARCHAR(100) NOT NULL, # Наименование издания
-    language   VARCHAR(30)  NOT NULL, # Язык издания
-    volume     INT          NOT NULL, # Объём издания -- 5 листов
-    place      VARCHAR(100) NOT NULL, # Место издания -- Тверь/Москва
-    type       VARCHAR(50)  NOT NULL  # Тип издания -- вак, ринц ....
+    edition_id     INT PRIMARY KEY AUTO_INCREMENT,
+    title          VARCHAR(100) NOT NULL, # Наименование издания
+    language       VARCHAR(30)  NOT NULL, # Язык издания
+    volume         INT          NOT NULL, # Объём издания -- 5 листов
+    place          VARCHAR(100) NOT NULL, # Место издания -- Тверь/Москва
+    type           VARCHAR(50)  NOT NULL, # Тип издания -- вак, ринц ....
+    publication_id INT          NOT NULL,
+    FOREIGN KEY (publication_id) REFERENCES publication (publication_id)
 );
 
 INSERT INTO person(name, surname, middle_name, position)
