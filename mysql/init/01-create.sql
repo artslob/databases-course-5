@@ -73,11 +73,19 @@ CREATE TABLE project_participants # участники проекта
 
 CREATE TABLE publication
 (
-    # TODO Соавторы
     publication_id INT PRIMARY KEY AUTO_INCREMENT,
     title          VARCHAR(100) NOT NULL,     # Наименование публикации
     type           ENUM ('статья', 'тезисы'), # статья/тезисы
     citation_index INT                        # Индекс цитирования
+);
+
+CREATE TABLE publication_coauthors # соавторы публикации
+(
+    publication_id INT NOT NULL, # публикация
+    person_id      INT NOT NULL, # соавтор
+    FOREIGN KEY (publication_id) REFERENCES publication (publication_id),
+    FOREIGN KEY (person_id) REFERENCES person (person_id),
+    PRIMARY KEY (publication_id, person_id)
 );
 
 CREATE TABLE edition
