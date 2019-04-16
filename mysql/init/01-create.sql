@@ -33,6 +33,15 @@ CREATE TABLE conference
     date          DATE         NOT NULL  # Дата конференции
 );
 
+CREATE TABLE conference_participants # участники конференции
+(
+    conference_id INT NOT NULL, # конференция
+    person_id     INT NOT NULL, # участник
+    FOREIGN KEY (person_id) REFERENCES person (person_id),
+    FOREIGN KEY (conference_id) REFERENCES conference (conference_id),
+    PRIMARY KEY (conference_id, person_id)
+);
+
 CREATE TABLE project
 (
     # TODO Участники научного проекта
