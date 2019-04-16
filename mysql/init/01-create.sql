@@ -14,7 +14,9 @@ CREATE TABLE person
 CREATE TABLE reader_list
 (
     list_id           INT PRIMARY KEY AUTO_INCREMENT, # Читательский лист -- взял книгу, какую книгу, когда взял, когда вернул
-    registration_date DATE NOT NULL                   # дата регистрации
+    registration_date DATE       NOT NULL,            # дата регистрации
+    person_id         INT UNIQUE NOT NULL,
+    FOREIGN KEY (person_id) REFERENCES person (person_id)
 );
 
 CREATE TABLE book
