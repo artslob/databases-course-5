@@ -1,8 +1,8 @@
-DROP table person;
-DROP table work;
-DROP table discipline;
-DROP table schedule;
-DROP table department;
-DROP table education;
-DROP table grade;
-DROP table person_education;
+DROP table person CASCADE CONSTRAINTS;
+DROP table work CASCADE CONSTRAINTS;
+DROP table discipline CASCADE CONSTRAINTS;
+DROP table schedule CASCADE CONSTRAINTS;
+DROP table department CASCADE CONSTRAINTS;
+DROP table education CASCADE CONSTRAINTS;
+DROP table grade CASCADE CONSTRAINTS;
+DROP table person_education CASCADE CONSTRAINTS;
