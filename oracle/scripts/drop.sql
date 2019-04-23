@@ -5,3 +5,4 @@ DROP table schedule;
 DROP table department;
 DROP table education;
 DROP table grade;
+DROP table person_education;
