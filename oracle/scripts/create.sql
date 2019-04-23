@@ -46,7 +46,8 @@ CREATE TABLE education -- учёба
     qualification  VARCHAR2(100) NOT NULL, -- квалификация -- магистр
     start_date     DATE          NOT NULL, -- дата начала
     end_date       DATE,                   -- дата конца
-    course         SMALLINT      NOT NULL  -- курс
+    course         SMALLINT      NOT NULL, -- курс
+    department_id  INTEGER REFERENCES department (department_id)
 );
 
 CREATE TABLE person_education
