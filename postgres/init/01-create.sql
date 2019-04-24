@@ -12,6 +12,7 @@ CREATE TABLE speciality
     name             VARCHAR(100) NOT NULL, /* название специальности -- 09.03.04 – Разработка программно-информационных систем (Академический магистр) */
     educational_form VARCHAR(100) NOT NULL, /* форма обучения -- очная/заочная */
     standard         VARCHAR(10)  NOT NULL, /* тип стандарта обучения -- старый/новый */
+    faculty          VARCHAR(100) NOT NULL, /* место учёбы -- факультет */
     university_id    INTEGER      NOT NULL REFERENCES university (university_id)
 );
 
