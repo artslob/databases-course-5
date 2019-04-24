@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  oracle:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "32100:1521"
+      - "35500:5500"
+    volumes:
+      - ./scripts:/workdir/
+      - ~/docker/union-xe:/opt/oracle/oradata
+    restart: on-failure
