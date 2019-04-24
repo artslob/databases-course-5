@@ -7,7 +7,6 @@ db.person.insertMany([
         name: "ivan",
         surname: "ivanov",
         middle_name: "petrovich",
-        exemption: false,    // льготы -- Y/N
         study_type: "бюджет" // Вид обучения -- бюджет/контракт
     }
 ]);
@@ -44,6 +43,7 @@ db.accommodation.insertMany([
         room_no: 309,                  /* -> room */     // по этому полю можно понять, сколько человек живёт в комнате
         from: new Date("2014-09-01"),  // Период с/по -- Живёт со 2 курса, то есть 01.09.2001-31.08.2002 2 курс
         to: new Date("2015-05-31"),
+        exemption: false,              // льготы -- Y/N
         warnings: [                    // Предупреждения -- 1, 2, ...
             {
                 date: new Date("2014-12-31"),
