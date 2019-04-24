@@ -61,6 +61,7 @@ CREATE TABLE project
 (
     project_id INT PRIMARY KEY AUTO_INCREMENT,
     title      VARCHAR(100) NOT NULL, # Наименование научного проекта
+    # TODO rename it to project_start and project_end
     start      DATE         NOT NULL, # Период участия в проекте
     end        DATE         NOT NULL
 );
