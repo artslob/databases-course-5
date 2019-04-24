@@ -36,7 +36,7 @@ Dependencies:
     ```
 
 ## Oracle
-Build image with name `oracle-xe:18c` because its required for oracle/Dockerfile.
+Build image with name `oracle-xe:18c` because its required for `oracle/Dockerfile`.
 Follow any of these instructions:
 - [github.com/fuzziebrain/docker-oracle-xe](https://github.com/fuzziebrain/docker-oracle-xe) (Recommended)
 
