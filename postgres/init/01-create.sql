@@ -6,9 +6,9 @@ CREATE TABLE university
     name          VARCHAR(100) NOT NULL /* название университета */
 );
 
-CREATE TABLE speciality
+CREATE TABLE department
 (
-    speciality_id    serial PRIMARY KEY,
+    department_id    serial PRIMARY KEY,
     name             VARCHAR(100) NOT NULL, /* название специальности -- 09.03.04 – Разработка программно-информационных систем (Академический магистр) */
     educational_form VARCHAR(100) NOT NULL, /* форма обучения -- очная/заочная */
     standard         VARCHAR(10)  NOT NULL, /* тип стандарта обучения -- старый/новый */
@@ -26,7 +26,7 @@ CREATE TABLE person
     middle_name   VARCHAR(20),
     person_type   person_type NOT NULL,
     /* TODO: speciality for professor? add check that not null for student */
-    speciality_id INTEGER REFERENCES speciality (speciality_id)
+    department_id INTEGER REFERENCES department (department_id)
 );
 
 CREATE TABLE discipline
@@ -38,7 +38,7 @@ CREATE TABLE discipline
     labs              INTEGER      NOT NULL, /* лабораторные: кол-во часов */
     control_form      VARCHAR(10)  NOT NULL, /* форма контроля -- экзамен / зачёт */
     semester          INTEGER      NOT NULL, /* семестр */
-    speciality_id     INTEGER      NOT NULL REFERENCES speciality (speciality_id)
+    department_id     INTEGER      NOT NULL REFERENCES department (department_id)
 );
 
 CREATE TABLE grade
