@@ -42,6 +42,7 @@ CREATE TABLE conference
     conference_id INT PRIMARY KEY AUTO_INCREMENT,
     title         VARCHAR(100) NOT NULL, # Наименование конференции
     place         VARCHAR(100) NOT NULL, # Место проведения конференции
+    # TODO rename to conference_date
     date          DATE         NOT NULL  # Дата конференции
 );
 
