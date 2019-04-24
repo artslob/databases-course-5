@@ -2,6 +2,8 @@ CREATE DATABASE uni;
 
 USE uni;
 
+# TODO foreign keys to one line
+
 CREATE TABLE person
 (
     person_id   INT PRIMARY KEY AUTO_INCREMENT,
