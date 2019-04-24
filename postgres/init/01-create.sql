@@ -6,7 +6,7 @@ CREATE TABLE university
     name          VARCHAR(100) NOT NULL /* название университета */
 );
 
-CREATE TABLE department
+CREATE TABLE department -- подразделение
 (
     department_id    serial PRIMARY KEY,
     name             VARCHAR(100) NOT NULL, /* название специальности -- 09.03.04 – Разработка программно-информационных систем (Академический магистр) */
