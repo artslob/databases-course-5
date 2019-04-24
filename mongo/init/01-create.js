@@ -25,6 +25,7 @@ db.room.insertMany([
     {
         id: 309,
         hostel_id: 6,    /* -> hostel */
+        // TODO rename to room_number
         number: 1408,    // Номер комнаты
         capacity: 3,     // Комната -- на 3 человека
         payment: 1030,   // Сумма оплаты
