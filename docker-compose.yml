@@ -15,6 +15,8 @@ services:
     build:
       context: ./postgres
       dockerfile: Dockerfile
+    ports:
+      - "5432:5432"
     restart: on-failure
 
   mysql:
@@ -23,10 +25,14 @@ services:
       dockerfile: Dockerfile
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "3306:3306"
     restart: on-failure
 
   mongo:
     build:
       context: ./mongo
       dockerfile: Dockerfile
+    ports:
+      - "27017:27017"
     restart: on-failure
