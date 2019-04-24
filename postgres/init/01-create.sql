@@ -44,6 +44,7 @@ CREATE TABLE grade
 (
     grade_id      serial PRIMARY KEY,
     grade         INTEGER   NOT NULL, /* баллы */
+    -- TODO rename to grade_date
     date          timestamp NOT NULL, /* дата проставления баллов */
     person_id     INTEGER   NOT NULL REFERENCES person (person_id),
     discipline_id INTEGER   NOT NULL REFERENCES discipline (discipline_id),
