@@ -9,9 +9,9 @@ CREATE TABLE university
 CREATE TABLE speciality
 (
     speciality_id    serial PRIMARY KEY,
-    name             VARCHAR(100) NOT NULL, /* название специальности */
-    educational_form VARCHAR(100) NOT NULL, /* форма обучения */
-    standard         VARCHAR(10)  NOT NULL, /* тип стандарта обучения */
+    name             VARCHAR(100) NOT NULL, /* название специальности -- 09.03.04 – Разработка программно-информационных систем (Академический магистр) */
+    educational_form VARCHAR(100) NOT NULL, /* форма обучения -- очная/заочная */
+    standard         VARCHAR(10)  NOT NULL, /* тип стандарта обучения -- старый/новый */
     university_id    INTEGER      NOT NULL REFERENCES university (university_id)
 );
 
@@ -31,11 +31,11 @@ CREATE TABLE person
 CREATE TABLE discipline
 (
     discipline_id     serial PRIMARY KEY,
-    name              VARCHAR(100) NOT NULL, /* название дисциплины */
+    name              VARCHAR(100) NOT NULL, /* название дисциплины -- Компьютерная графика (2018449043-И) */
     lectures          INTEGER      NOT NULL, /* лекции: кол-во часов */
     practical_lessons INTEGER      NOT NULL, /* практические занятия: кол-во часов */
     labs              INTEGER      NOT NULL, /* лабораторные: кол-во часов */
-    control_form      VARCHAR(10)  NOT NULL, /* форма контроля */
+    control_form      VARCHAR(10)  NOT NULL, /* форма контроля -- экзамен / зачёт */
     semester          INTEGER      NOT NULL, /* семестр */
     speciality_id     INTEGER      NOT NULL REFERENCES speciality (speciality_id)
 );
