@@ -31,23 +31,23 @@ public class DatabaseApplication {
 	@PostConstruct
 	void init () {
 
-//	    mySQLPersonRepository.findAll().forEach(System.out::println);
-//        postgresPersonRepository.findAll().forEach(System.out::println);
-//        oraclePersonRepository.findAll().forEach(System.out::println);
+	    mySQLPersonRepository.findAll().forEach(System.out::println);
+        postgresPersonRepository.findAll().forEach(System.out::println);
+        oraclePersonRepository.findAll().forEach(System.out::println);
 
-		MySQLPerson mySQLPerson = mySQLPersonRepository.findAll().iterator().next();
-
-		PostgresPerson postgresPerson = postgresPersonRepository.findAll().iterator().next();
-
-		OraclePerson oraclePerson = new OraclePerson();
-		oraclePerson.setId(postgresPerson.getId());
-		oraclePerson.setName(postgresPerson.getName());
-		oraclePerson.setMiddleName(postgresPerson.getMiddleName());
-		oraclePerson.setSurname(postgresPerson.getSurname());
-		oraclePerson.setPersonType(postgresPerson.getPersonType());
-		oraclePerson.setSpecialityId(postgresPerson.getSpecialityId());
-		oraclePerson.setPosition(mySQLPerson.getPosition());
-
-		oraclePersonRepository.save(oraclePerson);
+//		MySQLPerson mySQLPerson = mySQLPersonRepository.findAll().iterator().next();
+//
+//		PostgresPerson postgresPerson = postgresPersonRepository.findAll().iterator().next();
+//
+//		OraclePerson oraclePerson = new OraclePerson();
+//		oraclePerson.setId(postgresPerson.getId());
+//		oraclePerson.setName(postgresPerson.getName());
+//		oraclePerson.setMiddleName(postgresPerson.getMiddleName());
+//		oraclePerson.setSurname(postgresPerson.getSurname());
+//		oraclePerson.setPersonType(postgresPerson.getPersonType());
+//		oraclePerson.setSpecialityId(postgresPerson.getSpecialityId());
+//		oraclePerson.setPosition(mySQLPerson.getPosition());
+//
+//		oraclePersonRepository.save(oraclePerson);
 	}
 }

@@ -1,8 +1,5 @@
 package ru.ifmo.database.configuration;
 
-import javax.persistence.EntityManagerFactory;
-import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -15,8 +12,11 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import ru.ifmo.database.entity.mysql.MySQLPerson;
+import ru.ifmo.database.entity.mysql.generated.*;
 import ru.ifmo.database.repository.mysql.MySQLPersonRepository;
+
+import javax.persistence.EntityManagerFactory;
+import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
@@ -39,7 +39,21 @@ public class MySQLDBConfiguration {
     @Primary
     @Bean
     public LocalContainerEntityManagerFactoryBean mySQLDSEmFactory(@Qualifier("mySQLDS") DataSource mySQLDS, EntityManagerFactoryBuilder builder) {
-        return builder.dataSource(mySQLDS).packages(MySQLPerson.class).build();
+        return builder.dataSource(mySQLDS).packages(
+                MySQLBook.class,
+                MySQLConference.class,
+                MySQLConferenceParticipants.class,
+                MySQLConferenceParticipantsPK.class,
+                MySQLEdition.class,
+                MySQLPerson.class,
+                MySQLProject.class,
+                MySQLProjectParticipants.class,
+                MySQLProjectParticipantsPK.class,
+                MySQLPublication.class,
+                MySQLPublicationCoauthors.class,
+                MySQLPublicationCoauthorsPK.class,
+                MySQLReaderList.class
+        ).build();
     }
 
     @Primary
