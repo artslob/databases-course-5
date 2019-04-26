@@ -1,7 +1,6 @@
-package ru.ifmo.database.entity.mysql.generated;
+package ru.ifmo.database.entity.mysql;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -9,10 +8,8 @@ import java.util.Objects;
 public class MySQLPublication {
     private int publicationId;
     private String title;
-    private Object type;
+    private String type;
     private Integer citationIndex;
-    private Collection<MySQLEdition> editionsByPublicationId;
-    private Collection<MySQLPublicationCoauthors> publicationCoauthorsByPublicationId;
 
     @Id
     @Column(name = "publication_id", nullable = false)
@@ -36,11 +33,11 @@ public class MySQLPublication {
 
     @Basic
     @Column(name = "type", nullable = true)
-    public Object getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(Object type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -70,21 +67,13 @@ public class MySQLPublication {
         return Objects.hash(publicationId, title, type, citationIndex);
     }
 
-    @OneToMany(mappedBy = "publicationByPublicationId")
-    public Collection<MySQLEdition> getEditionsByPublicationId() {
-        return editionsByPublicationId;
-    }
-
-    public void setEditionsByPublicationId(Collection<MySQLEdition> editionsByPublicationId) {
-        this.editionsByPublicationId = editionsByPublicationId;
-    }
-
-    @OneToMany(mappedBy = "publicationByPublicationId")
-    public Collection<MySQLPublicationCoauthors> getPublicationCoauthorsByPublicationId() {
-        return publicationCoauthorsByPublicationId;
-    }
-
-    public void setPublicationCoauthorsByPublicationId(Collection<MySQLPublicationCoauthors> publicationCoauthorsByPublicationId) {
-        this.publicationCoauthorsByPublicationId = publicationCoauthorsByPublicationId;
+    @Override
+    public String toString() {
+        return "MySQLPublication{" +
+                "publicationId=" + publicationId +
+                ", title='" + title + '\'' +
+                ", type='" + type + '\'' +
+                ", citationIndex=" + citationIndex +
+                '}';
     }
 }

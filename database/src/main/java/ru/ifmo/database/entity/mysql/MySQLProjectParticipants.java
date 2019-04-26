@@ -1,4 +1,4 @@
-package ru.ifmo.database.entity.mysql.generated;
+package ru.ifmo.database.entity.mysql;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -9,8 +9,6 @@ import java.util.Objects;
 public class MySQLProjectParticipants {
     private int projectId;
     private int personId;
-    private MySQLProject projectByProjectId;
-    private MySQLPerson personByPersonId;
 
     @Id
     @Column(name = "project_id", nullable = false)
@@ -46,23 +44,11 @@ public class MySQLProjectParticipants {
         return Objects.hash(projectId, personId);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "project_id", referencedColumnName = "project_id", nullable = false)
-    public MySQLProject getProjectByProjectId() {
-        return projectByProjectId;
-    }
-
-    public void setProjectByProjectId(MySQLProject projectByProjectId) {
-        this.projectByProjectId = projectByProjectId;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "person_id", referencedColumnName = "person_id", nullable = false)
-    public MySQLPerson getPersonByPersonId() {
-        return personByPersonId;
-    }
-
-    public void setPersonByPersonId(MySQLPerson personByPersonId) {
-        this.personByPersonId = personByPersonId;
+    @Override
+    public String toString() {
+        return "MySQLProjectParticipants{" +
+                "projectId=" + projectId +
+                ", personId=" + personId +
+                '}';
     }
 }

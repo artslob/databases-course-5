@@ -1,22 +1,22 @@
-package ru.ifmo.database.entity.mysql.generated;
+package ru.ifmo.database.entity.mysql;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class MySQLProjectParticipantsPK implements Serializable {
-    private int projectId;
+public class MySQLConferenceParticipantsPK implements Serializable {
+    private int conferenceId;
     private int personId;
 
-    @Column(name = "project_id", nullable = false)
+    @Column(name = "conference_id", nullable = false)
     @Id
-    public int getProjectId() {
-        return projectId;
+    public int getConferenceId() {
+        return conferenceId;
     }
 
-    public void setProjectId(int projectId) {
-        this.projectId = projectId;
+    public void setConferenceId(int conferenceId) {
+        this.conferenceId = conferenceId;
     }
 
     @Column(name = "person_id", nullable = false)
@@ -33,13 +33,13 @@ public class MySQLProjectParticipantsPK implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        MySQLProjectParticipantsPK that = (MySQLProjectParticipantsPK) o;
-        return projectId == that.projectId &&
+        MySQLConferenceParticipantsPK that = (MySQLConferenceParticipantsPK) o;
+        return conferenceId == that.conferenceId &&
                 personId == that.personId;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, personId);
+        return Objects.hash(conferenceId, personId);
     }
 }

@@ -1,4 +1,4 @@
-package ru.ifmo.database.entity.mysql.generated;
+package ru.ifmo.database.entity.mysql;
 
 import javax.persistence.Column;
 import javax.persistence.Id;

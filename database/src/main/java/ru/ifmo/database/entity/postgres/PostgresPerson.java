@@ -11,7 +11,7 @@ public class PostgresPerson {
     private String surname;
     private String middleName;
     private String personType;
-    private PostgresDepartment departmentByDepartmentId;
+    private Integer departmentId;
 
     @Id
     @Column(name = "person_id", nullable = false)
@@ -63,6 +63,16 @@ public class PostgresPerson {
         this.personType = personType;
     }
 
+    @Basic
+    @Column(name = "department_id", nullable = true)
+    public Integer getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(Integer departmentId) {
+        this.departmentId = departmentId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -72,22 +82,13 @@ public class PostgresPerson {
                 Objects.equals(name, that.name) &&
                 Objects.equals(surname, that.surname) &&
                 Objects.equals(middleName, that.middleName) &&
-                Objects.equals(personType, that.personType);
+                Objects.equals(personType, that.personType) &&
+                Objects.equals(departmentId, that.departmentId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(personId, name, surname, middleName, personType);
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "department_id", referencedColumnName = "department_id")
-    public PostgresDepartment getDepartmentByDepartmentId() {
-        return departmentByDepartmentId;
-    }
-
-    public void setDepartmentByDepartmentId(PostgresDepartment departmentByDepartmentId) {
-        this.departmentByDepartmentId = departmentByDepartmentId;
+        return Objects.hash(personId, name, surname, middleName, personType, departmentId);
     }
 
     @Override
@@ -97,8 +98,8 @@ public class PostgresPerson {
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", middleName='" + middleName + '\'' +
-                ", personType='" + personType + '\'' +
-                ", departmentByDepartmentId=" + departmentByDepartmentId +
+                ", personType=" + personType +
+                ", departmentId=" + departmentId +
                 '}';
     }
 }

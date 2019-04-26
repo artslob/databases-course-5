@@ -1,8 +1,7 @@
-package ru.ifmo.database.entity.mysql.generated;
+package ru.ifmo.database.entity.mysql;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -11,8 +10,6 @@ public class MySQLReaderList {
     private int listId;
     private Date registrationDate;
     private int personId;
-    private Collection<MySQLReaderInfo> readerInfosByListId;
-    private MySQLPerson personByPersonId;
 
     @Id
     @Column(name = "list_id", nullable = false)
@@ -59,22 +56,12 @@ public class MySQLReaderList {
         return Objects.hash(listId, registrationDate, personId);
     }
 
-    @OneToMany(mappedBy = "readerListByReaderId")
-    public Collection<MySQLReaderInfo> getReaderInfosByListId() {
-        return readerInfosByListId;
-    }
-
-    public void setReaderInfosByListId(Collection<MySQLReaderInfo> readerInfosByListId) {
-        this.readerInfosByListId = readerInfosByListId;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "person_id", referencedColumnName = "person_id", nullable = false)
-    public MySQLPerson getPersonByPersonId() {
-        return personByPersonId;
-    }
-
-    public void setPersonByPersonId(MySQLPerson personByPersonId) {
-        this.personByPersonId = personByPersonId;
+    @Override
+    public String toString() {
+        return "MySQLReaderList{" +
+                "listId=" + listId +
+                ", registrationDate=" + registrationDate +
+                ", personId=" + personId +
+                '}';
     }
 }

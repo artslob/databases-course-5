@@ -13,7 +13,7 @@ public class PostgresDiscipline {
     private int labs;
     private String controlForm;
     private int semester;
-    private PostgresDepartment departmentByDepartmentId;
+    private int departmentId;
 
     @Id
     @Column(name = "discipline_id", nullable = false)
@@ -85,6 +85,16 @@ public class PostgresDiscipline {
         this.semester = semester;
     }
 
+    @Basic
+    @Column(name = "department_id", nullable = false)
+    public int getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(int departmentId) {
+        this.departmentId = departmentId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -95,23 +105,14 @@ public class PostgresDiscipline {
                 practicalLessons == that.practicalLessons &&
                 labs == that.labs &&
                 semester == that.semester &&
+                departmentId == that.departmentId &&
                 Objects.equals(name, that.name) &&
                 Objects.equals(controlForm, that.controlForm);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(disciplineId, name, lectures, practicalLessons, labs, controlForm, semester);
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "department_id", referencedColumnName = "department_id", nullable = false)
-    public PostgresDepartment getDepartmentByDepartmentId() {
-        return departmentByDepartmentId;
-    }
-
-    public void setDepartmentByDepartmentId(PostgresDepartment departmentByDepartmentId) {
-        this.departmentByDepartmentId = departmentByDepartmentId;
+        return Objects.hash(disciplineId, name, lectures, practicalLessons, labs, controlForm, semester, departmentId);
     }
 
     @Override
@@ -124,7 +125,7 @@ public class PostgresDiscipline {
                 ", labs=" + labs +
                 ", controlForm='" + controlForm + '\'' +
                 ", semester=" + semester +
-                ", departmentByDepartmentId=" + departmentByDepartmentId +
+                ", departmentId=" + departmentId +
                 '}';
     }
 }

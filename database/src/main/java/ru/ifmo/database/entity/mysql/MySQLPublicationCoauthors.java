@@ -1,4 +1,4 @@
-package ru.ifmo.database.entity.mysql.generated;
+package ru.ifmo.database.entity.mysql;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -9,8 +9,6 @@ import java.util.Objects;
 public class MySQLPublicationCoauthors {
     private int publicationId;
     private int personId;
-    private MySQLPublication publicationByPublicationId;
-    private MySQLPerson personByPersonId;
 
     @Id
     @Column(name = "publication_id", nullable = false)
@@ -46,23 +44,11 @@ public class MySQLPublicationCoauthors {
         return Objects.hash(publicationId, personId);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "publication_id", referencedColumnName = "publication_id", nullable = false)
-    public MySQLPublication getPublicationByPublicationId() {
-        return publicationByPublicationId;
-    }
-
-    public void setPublicationByPublicationId(MySQLPublication publicationByPublicationId) {
-        this.publicationByPublicationId = publicationByPublicationId;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "person_id", referencedColumnName = "person_id", nullable = false)
-    public MySQLPerson getPersonByPersonId() {
-        return personByPersonId;
-    }
-
-    public void setPersonByPersonId(MySQLPerson personByPersonId) {
-        this.personByPersonId = personByPersonId;
+    @Override
+    public String toString() {
+        return "MySQLPublicationCoauthors{" +
+                "publicationId=" + publicationId +
+                ", personId=" + personId +
+                '}';
     }
 }
