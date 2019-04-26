@@ -1,8 +1,7 @@
-package ru.ifmo.database.entity.mysql.generated;
+package ru.ifmo.database.entity.mysql;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -12,7 +11,6 @@ public class MySQLBook {
     private String title;
     private String author;
     private Date publicationDate;
-    private Collection<MySQLReaderInfo> readerInfosByBookId;
 
     @Id
     @Column(name = "book_id", nullable = false)
@@ -70,12 +68,13 @@ public class MySQLBook {
         return Objects.hash(bookId, title, author, publicationDate);
     }
 
-    @OneToMany(mappedBy = "bookByBookId")
-    public Collection<MySQLReaderInfo> getReaderInfosByBookId() {
-        return readerInfosByBookId;
-    }
-
-    public void setReaderInfosByBookId(Collection<MySQLReaderInfo> readerInfosByBookId) {
-        this.readerInfosByBookId = readerInfosByBookId;
+    @Override
+    public String toString() {
+        return "MySQLBook{" +
+                "bookId=" + bookId +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", publicationDate=" + publicationDate +
+                '}';
     }
 }

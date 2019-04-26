@@ -1,4 +1,4 @@
-package ru.ifmo.database.entity.mysql.generated;
+package ru.ifmo.database.entity.mysql;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -13,7 +13,6 @@ public class MySQLEdition {
     private String place;
     private String type;
     private int publicationId;
-    private MySQLPublication publicationByPublicationId;
 
     @Id
     @Column(name = "edition_id", nullable = false)
@@ -104,13 +103,16 @@ public class MySQLEdition {
         return Objects.hash(editionId, title, language, volume, place, type, publicationId);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "publication_id", referencedColumnName = "publication_id", nullable = false)
-    public MySQLPublication getPublicationByPublicationId() {
-        return publicationByPublicationId;
-    }
-
-    public void setPublicationByPublicationId(MySQLPublication publicationByPublicationId) {
-        this.publicationByPublicationId = publicationByPublicationId;
+    @Override
+    public String toString() {
+        return "MySQLEdition{" +
+                "editionId=" + editionId +
+                ", title='" + title + '\'' +
+                ", language='" + language + '\'' +
+                ", volume=" + volume +
+                ", place='" + place + '\'' +
+                ", type='" + type + '\'' +
+                ", publicationId=" + publicationId +
+                '}';
     }
 }

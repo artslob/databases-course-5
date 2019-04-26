@@ -10,7 +10,8 @@ public class PostgresGrade {
     private int gradeId;
     private int grade;
     private Timestamp date;
-    private PostgresDiscipline disciplineByDisciplineId;
+    private int personId;
+    private int disciplineId;
 
     @Id
     @Column(name = "grade_id", nullable = false)
@@ -42,6 +43,26 @@ public class PostgresGrade {
         this.date = date;
     }
 
+    @Basic
+    @Column(name = "person_id", nullable = false)
+    public int getPersonId() {
+        return personId;
+    }
+
+    public void setPersonId(int personId) {
+        this.personId = personId;
+    }
+
+    @Basic
+    @Column(name = "discipline_id", nullable = false)
+    public int getDisciplineId() {
+        return disciplineId;
+    }
+
+    public void setDisciplineId(int disciplineId) {
+        this.disciplineId = disciplineId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -49,22 +70,14 @@ public class PostgresGrade {
         PostgresGrade that = (PostgresGrade) o;
         return gradeId == that.gradeId &&
                 grade == that.grade &&
+                personId == that.personId &&
+                disciplineId == that.disciplineId &&
                 Objects.equals(date, that.date);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(gradeId, grade, date);
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "discipline_id", referencedColumnName = "discipline_id", nullable = false)
-    public PostgresDiscipline getDisciplineByDisciplineId() {
-        return disciplineByDisciplineId;
-    }
-
-    public void setDisciplineByDisciplineId(PostgresDiscipline disciplineByDisciplineId) {
-        this.disciplineByDisciplineId = disciplineByDisciplineId;
+        return Objects.hash(gradeId, grade, date, personId, disciplineId);
     }
 
     @Override
@@ -73,7 +86,8 @@ public class PostgresGrade {
                 "gradeId=" + gradeId +
                 ", grade=" + grade +
                 ", date=" + date +
-                ", disciplineByDisciplineId=" + disciplineByDisciplineId +
+                ", personId=" + personId +
+                ", disciplineId=" + disciplineId +
                 '}';
     }
 }

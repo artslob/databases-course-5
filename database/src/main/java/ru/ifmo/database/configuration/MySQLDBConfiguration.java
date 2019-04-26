@@ -12,7 +12,7 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import ru.ifmo.database.entity.mysql.generated.*;
+import ru.ifmo.database.entity.mysql.*;
 import ru.ifmo.database.repository.mysql.MySQLPersonRepository;
 
 import javax.persistence.EntityManagerFactory;

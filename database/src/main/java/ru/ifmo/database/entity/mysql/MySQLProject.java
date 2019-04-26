@@ -1,8 +1,7 @@
-package ru.ifmo.database.entity.mysql.generated;
+package ru.ifmo.database.entity.mysql;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -12,7 +11,6 @@ public class MySQLProject {
     private String title;
     private Date start;
     private Date end;
-    private Collection<MySQLProjectParticipants> projectParticipantsByProjectId;
 
     @Id
     @Column(name = "project_id", nullable = false)
@@ -70,12 +68,13 @@ public class MySQLProject {
         return Objects.hash(projectId, title, start, end);
     }
 
-    @OneToMany(mappedBy = "projectByProjectId")
-    public Collection<MySQLProjectParticipants> getProjectParticipantsByProjectId() {
-        return projectParticipantsByProjectId;
-    }
-
-    public void setProjectParticipantsByProjectId(Collection<MySQLProjectParticipants> projectParticipantsByProjectId) {
-        this.projectParticipantsByProjectId = projectParticipantsByProjectId;
+    @Override
+    public String toString() {
+        return "MySQLProject{" +
+                "projectId=" + projectId +
+                ", title='" + title + '\'' +
+                ", start=" + start +
+                ", end=" + end +
+                '}';
     }
 }

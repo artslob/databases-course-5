@@ -11,6 +11,7 @@ public class PostgresDepartment {
     private String educationalForm;
     private String standard;
     private String faculty;
+    private int universityId;
 
     @Id
     @Column(name = "department_id", nullable = false)
@@ -62,12 +63,23 @@ public class PostgresDepartment {
         this.faculty = faculty;
     }
 
+    @Basic
+    @Column(name = "university_id", nullable = false)
+    public int getUniversityId() {
+        return universityId;
+    }
+
+    public void setUniversityId(int universityId) {
+        this.universityId = universityId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PostgresDepartment that = (PostgresDepartment) o;
         return departmentId == that.departmentId &&
+                universityId == that.universityId &&
                 Objects.equals(name, that.name) &&
                 Objects.equals(educationalForm, that.educationalForm) &&
                 Objects.equals(standard, that.standard) &&
@@ -76,7 +88,7 @@ public class PostgresDepartment {
 
     @Override
     public int hashCode() {
-        return Objects.hash(departmentId, name, educationalForm, standard, faculty);
+        return Objects.hash(departmentId, name, educationalForm, standard, faculty, universityId);
     }
 
     @Override
@@ -87,6 +99,7 @@ public class PostgresDepartment {
                 ", educationalForm='" + educationalForm + '\'' +
                 ", standard='" + standard + '\'' +
                 ", faculty='" + faculty + '\'' +
+                ", universityId=" + universityId +
                 '}';
     }
 }

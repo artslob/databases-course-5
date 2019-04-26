@@ -1,8 +1,7 @@
-package ru.ifmo.database.entity.mysql.generated;
+package ru.ifmo.database.entity.mysql;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -12,7 +11,6 @@ public class MySQLConference {
     private String title;
     private String place;
     private Date date;
-    private Collection<MySQLConferenceParticipants> conferenceParticipantsByConferenceId;
 
     @Id
     @Column(name = "conference_id", nullable = false)
@@ -70,12 +68,13 @@ public class MySQLConference {
         return Objects.hash(conferenceId, title, place, date);
     }
 
-    @OneToMany(mappedBy = "conferenceByConferenceId")
-    public Collection<MySQLConferenceParticipants> getConferenceParticipantsByConferenceId() {
-        return conferenceParticipantsByConferenceId;
-    }
-
-    public void setConferenceParticipantsByConferenceId(Collection<MySQLConferenceParticipants> conferenceParticipantsByConferenceId) {
-        this.conferenceParticipantsByConferenceId = conferenceParticipantsByConferenceId;
+    @Override
+    public String toString() {
+        return "MySQLConference{" +
+                "conferenceId=" + conferenceId +
+                ", title='" + title + '\'' +
+                ", place='" + place + '\'' +
+                ", date=" + date +
+                '}';
     }
 }
