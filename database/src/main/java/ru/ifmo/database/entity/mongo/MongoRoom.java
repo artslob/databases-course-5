@@ -9,21 +9,25 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-@Document(collection = "person")
+import java.util.Date;
+import java.util.List;
+
+@Document(collection = "room")
 @Getter
 @Setter
 @ToString
 @EqualsAndHashCode
-public class MongoPerson {
+public class MongoRoom {
     @Id
     @JsonIgnore
     private String id;
     @Field("id")
-    private int personId;
-    private String name;
-    private String surname;
-    @Field(value = "middle_name")
-    private String middleName;
-    @Field(value = "study_type")
-    private String studyType;
+    private int roomId;
+    @Field("hostel_id")
+    private int hostelId;
+    private int number;
+    private int capacity;
+    private int payment;
+    private Boolean insects;
+    private List<Date> disinfection;
 }
