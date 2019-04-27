@@ -2,6 +2,7 @@ package ru.ifmo.database.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.ifmo.database.repository.mongo.MongoPersonRepository;
 import ru.ifmo.database.repository.mysql.MySQLPersonRepository;
@@ -11,8 +12,9 @@ import ru.ifmo.database.repository.postgres.PostgresPersonRepository;
 import java.util.Arrays;
 import java.util.List;
 
-@RestController("/person")
-public class PersonController {
+@RestController
+@RequestMapping("/all")
+public class AllController {
 
     @Autowired
     private MySQLPersonRepository mySQLPersonRepository;
@@ -26,7 +28,7 @@ public class PersonController {
     @Autowired
     private MongoPersonRepository mongoPersonRepository;
 
-    @GetMapping()
+    @GetMapping("/person")
     public List<Object> findAll() {
         return Arrays.asList(
                 mongoPersonRepository.findAll(),
