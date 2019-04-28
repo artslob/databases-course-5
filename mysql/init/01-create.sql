@@ -31,7 +31,7 @@ CREATE TABLE book
 
 CREATE TABLE reader_info
 (
-    info_id INT PRIMARY KEY AUTO_INCREMENT,
+    info_id     INT PRIMARY KEY AUTO_INCREMENT,
     reader_id   INT  NOT NULL, # человек
     book_id     INT  NOT NULL, # взял книгу
     obtain_date DATE NOT NULL, # когда взял
