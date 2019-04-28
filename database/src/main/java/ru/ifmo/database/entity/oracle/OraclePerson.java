@@ -1,33 +1,40 @@
 package ru.ifmo.database.entity.oracle;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Entity
-@Table(name = "person")
+@Table(name = "PERSON", schema = "IFMO", catalog = "")
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString
+@EqualsAndHashCode
 public class OraclePerson {
-
     @Id
     @Column(name = "person_id")
-    private int id;
+    private long personId;
+    @NotNull
+    @Size(max = 20)
     private String name;
+    @NotNull
+    @Size(max = 20)
     private String surname;
+    @NotNull
+    @Size(max = 20)
     @Column(name = "middle_name")
     private String middleName;
-    private String position;
+    private Date birthday;
+    @NotNull
+    @Size(max = 100)
+    private String birthplace;
     @Column(name = "person_type")
     private String personType;
-    @Column(name = "speciality_id")
-    private int specialityId;
 }
