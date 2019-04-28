@@ -37,11 +37,10 @@ CREATE TABLE reader_info
 
 CREATE TABLE conference
 (
-    conference_id INT PRIMARY KEY AUTO_INCREMENT,
-    title         VARCHAR(100) NOT NULL, -- Наименование конференции
-    place         VARCHAR(100) NOT NULL, -- Место проведения конференции
-    -- TODO rename to conference_date
-    date          DATE         NOT NULL  -- Дата конференции
+    conference_id   INT PRIMARY KEY AUTO_INCREMENT,
+    title           VARCHAR(100) NOT NULL, -- Наименование конференции
+    place           VARCHAR(100) NOT NULL, -- Место проведения конференции
+    conference_date DATE         NOT NULL  -- Дата конференции
 );
 
 CREATE TABLE conference_participants -- участники конференции
@@ -53,11 +52,10 @@ CREATE TABLE conference_participants -- участники конференци�
 
 CREATE TABLE project
 (
-    project_id INT PRIMARY KEY AUTO_INCREMENT,
-    title      VARCHAR(100) NOT NULL, -- Наименование научного проекта
-    -- TODO rename it to project_start and project_end
-    start      DATE         NOT NULL, -- Период участия в проекте
-    end        DATE         NOT NULL
+    project_id    INT PRIMARY KEY AUTO_INCREMENT,
+    title         VARCHAR(100) NOT NULL, -- Наименование научного проекта
+    project_start DATE         NOT NULL, -- Период участия в проекте
+    project_end   DATE         NOT NULL
 );
 
 CREATE TABLE project_participants -- участники проекта
