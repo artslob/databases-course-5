@@ -15,24 +15,21 @@ CREATE TABLE department -- подразделение
 
 CREATE TABLE speciality -- специализация
 (
-    speciality_id    serial PRIMARY KEY,
-    name             VARCHAR(100) NOT NULL, /* название специальности -- 09.03.04 – Разработка программно-информационных систем (Академический магистр) */
-    educational_form VARCHAR(100) NOT NULL, /* форма обучения -- очная/заочная */
-    standard         VARCHAR(10)  NOT NULL, /* тип стандарта обучения -- старый/новый */
-    department_id    INTEGER      NOT NULL REFERENCES department (department_id)
+    speciality_id serial PRIMARY KEY,
+    name          VARCHAR(100) NOT NULL, /* название специальности -- 09.03.04 – Разработка программно-информационных систем (Академический магистр) */
+    standard      VARCHAR(10)  NOT NULL, /* тип стандарта обучения -- старый/новый */
+    department_id INTEGER      NOT NULL REFERENCES department (department_id)
 );
 
 CREATE TYPE person_type AS ENUM ('student', 'professor');
 
 CREATE TABLE person
 (
-    person_id     serial PRIMARY KEY,
-    name          VARCHAR(20) NOT NULL,
-    surname       VARCHAR(20) NOT NULL,
-    middle_name   VARCHAR(20),
-    person_type   person_type NOT NULL,
-    /* TODO: speciality for professor? add check that not null for student */
-    department_id INTEGER REFERENCES department (department_id)
+    person_id   serial PRIMARY KEY,
+    name        VARCHAR(20) NOT NULL,
+    surname     VARCHAR(20) NOT NULL,
+    middle_name VARCHAR(20),
+    person_type person_type NOT NULL
 );
 
 CREATE TABLE discipline
@@ -55,6 +52,26 @@ CREATE TABLE grade
     person_id     INTEGER   NOT NULL REFERENCES person (person_id),
     discipline_id INTEGER   NOT NULL REFERENCES discipline (discipline_id),
     UNIQUE (person_id, discipline_id)
+);
+
+CREATE TABLE education -- учёба
+(
+    education_id   serial PRIMARY KEY,
+    education_type VARCHAR(100) NOT NULL, -- вид обучения -- бюджет/контракт
+    education_form VARCHAR(100) NOT NULL, -- форма обучения -- очная/заочная
+    qualification  VARCHAR(100) NOT NULL, -- квалификация -- магистр
+    start_date     DATE         NOT NULL, -- дата начала
+    end_date       DATE,                  -- дата конца
+    course         SMALLINT     NOT NULL, -- курс
+    speciality_id  INTEGER      NOT NULL REFERENCES speciality (speciality_id)
+);
+
+CREATE TABLE person_education
+(
+    -- many to many от студента к курсам учёбы
+    person_id    INTEGER NOT NULL REFERENCES person (person_id),
+    education_id INTEGER NOT NULL REFERENCES education (education_id),
+    PRIMARY KEY (person_id, education_id)
 );
 
 INSERT INTO person(name, surname, middle_name, person_type)
