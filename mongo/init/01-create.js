@@ -24,13 +24,12 @@ db.hostel.insertMany([
 db.room.insertMany([
     {
         id: 309,
-        hostel_id: 6,    /* -> hostel */
-        // TODO rename to room_number
-        number: 1408,    // Номер комнаты
-        capacity: 3,     // Комната -- на 3 человека
-        payment: 1030,   // Сумма оплаты
-        insects: false,  // Клопы -- Y/N
-        disinfection: [  // Когда проводили дезинфекцию дата
+        hostel_id: 6,       /* -> hostel */
+        room_number: 1408,  // Номер комнаты
+        capacity: 3,        // Комната -- на 3 человека
+        payment: 1030,      // Сумма оплаты
+        insects: false,     // Клопы -- Y/N
+        disinfection: [     // Когда проводили дезинфекцию дата
             new Date("2014-01-24"),
             new Date("2015-12-20"),
         ]
