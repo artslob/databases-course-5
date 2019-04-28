@@ -74,5 +74,22 @@ CREATE TABLE person_education
     PRIMARY KEY (person_id, education_id)
 );
 
+CREATE TABLE work
+(
+    work_id    serial PRIMARY KEY,
+    position   VARCHAR(20) NOT NULL, -- должность
+    work_start DATE        NOT NULL, -- начало работы
+    work_end   DATE,                 -- конец работы
+    person_id  INTEGER     NOT NULL REFERENCES person (person_id)
+);
+
+CREATE TABLE work_discipline
+(
+    -- many to many от должности (работы) к дисциплинам
+    work_id       INTEGER NOT NULL REFERENCES work (work_id),
+    discipline_id INTEGER NOT NULL REFERENCES discipline (discipline_id),
+    PRIMARY KEY (work_id, discipline_id)
+);
+
 INSERT INTO person(name, surname, middle_name, person_type)
 VALUES ('Иван', 'Иванов', 'Иванович', 'student');
