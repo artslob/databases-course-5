@@ -63,15 +63,8 @@ CREATE TABLE education -- учёба
     start_date     DATE         NOT NULL, -- дата начала
     end_date       DATE,                  -- дата конца
     course         SMALLINT     NOT NULL, -- курс
-    speciality_id  INTEGER      NOT NULL REFERENCES speciality (speciality_id)
-);
-
-CREATE TABLE person_education
-(
-    -- many to many от студента к курсам учёбы
-    person_id    INTEGER NOT NULL REFERENCES person (person_id),
-    education_id INTEGER NOT NULL REFERENCES education (education_id),
-    PRIMARY KEY (person_id, education_id)
+    speciality_id  INTEGER      NOT NULL REFERENCES speciality (speciality_id),
+    person_id      INTEGER      NOT NULL REFERENCES person (person_id)
 );
 
 CREATE TABLE work
