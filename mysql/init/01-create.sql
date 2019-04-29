@@ -5,10 +5,10 @@ USE uni;
 CREATE TABLE person
 (
     person_id   INT PRIMARY KEY AUTO_INCREMENT,
-    name        VARCHAR(20)                          NOT NULL,
-    surname     VARCHAR(20)                          NOT NULL,
+    name        VARCHAR(20)                         NOT NULL,
+    surname     VARCHAR(20)                         NOT NULL,
     middle_name VARCHAR(20),
-    position    ENUM ('доцент','бакалавр','магистр') NOT NULL -- должность
+    position    ENUM ('docent','bachelor','master') NOT NULL -- должность
 );
 
 CREATE TABLE reader_list
@@ -75,9 +75,9 @@ CREATE TABLE project_participants -- участники проекта
 CREATE TABLE publication
 (
     publication_id INT PRIMARY KEY AUTO_INCREMENT,
-    title          VARCHAR(100) NOT NULL,     -- Наименование публикации
-    type           ENUM ('статья', 'тезисы'), -- статья/тезисы
-    citation_index INT                        -- Индекс цитирования
+    title          VARCHAR(100) NOT NULL,      -- Наименование публикации
+    type           ENUM ('article', 'theses'), -- статья/тезисы
+    citation_index INT                         -- Индекс цитирования
 );
 
 CREATE TABLE publication_coauthors -- соавторы публикации
