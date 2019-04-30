@@ -22,6 +22,7 @@ public class OracleDiscipline {
     @NotNull
     @Size(max = 100)
     private String name;
-    @Column(name = "department_id")
-    private int departmentId;
+    @NotNull
+    @Column(name = "speciality_id")
+    private int specialityId;
 }

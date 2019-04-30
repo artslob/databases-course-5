@@ -27,14 +27,16 @@ public class OraclePerson {
     @NotNull
     @Size(max = 20)
     private String surname;
-    @NotNull
     @Size(max = 20)
     @Column(name = "middle_name")
     private String middleName;
+    @NotNull
     private Date birthday;
     @NotNull
     @Size(max = 100)
     private String birthplace;
+    @NotNull
+    @Size(max = 20)
     @Column(name = "person_type")
     private String personType;
 }

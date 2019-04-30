@@ -2,10 +2,12 @@ package ru.ifmo.database.entity.postgres;
 
 import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
-import java.util.Objects;
 
 @Entity
 @Table(name = "grade", schema = "public", catalog = "ifmo_hibd")
@@ -21,7 +23,8 @@ public class PostgresGrade {
     @NotNull
     private int grade;
     @NotNull
-    private Timestamp date;
+    @Column(name = "grade_date")
+    private Timestamp gradeDate;
     @NotNull
     @Column(name = "person_id")
     private int personId;

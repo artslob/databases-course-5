@@ -1,4 +1,4 @@
-package ru.ifmo.database.entity.oracle;
+package ru.ifmo.database.entity.postgres;
 
 import lombok.*;
 
@@ -11,13 +11,13 @@ import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
-@Table(name = "EDUCATION", schema = "IFMO", catalog = "")
+@Table(name = "education", schema = "public", catalog = "ifmo_hibd")
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
-public class OracleEducation {
+public class PostgresEducation {
     @Id
     @Column(name = "education_id")
     private int educationId;
@@ -35,7 +35,6 @@ public class OracleEducation {
     @NotNull
     @Column(name = "start_date")
     private Date startDate;
-    @NotNull
     @Column(name = "end_date")
     private Date endDate;
     @NotNull
