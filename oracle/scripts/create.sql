@@ -79,8 +79,143 @@ CREATE TABLE schedule -- расписание
     discipline_id    INTEGER REFERENCES discipline (discipline_id)
 );
 
-INSERT INTO person(person_id, name, surname, middle_name, birthday, birthplace, person_type)
-VALUES (191950, 'Ivan', 'Ivanov', 'Ivanovich', TO_DATE('23/02/1994', 'DD/MM/YYYY'), 'Russia, Moscow', 'student');
+-- students
+INSERT INTO person(person_id, name, surname, middle_name, person_type, birthplace, birthday)
+VALUES (191950, 'Ivan', 'Ivanov', 'Ivanovich', 'student', 'Russia, Spb', TO_DATE('1996-01-17', 'YYYY-MM-DD'));
+INSERT INTO person(person_id, name, surname, middle_name, person_type, birthplace, birthday)
+VALUES (191951, 'Fedor', 'Fedorov', 'Fedorovich', 'student', 'Russia, Moscow', TO_DATE('1996-02-22', 'YYYY-MM-DD'));
+INSERT INTO person(person_id, name, surname, middle_name, person_type, birthplace, birthday)
+VALUES (191952, 'Aleksey', 'Alekseev', 'Alekseevich', 'student', 'Russia, Vologda',
+        TO_DATE('1997-03-06', 'YYYY-MM-DD'));
+-- professors
+INSERT INTO person(person_id, name, surname, middle_name, person_type, birthplace, birthday)
+VALUES (75950, 'Dmitriy', 'Dmitriev', 'Dmitrievich', 'professor', 'Russia, Spb', TO_DATE('1990-02-15', 'YYYY-MM-DD'));
+INSERT INTO person(person_id, name, surname, middle_name, person_type, birthplace, birthday)
+VALUES (75951, 'Artem', 'Artemiev', 'Artemievich', 'professor', 'Russia, Moscow', TO_DATE('1991-10-02', 'YYYY-MM-DD'));
+INSERT INTO person(person_id, name, surname, middle_name, person_type, birthplace, birthday)
+VALUES (75952, 'Kirill', 'Kirillov', 'Kirillovich', 'professor', 'Russia, vologda',
+        TO_DATE('1992-05-22', 'YYYY-MM-DD'));
+
+-- itmo
+INSERT INTO department(department_id, faculty)
+VALUES (1, 'Faculty of Software Engineering and Computer Systems');
+INSERT INTO department(department_id, faculty)
+VALUES (2, 'Faculty of Secure Information Technologies');
+INSERT INTO department(department_id, faculty)
+VALUES (3, 'Institute of Information and Navigation Systems');
+-- spsu
+INSERT INTO department(department_id, faculty)
+VALUES (4, 'Graduate School of Journalism and Mass Communication');
+INSERT INTO department(department_id, faculty)
+VALUES (5, 'Graduate School of Management');
+INSERT INTO department(department_id, faculty)
+VALUES (6, 'Institute of Earth Sciences');
+-- spbpu
+INSERT INTO department(department_id, faculty)
+VALUES (7, 'Department for Protecting Confidential Information');
+INSERT INTO department(department_id, faculty)
+VALUES (8, 'Safety and Security Office');
+INSERT INTO department(department_id, faculty)
+VALUES (9, 'Technopark “Polytechnic”');
+
+INSERT INTO speciality (speciality_id, name, direction, standard, department_id)
+VALUES (1, '01.01.01', 'some direction', 'new', 1);
+INSERT INTO speciality (speciality_id, name, direction, standard, department_id)
+VALUES (2, '01.01.02', 'some direction', 'new', 2);
+INSERT INTO speciality (speciality_id, name, direction, standard, department_id)
+VALUES (3, '01.01.03', 'some direction', 'new', 3);
+INSERT INTO speciality (speciality_id, name, direction, standard, department_id)
+VALUES (4, '02.01.01', 'some direction', 'old', 4);
+INSERT INTO speciality (speciality_id, name, direction, standard, department_id)
+VALUES (5, '02.01.02', 'some direction', 'old', 5);
+INSERT INTO speciality (speciality_id, name, direction, standard, department_id)
+VALUES (6, '02.01.03', 'some direction', 'old', 6);
+INSERT INTO speciality (speciality_id, name, direction, standard, department_id)
+VALUES (7, '03.01.01', 'some direction', 'old', 7);
+INSERT INTO speciality (speciality_id, name, direction, standard, department_id)
+VALUES (8, '03.01.02', 'some direction', 'old', 8);
+INSERT INTO speciality (speciality_id, name, direction, standard, department_id)
+VALUES (9, '03.01.03', 'some direction', 'old', 9);
+
+INSERT INTO discipline (discipline_id, name, speciality_id)
+VALUES (1, 'graphics', 1);
+INSERT INTO discipline (discipline_id, name, speciality_id)
+VALUES (2, 'computers', 2);
+INSERT INTO discipline (discipline_id, name, speciality_id)
+VALUES (3, 'c/c++', 3);
+INSERT INTO discipline (discipline_id, name, speciality_id)
+VALUES (4, 'machine learning', 4);
+INSERT INTO discipline (discipline_id, name, speciality_id)
+VALUES (5, 'ai', 5);
+INSERT INTO discipline (discipline_id, name, speciality_id)
+VALUES (6, 'cryptography', 6);
+INSERT INTO discipline (discipline_id, name, speciality_id)
+VALUES (7, 'java', 7);
+INSERT INTO discipline (discipline_id, name, speciality_id)
+VALUES (8, 'asm', 8);
+INSERT INTO discipline (discipline_id, name, speciality_id)
+VALUES (9, 'iso', 9);
+
+INSERT INTO grade(grade_id, grade, grade_date, person_id, discipline_id)
+VALUES (1, 91, TO_DATE('2013-06-01', 'YYYY-MM-DD'), 191950, 1);
+INSERT INTO grade(grade_id, grade, grade_date, person_id, discipline_id)
+VALUES (2, 92, TO_DATE('2013-06-02', 'YYYY-MM-DD'), 191950, 2);
+INSERT INTO grade(grade_id, grade, grade_date, person_id, discipline_id)
+VALUES (3, 93, TO_DATE('2013-06-03', 'YYYY-MM-DD'), 191950, 3);
+INSERT INTO grade(grade_id, grade, grade_date, person_id, discipline_id)
+VALUES (4, 94, TO_DATE('2013-06-04', 'YYYY-MM-DD'), 191951, 4);
+INSERT INTO grade(grade_id, grade, grade_date, person_id, discipline_id)
+VALUES (5, 95, TO_DATE('2013-06-05', 'YYYY-MM-DD'), 191951, 5);
+INSERT INTO grade(grade_id, grade, grade_date, person_id, discipline_id)
+VALUES (6, 96, TO_DATE('2013-06-06', 'YYYY-MM-DD'), 191951, 6);
+INSERT INTO grade(grade_id, grade, grade_date, person_id, discipline_id)
+VALUES (7, 97, TO_DATE('2013-06-07', 'YYYY-MM-DD'), 191952, 7);
+INSERT INTO grade(grade_id, grade, grade_date, person_id, discipline_id)
+VALUES (8, 98, TO_DATE('2013-06-08', 'YYYY-MM-DD'), 191952, 8);
+INSERT INTO grade(grade_id, grade, grade_date, person_id, discipline_id)
+VALUES (9, 99, TO_DATE('2013-06-09', 'YYYY-MM-DD'), 191952, 9);
+
+INSERT INTO education (education_id, education_type, education_form, qualification, start_date, end_date, course,
+                       speciality_id, person_id)
+VALUES (1, 'budget', 'distant', 'master', TO_DATE('2012-09-01', 'YYYY-MM-DD'), NULL, 1, 1, 191950);
+INSERT INTO education (education_id, education_type, education_form, qualification, start_date, end_date, course,
+                       speciality_id, person_id)
+VALUES (2, 'budget', 'distant', 'master', TO_DATE('2012-09-01', 'YYYY-MM-DD'), NULL, 1, 1, 191950);
+INSERT INTO education (education_id, education_type, education_form, qualification, start_date, end_date, course,
+                       speciality_id, person_id)
+VALUES (3, 'budget', 'distant', 'master', TO_DATE('2012-09-01', 'YYYY-MM-DD'), NULL, 1, 1, 191950);
+INSERT INTO education (education_id, education_type, education_form, qualification, start_date, end_date, course,
+                       speciality_id, person_id)
+VALUES (4, 'budget', 'distant', 'master', TO_DATE('2012-09-01', 'YYYY-MM-DD'), NULL, 2, 2, 191951);
+INSERT INTO education (education_id, education_type, education_form, qualification, start_date, end_date, course,
+                       speciality_id, person_id)
+VALUES (5, 'budget', 'distant', 'master', TO_DATE('2012-09-01', 'YYYY-MM-DD'), NULL, 2, 2, 191951);
+INSERT INTO education (education_id, education_type, education_form, qualification, start_date, end_date, course,
+                       speciality_id, person_id)
+VALUES (6, 'budget', 'distant', 'master', TO_DATE('2012-09-01', 'YYYY-MM-DD'), NULL, 2, 2, 191951);
+INSERT INTO education (education_id, education_type, education_form, qualification, start_date, end_date, course,
+                       speciality_id, person_id)
+VALUES (7, 'budget', 'distant', 'master', TO_DATE('2012-09-01', 'YYYY-MM-DD'), NULL, 3, 3, 191952);
+INSERT INTO education (education_id, education_type, education_form, qualification, start_date, end_date, course,
+                       speciality_id, person_id)
+VALUES (8, 'budget', 'distant', 'master', TO_DATE('2012-09-01', 'YYYY-MM-DD'), NULL, 3, 3, 191952);
+INSERT INTO education (education_id, education_type, education_form, qualification, start_date, end_date, course,
+                       speciality_id, person_id)
+VALUES (9, 'budget', 'distant', 'master', TO_DATE('2012-09-01', 'YYYY-MM-DD'), NULL, 3, 3, 191952);
+
+INSERT INTO work (work_id, position, work_start, work_end, person_id)
+VALUES (1, 'professor', TO_DATE('1999-06-01', 'YYYY-MM-DD'), NULL, 75950);
+INSERT INTO work (work_id, position, work_start, work_end, person_id)
+VALUES (2, 'professor', TO_DATE('1999-06-02', 'YYYY-MM-DD'), NULL, 75951);
+INSERT INTO work (work_id, position, work_start, work_end, person_id)
+VALUES (3, 'professor', TO_DATE('1999-06-03', 'YYYY-MM-DD'), NULL, 75952);
+
+INSERT INTO work_discipline(work_id, discipline_id)
+VALUES (1, 1);
+INSERT INTO work_discipline(work_id, discipline_id)
+VALUES (2, 3);
+INSERT INTO work_discipline(work_id, discipline_id)
+VALUES (3, 3);
 
 SELECT *
-FROM person;
+FROM person FETCH FIRST 1 ROWS ONLY;
