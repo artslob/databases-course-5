@@ -2,10 +2,12 @@ package ru.ifmo.database.entity.postgres;
 
 import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.Objects;
 
 @Entity
 @Table(name = "discipline", schema = "public", catalog = "ifmo_hibd")
@@ -34,6 +36,6 @@ public class PostgresDiscipline {
     @NotNull
     private int semester;
     @NotNull
-    @Column(name = "department_id")
-    private int departmentId;
+    @Column(name = "speciality_id")
+    private int specialityId;
 }

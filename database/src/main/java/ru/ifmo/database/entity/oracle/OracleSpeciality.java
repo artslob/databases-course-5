@@ -10,17 +10,26 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "DEPARTMENT", schema = "IFMO", catalog = "")
+@Table(name = "SPECIALITY", schema = "IFMO", catalog = "")
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
-public class OracleDepartment {
+public class OracleSpeciality {
     @Id
-    @Column(name = "department_id")
-    private int departmentId;
+    @Column(name = "speciality_id")
+    private int specialityId;
     @NotNull
     @Size(max = 100)
-    private String faculty;
+    private String name;
+    @NotNull
+    @Size(max = 100)
+    private String direction;
+    @NotNull
+    @Size(max = 10)
+    private String standard;
+    @NotNull
+    @Column(name = "department_id")
+    private int departmentId;
 }

@@ -1,45 +1,21 @@
 package ru.ifmo.database.entity.mysql;
 
+import lombok.*;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 import java.io.Serializable;
-import java.util.Objects;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
+@EqualsAndHashCode
 public class MySQLConferenceParticipantsPK implements Serializable {
-    private int conferenceId;
-    private int personId;
-
+    @Id
     @Column(name = "conference_id", nullable = false)
+    private int conferenceId;
     @Id
-    public int getConferenceId() {
-        return conferenceId;
-    }
-
-    public void setConferenceId(int conferenceId) {
-        this.conferenceId = conferenceId;
-    }
-
     @Column(name = "person_id", nullable = false)
-    @Id
-    public int getPersonId() {
-        return personId;
-    }
-
-    public void setPersonId(int personId) {
-        this.personId = personId;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        MySQLConferenceParticipantsPK that = (MySQLConferenceParticipantsPK) o;
-        return conferenceId == that.conferenceId &&
-                personId == that.personId;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(conferenceId, personId);
-    }
+    private int personId;
 }

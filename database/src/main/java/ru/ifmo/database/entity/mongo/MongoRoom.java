@@ -25,7 +25,8 @@ public class MongoRoom {
     private int roomId;
     @Field("hostel_id")
     private int hostelId;
-    private int number;
+    @Field("room_number")
+    private int roomNumber;
     private int capacity;
     private int payment;
     private Boolean insects;

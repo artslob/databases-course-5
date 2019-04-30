@@ -22,8 +22,7 @@ public class OracleGrade {
     @Column(name = "grade_id")
     private int gradeId;
     @NotNull
-    @Size(max = 1)
-    private String letter;
+    private int grade;
     @NotNull
     @Column(name = "grade_date")
     private Date gradeDate;

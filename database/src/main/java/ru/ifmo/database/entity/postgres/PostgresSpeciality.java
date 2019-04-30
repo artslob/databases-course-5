@@ -10,26 +10,23 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "person", schema = "public", catalog = "ifmo_hibd")
+@Table(name = "speciality", schema = "public", catalog = "ifmo_hibd")
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
-public class PostgresPerson {
+public class PostgresSpeciality {
     @Id
-    @Column(name = "person_id")
-    private int personId;
+    @Column(name = "speciality_id")
+    private int specialityId;
     @NotNull
-    @Size(max = 20)
+    @Size(max = 100)
     private String name;
     @NotNull
-    @Size(max = 20)
-    private String surname;
+    @Size(max = 10)
+    private String standard;
     @NotNull
-    @Size(max = 20)
-    @Column(name = "middle_name")
-    private String middleName;
-    @Column(name = "person_type")
-    private String personType;
+    @Column(name = "department_id")
+    private int departmentId;
 }
