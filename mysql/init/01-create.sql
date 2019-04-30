@@ -60,7 +60,7 @@ CREATE TABLE project
     project_id    INT PRIMARY KEY AUTO_INCREMENT,
     title         VARCHAR(100) NOT NULL, -- Наименование научного проекта
     project_start DATE         NOT NULL, -- Период участия в проекте
-    project_end   DATE         NOT NULL
+    project_end   DATE
 );
 
 CREATE TABLE project_participants -- участники проекта
