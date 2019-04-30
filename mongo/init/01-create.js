@@ -4,27 +4,35 @@ db = conn.getDB("uni");
 db.person.insertMany([
     {
         id: 191950,
-        name: "ivan",
-        surname: "ivanov",
-        middle_name: "petrovich",
-        study_type: "бюджет" // Вид обучения -- бюджет/контракт
-    }
+        name: "Ivan",
+        surname: "Ivanov",
+        middle_name: "Ivanovich",
+        study_type: "budget" // Вид обучения -- бюджет/контракт
+    },
+    {id: 191951, name: 'Fedor', surname: 'Fedorov', middle_name: 'Fedorovich', study_type: 'budget'},
+    {id: 191952, name: 'Aleksey', surname: 'Alekseev', middle_name: 'Alekseevich', study_type: 'budget'},
+    {id: 75950, name: 'Dmitriy', surname: 'Dmitriev', middle_name: 'Dmitrievich', study_type: 'budget'},
+    {id: 75951, name: 'Artem', surname: 'Artemiev', middle_name: 'Artemievich', study_type: 'budget'},
+    {id: 75952, name: 'Kirill', surname: 'Kirillov', middle_name: 'Kirillovich', study_type: 'budget'},
 ]);
 
 // общежитие
 db.hostel.insertMany([
     {
-        id: 6,
-        address: "Белорусская улица, д. 6",  // Местоположение -- пер. Вяземский, наб. р. Карповки
-        rooms: 900,                          // Количество комнат в здании
-    }
+        id: 1,
+        address: 'пер. Вяземский, д. 5/7',  // Местоположение -- пер. Вяземский, наб. р. Карповки
+        rooms: 1320,                        // Количество комнат в здании
+    },
+    {id: 2, address: 'ул. Ленсовета, д. 23', rooms: 1035},
+    {id: 3, address: 'Альпийский пер., д.15, к. 2', rooms: 650},
+    {id: 4, address: 'Белорусская улица, д. 6', rooms: 900},
 ]);
 
 // комната
 db.room.insertMany([
     {
         id: 309,
-        hostel_id: 6,       /* -> hostel */
+        hostel_id: 1,       /* -> hostel */
         room_number: 1408,  // Номер комнаты
         capacity: 3,        // Комната -- на 3 человека
         payment: 1030,      // Сумма оплаты
@@ -33,7 +41,14 @@ db.room.insertMany([
             new Date("2014-01-24"),
             new Date("2015-12-20"),
         ]
-    }
+    },
+    {id: 310, hostel_id: 1, room_number: 1409, capacity: 3, payment: 1030, insects: false, disinfection: []},
+    {id: 500, hostel_id: 2, room_number: 901, capacity: 4, payment: 1500, insects: true, disinfection: []},
+    {id: 501, hostel_id: 2, room_number: 902, capacity: 4, payment: 1500, insects: true, disinfection: []},
+    {id: 700, hostel_id: 3, room_number: 901, capacity: 5, payment: 500, insects: false, disinfection: []},
+    {id: 701, hostel_id: 3, room_number: 902, capacity: 5, payment: 500, insects: false, disinfection: []},
+    {id: 900, hostel_id: 4, room_number: 1201, capacity: 2, payment: 1230, insects: false, disinfection: []},
+    {id: 901, hostel_id: 4, room_number: 1202, capacity: 2, payment: 1230, insects: false, disinfection: []},
 ]);
 
 // проживание
@@ -54,7 +69,9 @@ db.accommodation.insertMany([
                 text: "состояние алкогольного опьянения"
             },
         ],
-    }
+    },
+    {person_id: 191951, room_no: 309, from: new Date("2014-09-01"), to: null, exemption: false, warnings: []},
+    {person_id: 191952, room_no: 309, from: new Date("2014-09-01"), to: null, exemption: false, warnings: []},
 ]);
 
 // посещение -- зашёл в общежитие/вышел из общежития
@@ -74,6 +91,6 @@ db.visit.insertMany([
 ]);
 
 cursor = db.person.find();
-while (cursor.hasNext()) {
+if (cursor.hasNext()) {
     printjson(cursor.next());
 }
