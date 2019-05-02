@@ -10,24 +10,26 @@ import javax.persistence.*;
 @ToString
 @EqualsAndHashCode
 @Entity
-@Table(name = "EDITION", schema = "IFMO", catalog = "")
+@Table(name = "EDITION")
 public class UnionEdition {
     @Id
     @Column(name = "EDITION_ID")
-    private long editionId;
+    private int editionId;
     @Basic
-    @Column(name = "TITLE")
+    @Column(name = "TITLE", nullable = false, length = 100)
     private String title;
     @Basic
-    @Column(name = "LANGUAGE")
+    @Column(name = "LANGUAGE", nullable = false, length = 30)
     private String language;
     @Basic
-    @Column(name = "VOLUME")
-    private long volume;
+    @Column(name = "VOLUME", nullable = false)
+    private int volume;
     @Basic
-    @Column(name = "PLACE")
+    @Column(name = "PLACE", nullable = false, length = 100)
     private String place;
     @Basic
-    @Column(name = "TYPE")
+    @Column(name = "TYPE", nullable = false, length = 100)
     private String type;
+    @Column(name = "publication_id")
+    private int publicationId;
 }

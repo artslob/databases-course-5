@@ -3,10 +3,10 @@ package ru.ifmo.database.entity.union;
 import lombok.*;
 
 import javax.persistence.*;
-import java.sql.Time;
+import java.util.Date;
 
 @Entity
-@Table(name = "CONFERENCE", schema = "IFMO", catalog = "")
+@Table(name = "CONFERENCE")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -15,14 +15,14 @@ import java.sql.Time;
 public class UnionConference {
     @Id
     @Column(name = "CONFERENCE_ID")
-    private long conferenceId;
+    private int conferenceId;
     @Basic
-    @Column(name = "TITLE")
+    @Column(name = "TITLE", nullable = false, length = 100)
     private String title;
     @Basic
-    @Column(name = "PLACE")
+    @Column(name = "PLACE", nullable = false, length = 100)
     private String place;
     @Basic
     @Column(name = "CONFERENCE_DATE")
-    private Time conferenceDate;
+    private Date conferenceDate;
 }

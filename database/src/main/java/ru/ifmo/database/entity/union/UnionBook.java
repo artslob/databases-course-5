@@ -3,7 +3,7 @@ package ru.ifmo.database.entity.union;
 import lombok.*;
 
 import javax.persistence.*;
-import java.sql.Time;
+import java.util.Date;
 
 @Entity
 @Table(name = "BOOK", schema = "IFMO", catalog = "")
@@ -15,14 +15,14 @@ import java.sql.Time;
 public class UnionBook {
     @Id
     @Column(name = "BOOK_ID")
-    private long bookId;
+    private int bookId;
     @Basic
-    @Column(name = "TITLE")
+    @Column(name = "TITLE", nullable = false, length = 100)
     private String title;
     @Basic
-    @Column(name = "AUTHOR")
+    @Column(name = "AUTHOR", nullable = false, length = 100)
     private String author;
     @Basic
     @Column(name = "PUBLICATION_DATE")
-    private Time publicationDate;
+    private Date publicationDate;
 }

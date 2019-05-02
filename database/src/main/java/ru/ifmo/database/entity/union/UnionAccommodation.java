@@ -3,10 +3,10 @@ package ru.ifmo.database.entity.union;
 import lombok.*;
 
 import javax.persistence.*;
-import java.sql.Time;
+import java.util.Date;
 
 @Entity
-@Table(name = "ACCOMMODATION", schema = "IFMO", catalog = "")
+@Table(name = "ACCOMMODATION")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -15,14 +15,18 @@ import java.sql.Time;
 public class UnionAccommodation {
     @Id
     @Column(name = "ACCOMMODATION_ID")
-    private long accommodationId;
+    private int accommodationId;
     @Basic
-    @Column(name = "ACC_FROM")
-    private Time accFrom;
+    @Column(name = "ACC_FROM", nullable = false)
+    private Date accFrom;
     @Basic
     @Column(name = "ACC_TO")
-    private Time accTo;
+    private Date accTo;
     @Basic
-    @Column(name = "EXEMPTION")
-    private long exemption;
+    @Column(name = "EXEMPTION", nullable = false)
+    private int exemption;
+    @Column(name = "person_id")
+    private int personId;
+    @Column(name = "room_id")
+    private int roomId;
 }

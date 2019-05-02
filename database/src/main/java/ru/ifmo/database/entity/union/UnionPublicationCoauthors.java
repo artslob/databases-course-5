@@ -10,13 +10,13 @@ import javax.persistence.*;
 @ToString
 @EqualsAndHashCode
 @Entity
-@Table(name = "PUBLICATION_COAUTHORS", schema = "IFMO", catalog = "")
+@Table(name = "PUBLICATION_COAUTHORS")
 @IdClass(UnionPublicationCoauthorsPK.class)
 public class UnionPublicationCoauthors {
     @Id
     @Column(name = "PUBLICATION_ID")
-    private long publicationId;
+    private int publicationId;
     @Id
     @Column(name = "PERSON_ID")
-    private long personId;
+    private int personId;
 }
