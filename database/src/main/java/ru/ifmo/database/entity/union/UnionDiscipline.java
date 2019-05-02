@@ -10,27 +10,29 @@ import javax.persistence.*;
 @ToString
 @EqualsAndHashCode
 @Entity
-@Table(name = "DISCIPLINE", schema = "IFMO", catalog = "")
+@Table(name = "DISCIPLINE")
 public class UnionDiscipline {
     @Id
     @Column(name = "DISCIPLINE_ID")
-    private long disciplineId;
+    private int disciplineId;
     @Basic
-    @Column(name = "NAME")
+    @Column(name = "NAME", nullable = false, length = 100)
     private String name;
     @Basic
-    @Column(name = "LECTURES")
-    private long lectures;
+    @Column(name = "LECTURES", nullable = false)
+    private int lectures;
     @Basic
-    @Column(name = "PRACTICAL_LESSONS")
-    private long practicalLessons;
+    @Column(name = "PRACTICAL_LESSONS", nullable = false)
+    private int practicalLessons;
     @Basic
-    @Column(name = "LABS")
-    private long labs;
+    @Column(name = "LABS", nullable = false)
+    private int labs;
     @Basic
-    @Column(name = "CONTROL_FORM")
+    @Column(name = "CONTROL_FORM",  nullable = false, length = 10)
     private String controlForm;
     @Basic
-    @Column(name = "SEMESTER")
-    private long semester;
+    @Column(name = "SEMESTER", nullable = false)
+    private int semester;
+    @Column(name = "speciality_id")
+    private int specialityId;
 }

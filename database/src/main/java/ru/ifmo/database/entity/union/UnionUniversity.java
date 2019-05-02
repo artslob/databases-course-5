@@ -10,12 +10,12 @@ import javax.persistence.*;
 @ToString
 @EqualsAndHashCode
 @Entity
-@Table(name = "UNIVERSITY", schema = "IFMO", catalog = "")
+@Table(name = "UNIVERSITY")
 public class UnionUniversity {
     @Id
     @Column(name = "UNIVERSITY_ID")
-    private long universityId;
+    private int universityId;
     @Basic
-    @Column(name = "NAME")
+    @Column(name = "NAME", nullable = false, length = 100)
     private String name;
 }

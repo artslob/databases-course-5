@@ -3,7 +3,7 @@ package ru.ifmo.database.entity.union;
 import lombok.*;
 
 import javax.persistence.*;
-import java.sql.Time;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -11,30 +11,30 @@ import java.sql.Time;
 @ToString
 @EqualsAndHashCode
 @Entity
-@Table(name = "PERSON", schema = "IFMO", catalog = "")
+@Table(name = "PERSON")
 public class UnionPerson {
     @Id
     @Column(name = "PERSON_ID")
-    private long personId;
+    private int personId;
     @Basic
-    @Column(name = "NAME")
+    @Column(name = "NAME", nullable = false, length = 20)
     private String name;
     @Basic
-    @Column(name = "SURNAME")
+    @Column(name = "SURNAME", nullable = false, length = 20)
     private String surname;
     @Basic
-    @Column(name = "MIDDLE_NAME")
+    @Column(name = "MIDDLE_NAME", length = 20)
     private String middleName;
     @Basic
-    @Column(name = "BIRTHDAY")
-    private Time birthday;
+    @Column(name = "BIRTHDAY", nullable = false)
+    private Date birthday;
     @Basic
-    @Column(name = "BIRTHPLACE")
+    @Column(name = "BIRTHPLACE",  nullable = false, length = 100)
     private String birthplace;
     @Basic
-    @Column(name = "PERSON_TYPE")
+    @Column(name = "PERSON_TYPE", length = 20)
     private String personType;
     @Basic
-    @Column(name = "POSITION")
+    @Column(name = "POSITION", nullable = false, length = 20)
     private String position;
 }

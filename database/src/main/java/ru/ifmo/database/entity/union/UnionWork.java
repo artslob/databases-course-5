@@ -3,7 +3,7 @@ package ru.ifmo.database.entity.union;
 import lombok.*;
 
 import javax.persistence.*;
-import java.sql.Time;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -11,18 +11,20 @@ import java.sql.Time;
 @ToString
 @EqualsAndHashCode
 @Entity
-@Table(name = "WORK", schema = "IFMO", catalog = "")
+@Table(name = "WORK")
 public class UnionWork {
     @Id
     @Column(name = "WORK_ID")
-    private long workId;
+    private int workId;
     @Basic
-    @Column(name = "POSITION")
+    @Column(name = "POSITION", nullable = false, length = 20)
     private String position;
     @Basic
-    @Column(name = "WORK_START")
-    private Time workStart;
+    @Column(name = "WORK_START", nullable = false)
+    private Date workStart;
     @Basic
     @Column(name = "WORK_END")
-    private Time workEnd;
+    private Date workEnd;
+    @Column(name = "person_id")
+    private int personId;
 }

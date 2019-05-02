@@ -10,15 +10,15 @@ import javax.persistence.*;
 @ToString
 @EqualsAndHashCode
 @Entity
-@Table(name = "HOSTEL", schema = "IFMO", catalog = "")
+@Table(name = "HOSTEL")
 public class UnionHostel {
     @Id
     @Column(name = "HOSTEL_ID")
-    private long hostelId;
+    private int hostelId;
     @Basic
-    @Column(name = "ADDRESS")
+    @Column(name = "ADDRESS", nullable = false, length = 100)
     private String address;
     @Basic
-    @Column(name = "ROOMS")
-    private long rooms;
+    @Column(name = "ROOMS", nullable = false)
+    private int rooms;
 }

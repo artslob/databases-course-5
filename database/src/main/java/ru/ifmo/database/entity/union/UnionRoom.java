@@ -10,21 +10,23 @@ import javax.persistence.*;
 @ToString
 @EqualsAndHashCode
 @Entity
-@Table(name = "ROOM", schema = "IFMO", catalog = "")
+@Table(name = "ROOM")
 public class UnionRoom {
     @Id
     @Column(name = "ROOM_ID")
-    private long roomId;
+    private int roomId;
     @Basic
-    @Column(name = "ROOM_NUMBER")
-    private long roomNumber;
+    @Column(name = "ROOM_NUMBER", nullable = false)
+    private int roomNumber;
     @Basic
-    @Column(name = "CAPACITY")
-    private long capacity;
+    @Column(name = "CAPACITY", nullable = false)
+    private int capacity;
     @Basic
-    @Column(name = "PAYMENT")
-    private long payment;
+    @Column(name = "PAYMENT", nullable = false)
+    private int payment;
     @Basic
-    @Column(name = "INSECTS")
-    private long insects;
+    @Column(name = "INSECTS", nullable = false)
+    private int insects;
+    @Column(name = "hostel_id")
+    private int hostelId;
 }

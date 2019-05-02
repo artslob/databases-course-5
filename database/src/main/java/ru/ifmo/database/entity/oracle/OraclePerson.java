@@ -20,7 +20,7 @@ import java.util.Date;
 public class OraclePerson {
     @Id
     @Column(name = "person_id")
-    private long personId;
+    private int personId;
     @NotNull
     @Size(max = 20)
     private String name;

@@ -14,14 +14,14 @@ import javax.persistence.*;
 public class UnionPublication {
     @Id
     @Column(name = "PUBLICATION_ID")
-    private long publicationId;
+    private int publicationId;
     @Basic
-    @Column(name = "TITLE")
+    @Column(name = "TITLE", nullable = false, length = 100)
     private String title;
     @Basic
-    @Column(name = "TYPE")
+    @Column(name = "TYPE", nullable = false, length = 20)
     private String type;
     @Basic
     @Column(name = "CITATION_INDEX")
-    private Long citationIndex;
+    private int citationIndex;
 }

@@ -14,7 +14,7 @@ import javax.persistence.*;
 public class UnionDepartment {
     @Id
     @Column(name = "DEPARTMENT_ID")
-    private long departmentId;
+    private int departmentId;
 
     @Basic
     @Column(name = "FACULTY")

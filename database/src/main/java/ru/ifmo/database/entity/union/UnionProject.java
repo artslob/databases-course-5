@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Time;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -11,18 +12,18 @@ import java.sql.Time;
 @ToString
 @EqualsAndHashCode
 @Entity
-@Table(name = "PROJECT", schema = "IFMO", catalog = "")
+@Table(name = "PROJECT")
 public class UnionProject {
     @Id
     @Column(name = "PROJECT_ID")
-    private long projectId;
+    private int projectId;
     @Basic
-    @Column(name = "TITLE")
+    @Column(name = "TITLE", nullable = false, length = 100)
     private String title;
     @Basic
-    @Column(name = "PROJECT_START")
-    private Time projectStart;
+    @Column(name = "PROJECT_START", nullable = false)
+    private Date projectStart;
     @Basic
     @Column(name = "PROJECT_END")
-    private Time projectEnd;
+    private Date projectEnd;
 }

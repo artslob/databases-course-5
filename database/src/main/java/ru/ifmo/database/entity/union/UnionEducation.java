@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Time;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -11,27 +12,31 @@ import java.sql.Time;
 @ToString
 @EqualsAndHashCode
 @Entity
-@Table(name = "EDUCATION", schema = "IFMO", catalog = "")
+@Table(name = "EDUCATION")
 public class UnionEducation {
     @Id
     @Column(name = "EDUCATION_ID")
-    private long educationId;
+    private int educationId;
     @Basic
-    @Column(name = "EDUCATION_TYPE")
+    @Column(name = "EDUCATION_TYPE", nullable = false, length = 100)
     private String educationType;
     @Basic
-    @Column(name = "EDUCATION_FORM")
+    @Column(name = "EDUCATION_FORM", nullable = false, length = 100)
     private String educationForm;
     @Basic
-    @Column(name = "QUALIFICATION")
+    @Column(name = "QUALIFICATION", nullable = false, length = 100)
     private String qualification;
     @Basic
-    @Column(name = "START_DATE")
-    private Time startDate;
+    @Column(name = "START_DATE", nullable = false)
+    private Date startDate;
     @Basic
     @Column(name = "END_DATE")
-    private Time endDate;
+    private Date endDate;
     @Basic
-    @Column(name = "COURSE")
-    private long course;
+    @Column(name = "COURSE", nullable = false)
+    private int course;
+    @Column(name = "speciality_id")
+    private int specialityId;
+    @Column(name = "person_id")
+    private int personId;
 }

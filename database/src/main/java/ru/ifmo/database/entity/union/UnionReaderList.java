@@ -3,7 +3,7 @@ package ru.ifmo.database.entity.union;
 import lombok.*;
 
 import javax.persistence.*;
-import java.sql.Time;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -15,8 +15,10 @@ import java.sql.Time;
 public class UnionReaderList {
     @Id
     @Column(name = "LIST_ID")
-    private long listId;
+    private int listId;
     @Basic
-    @Column(name = "REGISTRATION_DATE")
-    private Time registrationDate;
+    @Column(name = "REGISTRATION_DATE", nullable = false)
+    private Date registrationDate;
+    @Column(name = "person_id")
+    private int personId;
 }

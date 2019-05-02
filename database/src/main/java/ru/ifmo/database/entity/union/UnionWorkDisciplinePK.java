@@ -14,8 +14,8 @@ import java.io.Serializable;
 public class UnionWorkDisciplinePK implements Serializable {
     @Column(name = "WORK_ID")
     @Id
-    private long workId;
+    private int workId;
     @Column(name = "DISCIPLINE_ID")
     @Id
-    private long disciplineId;
+    private int disciplineId;
 }
