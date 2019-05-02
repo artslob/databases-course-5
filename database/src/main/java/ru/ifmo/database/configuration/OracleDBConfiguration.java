@@ -11,15 +11,29 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import ru.ifmo.database.entity.oracle.OraclePerson;
-import ru.ifmo.database.repository.oracle.OraclePersonRepository;
+import ru.ifmo.database.entity.oracle.*;
+import ru.ifmo.database.repository.oracle.*;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackageClasses = OraclePersonRepository.class, entityManagerFactoryRef = "oracleDSEmFactory", transactionManagerRef = "oracleDSTransactionManager")
+@EnableJpaRepositories(
+        basePackageClasses = {
+                OracleDepartmentRepository.class,
+                OracleDisciplineRepository.class,
+                OracleEducationRepository.class,
+                OracleGradeRepository.class,
+                OraclePersonRepository.class,
+                OracleScheduleRepository.class,
+                OracleSpecialityRepository.class,
+                OracleWorkDisciplineRepository.class,
+                OracleWorkRepository.class
+        },
+        entityManagerFactoryRef = "oracleDSEmFactory",
+        transactionManagerRef = "oracleDSTransactionManager"
+)
 public class OracleDBConfiguration {
 
     @Bean
@@ -35,7 +49,18 @@ public class OracleDBConfiguration {
 
     @Bean
     public LocalContainerEntityManagerFactoryBean oracleDSEmFactory(@Qualifier("oracleDS") DataSource oracleDS, EntityManagerFactoryBuilder builder) {
-        return builder.dataSource(oracleDS).packages(OraclePerson.class).build();
+        return builder.dataSource(oracleDS).packages(
+                OracleDepartment.class,
+                OracleDiscipline.class,
+                OracleEducation.class,
+                OracleGrade.class,
+                OraclePerson.class,
+                OracleSchedule.class,
+                OracleSpeciality.class,
+                OracleWork.class,
+                OracleWorkDiscipline.class,
+                OracleWorkDisciplinePK.class
+        ).build();
     }
 
     @Bean

@@ -12,14 +12,24 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import ru.ifmo.database.entity.postgres.*;
-import ru.ifmo.database.repository.postgres.PostgresPersonRepository;
+import ru.ifmo.database.repository.postgres.*;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackageClasses = PostgresPersonRepository.class, entityManagerFactoryRef = "postgresDSEmFactory", transactionManagerRef = "postgresDSTransactionManager")
+@EnableJpaRepositories(
+        basePackageClasses = {
+                PostgresDepartmentRepository.class,
+                PostgresDisciplineRepository.class,
+                PostgresGradeRepository.class,
+                PostgresPersonRepository.class,
+                PostgresUniversityRepository.class
+        },
+        entityManagerFactoryRef = "postgresDSEmFactory",
+        transactionManagerRef = "postgresDSTransactionManager"
+)
 public class PostgresDBConfiguration {
 
     @Bean
@@ -40,7 +50,8 @@ public class PostgresDBConfiguration {
                 PostgresDiscipline.class,
                 PostgresGrade.class,
                 PostgresPerson.class,
-                PostgresUniversity.class).build();
+                PostgresUniversity.class
+        ).build();
     }
 
     @Bean
