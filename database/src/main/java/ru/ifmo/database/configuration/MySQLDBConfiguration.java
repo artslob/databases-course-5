@@ -13,14 +13,28 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import ru.ifmo.database.entity.mysql.*;
-import ru.ifmo.database.repository.mysql.MySQLPersonRepository;
+import ru.ifmo.database.repository.mysql.*;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackageClasses = MySQLPersonRepository.class, entityManagerFactoryRef = "mySQLDSEmFactory", transactionManagerRef = "mySQLDSTransactionManager")
+@EnableJpaRepositories(
+        basePackageClasses = {
+                MySQLBookRepository.class,
+                MySQLConferenceRepository.class,
+                MySQLConferenceParticipantsRepository.class,
+                MySQLEditionRepository.class,
+                MySQLPersonRepository.class,
+                MySQLProjectRepository.class,
+                MySQLProjectParticipantsRepository.class,
+                MySQLPublicationRepository.class,
+                MySQLPublicationCoauthorsRepository.class,
+                MySQLReaderList.class
+        },
+        entityManagerFactoryRef = "mySQLDSEmFactory",
+        transactionManagerRef = "mySQLDSTransactionManager")
 public class MySQLDBConfiguration {
 
     @Primary

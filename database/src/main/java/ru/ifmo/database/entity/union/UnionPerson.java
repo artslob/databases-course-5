@@ -37,4 +37,6 @@ public class UnionPerson {
     @Basic
     @Column(name = "POSITION", nullable = false, length = 20)
     private String position;
+//    @Column(name = "study_type", nullable = false, length = 20)
+//    private String studyType;
 }
