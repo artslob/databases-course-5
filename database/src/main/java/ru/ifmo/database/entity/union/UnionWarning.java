@@ -9,7 +9,7 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "warningId")
 @Entity
 @Table(name = "WARNING")
 public class UnionWarning {

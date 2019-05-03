@@ -16,7 +16,7 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "workId")
 public class PostgresWork {
     @Id
     @Column(name = "work_id")

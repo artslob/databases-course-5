@@ -10,7 +10,7 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "projectId")
 @Entity
 @Table(name = "PROJECT")
 public class UnionProject {

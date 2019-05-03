@@ -9,7 +9,7 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "listId")
 @Entity
 @Table(name = "READER_LIST", schema = "IFMO", catalog = "")
 public class UnionReaderList {

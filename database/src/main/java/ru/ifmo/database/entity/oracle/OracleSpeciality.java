@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 @Setter
 @NoArgsConstructor
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "specialityId")
 public class OracleSpeciality {
     @Id
     @Column(name = "speciality_id")

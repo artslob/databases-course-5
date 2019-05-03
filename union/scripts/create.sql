@@ -8,7 +8,6 @@ CREATE TABLE person
     birthplace  VARCHAR2(100)                                                     NOT NULL,
     person_type VARCHAR2(20) CHECK ( person_type IN ('student', 'professor') ),
     position    VARCHAR2(20) CHECK (position IN ('docent', 'bachelor', 'master')) NOT NULL, -- должность MySQL
-    study_type VARCHAR2(20) CHECK ( person_type IN ('budget', 'contract') )
 );
 
 CREATE TABLE university -- университет Postgres

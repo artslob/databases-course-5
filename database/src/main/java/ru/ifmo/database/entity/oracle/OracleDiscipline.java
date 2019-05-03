@@ -14,7 +14,7 @@ import java.util.Objects;
 @Setter
 @NoArgsConstructor
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "disciplineId")
 public class OracleDiscipline {
     @Id
     @Column(name = "discipline_id")

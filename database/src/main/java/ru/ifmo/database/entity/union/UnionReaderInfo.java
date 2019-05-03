@@ -9,7 +9,7 @@ import java.sql.Time;
 @Setter
 @NoArgsConstructor
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "infoId")
 @Entity
 @Table(name = "READER_INFO")
 public class UnionReaderInfo {

@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 @Setter
 @NoArgsConstructor
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "disciplineId")
 public class PostgresDiscipline {
     @Id
     @Column(name = "discipline_id")

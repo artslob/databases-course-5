@@ -11,7 +11,7 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "accommodationId")
 public class UnionAccommodation {
     @Id
     @Column(name = "ACCOMMODATION_ID")
