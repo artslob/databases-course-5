@@ -9,7 +9,7 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "disinfectionId")
 @Entity
 @Table(name = "DISINFECTION")
 public class UnionDisinfection {

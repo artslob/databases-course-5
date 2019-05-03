@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "editionId")
 @Entity
 @Table(name = "EDITION")
 public class UnionEdition {

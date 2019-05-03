@@ -16,7 +16,7 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "educationId")
 public class OracleEducation {
     @Id
     @Column(name = "education_id")

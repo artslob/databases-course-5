@@ -15,7 +15,7 @@ import java.sql.Timestamp;
 @Setter
 @NoArgsConstructor
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "gradeId")
 public class PostgresGrade {
     @Id
     @Column(name = "grade_id")

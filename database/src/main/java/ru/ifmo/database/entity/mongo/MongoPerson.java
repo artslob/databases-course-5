@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @Getter
 @Setter
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "personId")
 public class MongoPerson {
     @Id
     @JsonIgnore
@@ -24,6 +24,4 @@ public class MongoPerson {
     private String surname;
     @Field(value = "middle_name")
     private String middleName;
-    @Field(value = "study_type")
-    private String studyType;
 }

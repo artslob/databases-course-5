@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "personId")
 public class MySQLPerson {
     @Id
     @Column(name = "person_id", nullable = false)
