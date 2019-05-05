@@ -20,6 +20,18 @@ public class AllController {
     @Autowired
     MergeUniversityService mergeUniversityService;
 
+    @PostMapping("/merge/all")
+    public String mergeAll() {
+        try {
+            mergePerson();
+            mergeUniversity();
+            return "Success";
+        } catch (Exception ex) {
+            ex.getStackTrace();
+            return "Failed";
+        }
+    }
+
     @PostMapping("/merge/person")
     public List<UnionPerson> mergePerson() {
         return mergePersonService.merge();
