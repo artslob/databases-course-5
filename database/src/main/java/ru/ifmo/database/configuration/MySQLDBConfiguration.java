@@ -31,7 +31,7 @@ import javax.sql.DataSource;
                 MySQLProjectParticipantsRepository.class,
                 MySQLPublicationRepository.class,
                 MySQLPublicationCoauthorsRepository.class,
-                MySQLReaderList.class
+                MySQLReaderListRepository.class
         },
         entityManagerFactoryRef = "mySQLDSEmFactory",
         transactionManagerRef = "mySQLDSTransactionManager")

@@ -13,16 +13,19 @@ import java.util.List;
 @RequestMapping("/mongo")
 public class MongoController {
 
-    @Autowired
-    private MongoRoomRepository mongoRoomRepository;
-    @Autowired
-    private MongoPersonRepository mongoPersonRepository;
-    @Autowired
-    private MongoVisitRepository mongoVisitRepository;
-    @Autowired
-    private MongoHostelRepository mongoHostelRepository;
-    @Autowired
-    private MongoAccommodationRepository mongoAccommodationRepository;
+    private final MongoRoomRepository mongoRoomRepository;
+    private final MongoPersonRepository mongoPersonRepository;
+    private final MongoVisitRepository mongoVisitRepository;
+    private final MongoHostelRepository mongoHostelRepository;
+    private final MongoAccommodationRepository mongoAccommodationRepository;
+
+    public MongoController(MongoRoomRepository mongoRoomRepository, MongoPersonRepository mongoPersonRepository, MongoVisitRepository mongoVisitRepository, MongoHostelRepository mongoHostelRepository, MongoAccommodationRepository mongoAccommodationRepository) {
+        this.mongoRoomRepository = mongoRoomRepository;
+        this.mongoPersonRepository = mongoPersonRepository;
+        this.mongoVisitRepository = mongoVisitRepository;
+        this.mongoHostelRepository = mongoHostelRepository;
+        this.mongoAccommodationRepository = mongoAccommodationRepository;
+    }
 
     @GetMapping("/room")
     public List<MongoRoom> findAllRooms() {
