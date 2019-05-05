@@ -11,17 +11,6 @@ import java.util.List;
 
 public abstract class AbstractMergeService<E, T> implements ETL<E, T> {
 
-    @Autowired
-    protected MySQLPersonRepository mySQLPersonRepository;
-    @Autowired
-    protected PostgresPersonRepository postgresPersonRepository;
-    @Autowired
-    protected OraclePersonRepository oraclePersonRepository;
-    @Autowired
-    protected MongoPersonRepository mongoPersonRepository;
-    @Autowired
-    protected UnionPersonRepository unionPersonRepository;
-
     public abstract E extract();
 
     public abstract List<T> transform(E extractData);

@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "BOOK", schema = "IFMO", catalog = "")
+@Table(name = "BOOK")
 @Getter
 @Setter
 @NoArgsConstructor
