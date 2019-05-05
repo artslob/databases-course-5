@@ -12,14 +12,22 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import ru.ifmo.database.entity.union.*;
-import ru.ifmo.database.repository.union.UnionPersonRepository;
+import ru.ifmo.database.repository.union.*;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackageClasses = UnionPersonRepository.class, entityManagerFactoryRef = "unionDSEmFactory", transactionManagerRef = "unionDSTransactionManager")
+@EnableJpaRepositories(
+        basePackageClasses = {
+                UnionPersonRepository.class,
+                UnionUniversityRepository.class
+        }
+        ,
+        entityManagerFactoryRef = "unionDSEmFactory",
+        transactionManagerRef = "unionDSTransactionManager"
+)
 public class UnionDBConfiguration {
 
     @Bean

@@ -1,6 +1,5 @@
 package ru.ifmo.database.etl.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.ifmo.database.entity.postgres.PostgresUniversity;
 import ru.ifmo.database.entity.union.UnionUniversity;
@@ -15,10 +14,13 @@ import java.util.stream.Collectors;
 @Service
 public class MergeUniversityService extends AbstractMergeService<ExtractOneData<PostgresUniversity>, UnionUniversity> {
 
-    @Autowired
-    private PostgresUniversityRepository postgresUniversityRepository;
-    @Autowired
-    private UnionUniversityRepository unionUniversityRepository;
+    private final PostgresUniversityRepository postgresUniversityRepository;
+    private final UnionUniversityRepository unionUniversityRepository;
+
+    public MergeUniversityService(PostgresUniversityRepository postgresUniversityRepository, UnionUniversityRepository unionUniversityRepository) {
+        this.postgresUniversityRepository = postgresUniversityRepository;
+        this.unionUniversityRepository = unionUniversityRepository;
+    }
 
     public ExtractOneData<PostgresUniversity> extract() {
         List<PostgresUniversity> postgresPersonList = (List<PostgresUniversity>) postgresUniversityRepository.findAll();

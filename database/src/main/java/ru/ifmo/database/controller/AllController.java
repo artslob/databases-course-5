@@ -1,6 +1,5 @@
 package ru.ifmo.database.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,10 +14,13 @@ import java.util.List;
 @RequestMapping("/all")
 public class AllController {
 
-    @Autowired
-    MergePersonService mergePersonService;
-    @Autowired
-    MergeUniversityService mergeUniversityService;
+    private final MergePersonService mergePersonService;
+    private final MergeUniversityService mergeUniversityService;
+
+    public AllController(MergePersonService mergePersonService, MergeUniversityService mergeUniversityService) {
+        this.mergePersonService = mergePersonService;
+        this.mergeUniversityService = mergeUniversityService;
+    }
 
     @PostMapping("/merge/all")
     public String mergeAll() {

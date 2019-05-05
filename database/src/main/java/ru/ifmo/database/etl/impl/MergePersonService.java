@@ -1,6 +1,5 @@
 package ru.ifmo.database.etl.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.ifmo.database.entity.mongo.MongoPerson;
 import ru.ifmo.database.entity.mysql.MySQLPerson;
@@ -21,16 +20,19 @@ import java.util.List;
 @Service
 public class MergePersonService extends AbstractMergeService<ExtractDataAll<PostgresPerson, MySQLPerson, OraclePerson, MongoPerson>, UnionPerson> {
 
-    @Autowired
-    protected MySQLPersonRepository mySQLPersonRepository;
-    @Autowired
-    protected PostgresPersonRepository postgresPersonRepository;
-    @Autowired
-    protected OraclePersonRepository oraclePersonRepository;
-    @Autowired
-    protected MongoPersonRepository mongoPersonRepository;
-    @Autowired
-    protected UnionPersonRepository unionPersonRepository;
+    private final MySQLPersonRepository mySQLPersonRepository;
+    private final PostgresPersonRepository postgresPersonRepository;
+    private final OraclePersonRepository oraclePersonRepository;
+    private final MongoPersonRepository mongoPersonRepository;
+    private final UnionPersonRepository unionPersonRepository;
+
+    public MergePersonService(MySQLPersonRepository mySQLPersonRepository, PostgresPersonRepository postgresPersonRepository, OraclePersonRepository oraclePersonRepository, MongoPersonRepository mongoPersonRepository, UnionPersonRepository unionPersonRepository) {
+        this.mySQLPersonRepository = mySQLPersonRepository;
+        this.postgresPersonRepository = postgresPersonRepository;
+        this.oraclePersonRepository = oraclePersonRepository;
+        this.mongoPersonRepository = mongoPersonRepository;
+        this.unionPersonRepository = unionPersonRepository;
+    }
 
     public ExtractDataAll<PostgresPerson, MySQLPerson, OraclePerson, MongoPerson> extract() {
         List<PostgresPerson> postgresPersonList = (List<PostgresPerson>) postgresPersonRepository.findAll();
