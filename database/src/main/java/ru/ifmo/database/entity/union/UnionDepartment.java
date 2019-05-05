@@ -15,8 +15,9 @@ public class UnionDepartment {
     @Id
     @Column(name = "DEPARTMENT_ID")
     private int departmentId;
-
     @Basic
     @Column(name = "FACULTY")
     private String faculty;
+    @Column(name = "university_id")
+    private int universityId;
 }
