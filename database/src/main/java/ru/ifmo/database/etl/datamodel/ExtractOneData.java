@@ -11,9 +11,6 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ExtractData<P, MS, O, M> {
-    private List<P> postgresEntityList;
-    private List<MS> mySQLEntityList;
-    private List<O> oracleEntityList;
-    private List<M> mongoEntityList;
+public class ExtractOneData<E> {
+    private List<E> entityList;
 }
