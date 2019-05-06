@@ -10,13 +10,13 @@ import javax.persistence.*;
 @ToString
 @EqualsAndHashCode(of = "departmentId")
 @Entity
-@Table(name = "DEPARTMENT", schema = "IFMO", catalog = "")
+@Table(name = "DEPARTMENT")
 public class UnionDepartment {
     @Id
-    @Column(name = "DEPARTMENT_ID")
+    @Column(name = "department_id")
     private int departmentId;
     @Basic
-    @Column(name = "FACULTY")
+    @Column(name = "faculty")
     private String faculty;
     @Column(name = "university_id")
     private int universityId;

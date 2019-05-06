@@ -10,7 +10,7 @@ import javax.persistence.*;
 @ToString
 @EqualsAndHashCode(of = "publicationId")
 @Entity
-@Table(name = "PUBLICATION", schema = "IFMO", catalog = "")
+@Table(name = "PUBLICATION")
 public class UnionPublication {
     @Id
     @Column(name = "PUBLICATION_ID")

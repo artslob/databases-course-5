@@ -3,14 +3,8 @@ package ru.ifmo.database.controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.ifmo.database.entity.union.UnionDepartment;
-import ru.ifmo.database.entity.union.UnionPerson;
-import ru.ifmo.database.entity.union.UnionSpeciality;
-import ru.ifmo.database.entity.union.UnionUniversity;
-import ru.ifmo.database.etl.impl.MergeDepartmentService;
-import ru.ifmo.database.etl.impl.MergePersonService;
-import ru.ifmo.database.etl.impl.MergeSpecialityService;
-import ru.ifmo.database.etl.impl.MergeUniversityService;
+import ru.ifmo.database.entity.union.*;
+import ru.ifmo.database.etl.impl.*;
 
 import java.util.List;
 
@@ -22,12 +16,14 @@ public class AllController {
     private final MergeUniversityService mergeUniversityService;
     private final MergeDepartmentService mergeDepartmentService;
     private final MergeSpecialityService mergeSpecialityService;
+    private final MergeDisciplineService mergeDisciplineService;
 
-    public AllController(MergePersonService mergePersonService, MergeUniversityService mergeUniversityService, MergeDepartmentService mergeDepartmentService, MergeSpecialityService mergeSpecialityService) {
+    public AllController(MergePersonService mergePersonService, MergeUniversityService mergeUniversityService, MergeDepartmentService mergeDepartmentService, MergeSpecialityService mergeSpecialityService, MergeDisciplineService mergeDisciplineService) {
         this.mergePersonService = mergePersonService;
         this.mergeUniversityService = mergeUniversityService;
         this.mergeDepartmentService = mergeDepartmentService;
         this.mergeSpecialityService = mergeSpecialityService;
+        this.mergeDisciplineService = mergeDisciplineService;
     }
 
     @PostMapping("/merge/all")
@@ -37,6 +33,7 @@ public class AllController {
             mergeUniversity();
             mergeDepartment();
             mergeSpeciality();
+            mergeDiscipline();
             return "Success";
         } catch (Exception ex) {
             ex.getStackTrace();
@@ -64,4 +61,8 @@ public class AllController {
         return mergeSpecialityService.merge();
     }
 
+    @PostMapping("/merge/discipline")
+    public List<UnionDiscipline> mergeDiscipline() {
+        return mergeDisciplineService.merge();
+    }
 }

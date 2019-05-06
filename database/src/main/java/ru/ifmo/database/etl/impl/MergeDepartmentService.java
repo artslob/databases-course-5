@@ -16,23 +16,23 @@ import java.util.List;
 @Service
 public class MergeDepartmentService extends AbstractMergeService<ExtractTwoData<PostgresDepartment, OracleDepartment>, UnionDepartment> {
 
-    private final PostgresDepartmentRepository postgresDepartmentRepository;
-    private final OracleDepartmentRepository oracleDepartmentRepository;
-    private final UnionDepartmentRepository unionDepartmentRepository;
+    private final PostgresDepartmentRepository postgresRepository;
+    private final OracleDepartmentRepository oracleRepository;
+    private final UnionDepartmentRepository unionRepository;
 
-    public MergeDepartmentService(PostgresDepartmentRepository postgresDepartmentRepository, OracleDepartmentRepository oracleDepartmentRepository, UnionDepartmentRepository unionDepartmentRepository) {
-        this.postgresDepartmentRepository = postgresDepartmentRepository;
-        this.oracleDepartmentRepository = oracleDepartmentRepository;
-        this.unionDepartmentRepository = unionDepartmentRepository;
+    public MergeDepartmentService(PostgresDepartmentRepository postgresRepository, OracleDepartmentRepository oracleRepository, UnionDepartmentRepository unionRepository) {
+        this.postgresRepository = postgresRepository;
+        this.oracleRepository = oracleRepository;
+        this.unionRepository = unionRepository;
     }
 
     public ExtractTwoData<PostgresDepartment, OracleDepartment> extract() {
-        List<PostgresDepartment> postgresPersonList = (List<PostgresDepartment>) postgresDepartmentRepository.findAll();
-        List<OracleDepartment> oracleDepartmentList = (List<OracleDepartment>) oracleDepartmentRepository.findAll();
+        List<PostgresDepartment> postgresList = (List<PostgresDepartment>) postgresRepository.findAll();
+        List<OracleDepartment> oracleList = new ArrayList<>(postgresList.size());
 
-        postgresPersonList.forEach(p -> oracleDepartmentList.add(oracleDepartmentRepository.findById(p.getDepartmentId()).orElse(new OracleDepartment())));
+        postgresList.forEach(p -> oracleList.add(oracleRepository.findById(p.getDepartmentId()).orElse(new OracleDepartment())));
 
-        return new ExtractTwoData<>(postgresPersonList, oracleDepartmentList);
+        return new ExtractTwoData<>(postgresList, oracleList);
     }
 
     public List<UnionDepartment> transform(ExtractTwoData<PostgresDepartment, OracleDepartment> extractData) {
@@ -49,13 +49,6 @@ public class MergeDepartmentService extends AbstractMergeService<ExtractTwoData<
     }
 
     public List<UnionDepartment> load(List<UnionDepartment> unionDepartments) {
-//        List<UnionDepartment> unionDepartmentFromDB = (List<UnionDepartment>) unionDepartmentRepository.findAll();
-//        UnionDepartmentFromDB.forEach(p -> {
-//            if (!unionDepartmentList.contains(p)) {
-//                unionDepartmentRepository.deleteById(p.getDepartmentId());
-//            }
-//        });
-
-        return (List<UnionDepartment>) unionDepartmentRepository.saveAll(unionDepartments);
+        return (List<UnionDepartment>) unionRepository.saveAll(unionDepartments);
     }
 }
