@@ -28,7 +28,8 @@ import javax.sql.DataSource;
                 UnionPersonRepository.class,
                 UnionSpecialityRepository.class,
                 UnionUniversityRepository.class,
-                UnionWorkRepository.class
+                UnionWorkRepository.class,
+                UnionWorkDisciplineRepository.class
         }
         ,
         entityManagerFactoryRef = "unionDSEmFactory",
