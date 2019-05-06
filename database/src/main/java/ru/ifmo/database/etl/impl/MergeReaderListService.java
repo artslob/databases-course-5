@@ -14,16 +14,16 @@ import java.util.stream.Collectors;
 @Service
 public class MergeReaderListService extends AbstractMergeService<ExtractOneData<MySQLReaderList>, UnionReaderList> {
 
-    private final MySQLReaderListRepository oracleRepository;
+    private final MySQLReaderListRepository mySQLRepository;
     private final UnionReaderListRepository unionRepository;
 
-    public MergeReaderListService(MySQLReaderListRepository oracleRepository, UnionReaderListRepository unionRepository) {
-        this.oracleRepository = oracleRepository;
+    public MergeReaderListService(MySQLReaderListRepository mySQLRepository, UnionReaderListRepository unionRepository) {
+        this.mySQLRepository = mySQLRepository;
         this.unionRepository = unionRepository;
     }
 
     public ExtractOneData<MySQLReaderList> extract() {
-        return new ExtractOneData<>((List<MySQLReaderList>) oracleRepository.findAll());
+        return new ExtractOneData<>((List<MySQLReaderList>) mySQLRepository.findAll());
     }
 
     public List<UnionReaderList> transform(ExtractOneData<MySQLReaderList> extractData) {

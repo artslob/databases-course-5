@@ -14,16 +14,16 @@ import java.util.stream.Collectors;
 @Service
 public class MergeBookService extends AbstractMergeService<ExtractOneData<MySQLBook>, UnionBook> {
 
-    private final MySQLBookRepository oracleRepository;
+    private final MySQLBookRepository mySQLRepository;
     private final UnionBookRepository unionRepository;
 
-    public MergeBookService(MySQLBookRepository oracleRepository, UnionBookRepository unionRepository) {
-        this.oracleRepository = oracleRepository;
+    public MergeBookService(MySQLBookRepository mySQLRepository, UnionBookRepository unionRepository) {
+        this.mySQLRepository = mySQLRepository;
         this.unionRepository = unionRepository;
     }
 
     public ExtractOneData<MySQLBook> extract() {
-        return new ExtractOneData<>((List<MySQLBook>) oracleRepository.findAll());
+        return new ExtractOneData<>((List<MySQLBook>) mySQLRepository.findAll());
     }
 
     public List<UnionBook> transform(ExtractOneData<MySQLBook> extractData) {

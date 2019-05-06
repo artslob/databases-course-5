@@ -3,7 +3,6 @@ package ru.ifmo.database.entity.union;
 import lombok.*;
 
 import javax.persistence.*;
-import java.sql.Time;
 import java.util.Date;
 
 @Getter
