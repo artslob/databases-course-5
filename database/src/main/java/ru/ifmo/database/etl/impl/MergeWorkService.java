@@ -3,7 +3,6 @@ package ru.ifmo.database.etl.impl;
 import org.springframework.stereotype.Service;
 import ru.ifmo.database.entity.oracle.OracleWork;
 import ru.ifmo.database.entity.postgres.PostgresWork;
-import ru.ifmo.database.entity.union.UnionUniversity;
 import ru.ifmo.database.entity.union.UnionWork;
 import ru.ifmo.database.etl.api.AbstractMergeService;
 import ru.ifmo.database.etl.datamodel.ExtractTwoData;
