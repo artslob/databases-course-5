@@ -2,11 +2,12 @@ package ru.ifmo.database.entity.oracle;
 
 import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 @Table(name = "DISCIPLINE", schema = "IFMO", catalog = "")

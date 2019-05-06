@@ -11,7 +11,7 @@ import java.util.Date;
 @ToString
 @EqualsAndHashCode(of = "listId")
 @Entity
-@Table(name = "READER_LIST", schema = "IFMO", catalog = "")
+@Table(name = "READER_LIST")
 public class UnionReaderList {
     @Id
     @Column(name = "LIST_ID")

@@ -3,7 +3,6 @@ package ru.ifmo.database.etl.impl;
 import org.springframework.stereotype.Service;
 import ru.ifmo.database.entity.oracle.OracleSpeciality;
 import ru.ifmo.database.entity.postgres.PostgresSpeciality;
-import ru.ifmo.database.entity.union.UnionDepartment;
 import ru.ifmo.database.entity.union.UnionSpeciality;
 import ru.ifmo.database.etl.api.AbstractMergeService;
 import ru.ifmo.database.etl.datamodel.ExtractTwoData;
@@ -29,7 +28,7 @@ public class MergeSpecialityService extends AbstractMergeService<ExtractTwoData<
 
     public ExtractTwoData<PostgresSpeciality, OracleSpeciality> extract() {
         List<PostgresSpeciality> postgresList = (List<PostgresSpeciality>) postgresRepository.findAll();
-        List<OracleSpeciality> oracleList = (List<OracleSpeciality>) oracleRepository.findAll();
+        List<OracleSpeciality> oracleList = new ArrayList<>(postgresList.size());
 
         postgresList.forEach(p -> oracleList.add(oracleRepository.findById(p.getSpecialityId()).orElse(new OracleSpeciality())));
 
@@ -53,6 +52,6 @@ public class MergeSpecialityService extends AbstractMergeService<ExtractTwoData<
     }
 
     public List<UnionSpeciality> load(List<UnionSpeciality> unionList) {
-        return (List<UnionDepartment>) unionRepository.saveAll(unionList);
+        return (List<UnionSpeciality>) unionRepository.saveAll(unionList);
     }
 }

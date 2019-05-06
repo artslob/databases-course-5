@@ -39,13 +39,6 @@ public class MergeUniversityService extends AbstractMergeService<ExtractOneData<
     }
 
     public List<UnionUniversity> load(List<UnionUniversity> unionUniversityList) {
-//        List<UnionUniversity> unionUniversityFromDB = (List<UnionUniversity>) unionUniversityRepository.findAll();
-//        UnionUniversityFromDB.forEach(p -> {
-//            if (!unionUniversityList.contains(p)) {
-//                unionUniversityRepository.deleteById(p.getUniversityId());
-//            }
-//        });
-
         return (List<UnionUniversity>) unionUniversityRepository.saveAll(unionUniversityList);
     }
 }
