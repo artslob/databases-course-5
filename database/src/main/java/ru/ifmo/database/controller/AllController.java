@@ -26,6 +26,7 @@ public class AllController {
     private final MergeBookService mergeBookService;
     private final MergeReaderInfoService mergeReaderInfoService;
     private final MergeConferenceService mergeConferenceService;
+    private final MergeConferenceParticipantsService mergeConferenceParticipantsService;
 
     public AllController(MergePersonService mergePersonService,
                          MergeUniversityService mergeUniversityService,
@@ -40,7 +41,8 @@ public class AllController {
                          MergeReaderListService mergeReaderListService,
                          MergeBookService mergeBookService,
                          MergeReaderInfoService mergeReaderInfoService,
-                         MergeConferenceService mergeConferenceService) {
+                         MergeConferenceService mergeConferenceService,
+                         MergeConferenceParticipantsService mergeConferenceParticipantsService) {
         this.mergePersonService = mergePersonService;
         this.mergeUniversityService = mergeUniversityService;
         this.mergeDepartmentService = mergeDepartmentService;
@@ -55,6 +57,7 @@ public class AllController {
         this.mergeBookService = mergeBookService;
         this.mergeReaderInfoService = mergeReaderInfoService;
         this.mergeConferenceService = mergeConferenceService;
+        this.mergeConferenceParticipantsService = mergeConferenceParticipantsService;
     }
 
     @PostMapping("/merge/all")
@@ -71,8 +74,10 @@ public class AllController {
             mergeWorkDiscipline();
             mergeSchedule();
             mergeReaderList();
-            mergeUnionBook();
-            mergeUnionReaderInfo();
+            mergeBook();
+            mergeReaderInfo();
+            mergeConference();
+            mergeConferenceParticipants();
             return "Success";
         } catch (Exception ex) {
             ex.getStackTrace();
@@ -136,18 +141,23 @@ public class AllController {
     }
 
     @PostMapping("/merge/book")
-    public List<UnionBook> mergeUnionBook() {
+    public List<UnionBook> mergeBook() {
         return mergeBookService.merge();
     }
 
     @PostMapping("/merge/reader-info")
-    public List<UnionReaderInfo> mergeUnionReaderInfo() {
+    public List<UnionReaderInfo> mergeReaderInfo() {
         return mergeReaderInfoService.merge();
     }
 
     @PostMapping("/merge/conference")
-    public List<UnionConference> mergeUnionConference() {
+    public List<UnionConference> mergeConference() {
         return mergeConferenceService.merge();
+    }
+
+    @PostMapping("/merge/conference-participants")
+    public List<UnionConferenceParticipants> mergeConferenceParticipants() {
+        return mergeConferenceParticipantsService.merge();
     }
 
 }
