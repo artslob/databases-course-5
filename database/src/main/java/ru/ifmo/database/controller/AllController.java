@@ -31,6 +31,7 @@ public class AllController {
     private final MergeProjectParticipantsService mergeProjectParticipantsService;
     private final MergePublicationService mergePublicationService;
     private final MergePublicationCoauthorsService mergePublicationCoauthorsService;
+    private final MergeEditionService mergeEditionService;
 
     public AllController(MergePersonService mergePersonService,
                          MergeUniversityService mergeUniversityService,
@@ -50,7 +51,8 @@ public class AllController {
                          MergeProjectService mergeProjectService,
                          MergeProjectParticipantsService mergeProjectParticipantsService,
                          MergePublicationService mergePublicationService,
-                         MergePublicationCoauthorsService mergePublicationCoauthorsService) {
+                         MergePublicationCoauthorsService mergePublicationCoauthorsService,
+                         MergeEditionService mergeEditionService) {
         this.mergePersonService = mergePersonService;
         this.mergeUniversityService = mergeUniversityService;
         this.mergeDepartmentService = mergeDepartmentService;
@@ -70,6 +72,7 @@ public class AllController {
         this.mergeProjectParticipantsService = mergeProjectParticipantsService;
         this.mergePublicationService = mergePublicationService;
         this.mergePublicationCoauthorsService = mergePublicationCoauthorsService;
+        this.mergeEditionService = mergeEditionService;
     }
 
     @PostMapping("/merge/all")
@@ -93,6 +96,8 @@ public class AllController {
             mergeProject();
             mergeProjectParticipants();
             mergePublication();
+            mergePublicationCoauthors();
+            mergeEdition();
             return "Success";
         } catch (Exception ex) {
             ex.getStackTrace();
@@ -193,6 +198,11 @@ public class AllController {
     @PostMapping("/merge/publication-coauthors")
     public List<UnionPublicationCoauthors> mergePublicationCoauthors() {
         return mergePublicationCoauthorsService.merge();
+    }
+
+    @PostMapping("/merge/edition")
+    public List<UnionEdition> mergeEdition() {
+        return mergeEditionService.merge();
     }
 
 }
