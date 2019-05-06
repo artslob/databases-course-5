@@ -48,7 +48,7 @@ public class MergeDepartmentService extends AbstractMergeService<ExtractTwoData<
         return unionDepartmentList;
     }
 
-    public List<UnionDepartment> load(List<UnionDepartment> unionDepartments) {
-        return (List<UnionDepartment>) unionRepository.saveAll(unionDepartments);
+    public List<UnionDepartment> load(List<UnionDepartment> unionList) {
+        return (List<UnionDepartment>) unionRepository.saveAll(unionList);
     }
 }

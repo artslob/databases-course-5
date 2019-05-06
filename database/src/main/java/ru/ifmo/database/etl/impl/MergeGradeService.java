@@ -50,7 +50,7 @@ public class MergeGradeService extends AbstractMergeService<ExtractTwoData<Postg
         return unionGradeList;
     }
 
-    public List<UnionGrade> load(List<UnionGrade> unionGrades) {
-        return (List<UnionGrade>) unionRepository.saveAll(unionGrades);
+    public List<UnionGrade> load(List<UnionGrade> unionList) {
+        return (List<UnionGrade>) unionRepository.saveAll(unionList);
     }
 }

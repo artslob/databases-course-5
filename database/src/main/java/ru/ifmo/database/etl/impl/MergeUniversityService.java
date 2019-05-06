@@ -14,18 +14,16 @@ import java.util.stream.Collectors;
 @Service
 public class MergeUniversityService extends AbstractMergeService<ExtractOneData<PostgresUniversity>, UnionUniversity> {
 
-    private final PostgresUniversityRepository postgresUniversityRepository;
-    private final UnionUniversityRepository unionUniversityRepository;
+    private final PostgresUniversityRepository postgresRepository;
+    private final UnionUniversityRepository unionRepository;
 
-    public MergeUniversityService(PostgresUniversityRepository postgresUniversityRepository, UnionUniversityRepository unionUniversityRepository) {
-        this.postgresUniversityRepository = postgresUniversityRepository;
-        this.unionUniversityRepository = unionUniversityRepository;
+    public MergeUniversityService(PostgresUniversityRepository postgresRepository, UnionUniversityRepository unionRepository) {
+        this.postgresRepository = postgresRepository;
+        this.unionRepository = unionRepository;
     }
 
     public ExtractOneData<PostgresUniversity> extract() {
-        List<PostgresUniversity> postgresPersonList = (List<PostgresUniversity>) postgresUniversityRepository.findAll();
-
-        return new ExtractOneData<>(postgresPersonList);
+        return new ExtractOneData<>((List<PostgresUniversity>) postgresRepository.findAll());
     }
 
     public List<UnionUniversity> transform(ExtractOneData<PostgresUniversity> extractData) {
@@ -38,7 +36,7 @@ public class MergeUniversityService extends AbstractMergeService<ExtractOneData<
         }).collect(Collectors.toList());
     }
 
-    public List<UnionUniversity> load(List<UnionUniversity> unionUniversityList) {
-        return (List<UnionUniversity>) unionUniversityRepository.saveAll(unionUniversityList);
+    public List<UnionUniversity> load(List<UnionUniversity> unionList) {
+        return (List<UnionUniversity>) unionRepository.saveAll(unionList);
     }
 }
