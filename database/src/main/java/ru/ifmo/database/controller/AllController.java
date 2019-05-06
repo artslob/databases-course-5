@@ -27,6 +27,7 @@ public class AllController {
     private final MergeReaderInfoService mergeReaderInfoService;
     private final MergeConferenceService mergeConferenceService;
     private final MergeConferenceParticipantsService mergeConferenceParticipantsService;
+    private final MergeProjectService mergeProjectService;
 
     public AllController(MergePersonService mergePersonService,
                          MergeUniversityService mergeUniversityService,
@@ -42,7 +43,8 @@ public class AllController {
                          MergeBookService mergeBookService,
                          MergeReaderInfoService mergeReaderInfoService,
                          MergeConferenceService mergeConferenceService,
-                         MergeConferenceParticipantsService mergeConferenceParticipantsService) {
+                         MergeConferenceParticipantsService mergeConferenceParticipantsService,
+                         MergeProjectService mergeProjectService) {
         this.mergePersonService = mergePersonService;
         this.mergeUniversityService = mergeUniversityService;
         this.mergeDepartmentService = mergeDepartmentService;
@@ -58,6 +60,7 @@ public class AllController {
         this.mergeReaderInfoService = mergeReaderInfoService;
         this.mergeConferenceService = mergeConferenceService;
         this.mergeConferenceParticipantsService = mergeConferenceParticipantsService;
+        this.mergeProjectService = mergeProjectService;
     }
 
     @PostMapping("/merge/all")
@@ -78,6 +81,7 @@ public class AllController {
             mergeReaderInfo();
             mergeConference();
             mergeConferenceParticipants();
+            mergeProject();
             return "Success";
         } catch (Exception ex) {
             ex.getStackTrace();
@@ -158,6 +162,11 @@ public class AllController {
     @PostMapping("/merge/conference-participants")
     public List<UnionConferenceParticipants> mergeConferenceParticipants() {
         return mergeConferenceParticipantsService.merge();
+    }
+
+    @PostMapping("/merge/project")
+    public List<UnionProject> mergeProject() {
+        return mergeProjectService.merge();
     }
 
 }

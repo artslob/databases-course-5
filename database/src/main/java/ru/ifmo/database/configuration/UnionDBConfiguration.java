@@ -35,7 +35,8 @@ import javax.sql.DataSource;
                 UnionBookRepository.class,
                 UnionReaderInfoRepository.class,
                 UnionConferenceRepository.class,
-                UnionConferenceParticipantsRepository.class
+                UnionConferenceParticipantsRepository.class,
+                UnionProjectRepository.class
         },
         entityManagerFactoryRef = "unionDSEmFactory",
         transactionManagerRef = "unionDSTransactionManager"
