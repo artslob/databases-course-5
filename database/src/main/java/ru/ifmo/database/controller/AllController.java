@@ -21,6 +21,7 @@ public class AllController {
     private final MergeEducationService mergeEducationService;
     private final MergeWorkService mergeWorkService;
     private final MergeWorkDisciplineService mergeWorkDisciplineService;
+    private final MergeScheduleService mergeScheduleService;
 
     public AllController(MergePersonService mergePersonService,
                          MergeUniversityService mergeUniversityService,
@@ -30,7 +31,7 @@ public class AllController {
                          MergeGradeService mergeGradeService,
                          MergeEducationService mergeEducationService,
                          MergeWorkService mergeWorkService,
-                         MergeWorkDisciplineService mergeWorkDisciplineService) {
+                         MergeWorkDisciplineService mergeWorkDisciplineService, MergeScheduleService mergeScheduleService) {
         this.mergePersonService = mergePersonService;
         this.mergeUniversityService = mergeUniversityService;
         this.mergeDepartmentService = mergeDepartmentService;
@@ -40,6 +41,7 @@ public class AllController {
         this.mergeEducationService = mergeEducationService;
         this.mergeWorkService = mergeWorkService;
         this.mergeWorkDisciplineService = mergeWorkDisciplineService;
+        this.mergeScheduleService = mergeScheduleService;
     }
 
     @PostMapping("/merge/all")
@@ -53,6 +55,8 @@ public class AllController {
             mergeGrade();
             mergeEducation();
             mergeWork();
+            mergeWorkDiscipline();
+            mergeSchedule();
             return "Success";
         } catch (Exception ex) {
             ex.getStackTrace();
@@ -104,4 +108,10 @@ public class AllController {
     public List<UnionWorkDiscipline> mergeWorkDiscipline() {
         return mergeWorkDisciplineService.merge();
     }
+
+    @PostMapping("/merge/schedule")
+    public List<UnionSchedule> mergeSchedule() {
+        return mergeScheduleService.merge();
+    }
+
 }
