@@ -38,8 +38,8 @@ db.room.insertMany([
         payment: 1030,      // Сумма оплаты
         insects: false,     // Клопы -- Y/N
         disinfection: [     // Когда проводили дезинфекцию дата
-            new Date("2014-01-24"),
-            new Date("2015-12-20"),
+            {disinfection_id: 100, date: new Date("2014-01-24")},
+            {disinfection_id: 101, date: new Date("2015-12-20")},
         ]
     },
     {id: 310, hostel_id: 1, room_number: 1409, capacity: 3, payment: 1030, insects: false, disinfection: []},
@@ -61,10 +61,12 @@ db.accommodation.insertMany([
         exemption: false,              // льготы -- Y/N
         warnings: [                    // Предупреждения -- 1, 2, ...
             {
+                id: 111,
                 date: new Date("2014-12-31"),
                 text: "хулиганил"
             },
             {
+                id: 112,
                 date: new Date("2015-01-01"),
                 text: "состояние алкогольного опьянения"
             },
