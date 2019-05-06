@@ -33,6 +33,7 @@ public class AllController {
     private final MergePublicationCoauthorsService mergePublicationCoauthorsService;
     private final MergeEditionService mergeEditionService;
     private final MergeHostelService mergeHostelService;
+    private final MergeRoomService mergeRoomService;
 
     public AllController(MergePersonService mergePersonService,
                          MergeUniversityService mergeUniversityService,
@@ -53,7 +54,9 @@ public class AllController {
                          MergeProjectParticipantsService mergeProjectParticipantsService,
                          MergePublicationService mergePublicationService,
                          MergePublicationCoauthorsService mergePublicationCoauthorsService,
-                         MergeEditionService mergeEditionService, MergeHostelService mergeHostelService) {
+                         MergeEditionService mergeEditionService,
+                         MergeHostelService mergeHostelService,
+                         MergeRoomService mergeRoomService) {
         this.mergePersonService = mergePersonService;
         this.mergeUniversityService = mergeUniversityService;
         this.mergeDepartmentService = mergeDepartmentService;
@@ -75,6 +78,7 @@ public class AllController {
         this.mergePublicationCoauthorsService = mergePublicationCoauthorsService;
         this.mergeEditionService = mergeEditionService;
         this.mergeHostelService = mergeHostelService;
+        this.mergeRoomService = mergeRoomService;
     }
 
     @PostMapping("/merge/all")
@@ -101,6 +105,7 @@ public class AllController {
             mergePublicationCoauthors();
             mergeEdition();
             mergeHostel();
+            mergeRoom();
             return "Success";
         } catch (Exception ex) {
             ex.getStackTrace();
@@ -211,6 +216,11 @@ public class AllController {
     @PostMapping("/merge/hostel")
     public List<UnionHostel> mergeHostel() {
         return mergeHostelService.merge();
+    }
+
+    @PostMapping("/merge/room")
+    public List<UnionRoom> mergeRoom() {
+        return mergeRoomService.merge();
     }
 
 }
