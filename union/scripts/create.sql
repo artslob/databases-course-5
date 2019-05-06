@@ -130,8 +130,8 @@ CREATE TABLE conference -- конференция MySQL
 CREATE TABLE conference_participants -- участники конференции MySQL
 (
     -- many to many from persons to conferences
-    conference_id INTEGER NOT NULL REFERENCES person (person_id),         -- конференция
-    person_id     INTEGER NOT NULL REFERENCES conference (conference_id), -- участник
+    conference_id INTEGER NOT NULL REFERENCES conference (conference_id), -- конференция
+    person_id     INTEGER NOT NULL REFERENCES person (person_id),         -- участник
     PRIMARY KEY (conference_id, person_id)
 );
 
