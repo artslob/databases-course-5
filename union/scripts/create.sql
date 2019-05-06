@@ -82,7 +82,7 @@ CREATE TABLE work
 CREATE TABLE work_discipline
 (
     -- many to many от должности (работы) к дисциплинам
-    work_id       INTEGER NOT NULL REFERENCES work (work_id),
+    work_id       INTEGER NOT NULL REFERENCES work (work_id) ON DELETE CASCADE,
     discipline_id INTEGER NOT NULL REFERENCES discipline (discipline_id),
     PRIMARY KEY (work_id, discipline_id)
 );
