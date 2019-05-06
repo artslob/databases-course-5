@@ -21,10 +21,12 @@ public class MongoAccommodation {
     @Id
     @JsonIgnore
     private String id;
+    @Field("id")
+    private int accommodationId;
     @Field("person_id")
     private int personId;
-    @Field("room_no")
-    private int roomNo;
+    @Field("room_id")
+    private int roomId;
     private Date from;
     private Date to;
     private Boolean exemption;

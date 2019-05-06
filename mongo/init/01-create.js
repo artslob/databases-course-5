@@ -54,26 +54,27 @@ db.room.insertMany([
 // проживание
 db.accommodation.insertMany([
     {
+        id: 200,
         person_id: 191950,             /* -> person */
-        room_no: 309,                  /* -> room */     // по этому полю можно понять, сколько человек живёт в комнате
+        room_id: 309,                  /* -> room */     // по этому полю можно понять, сколько человек живёт в комнате
         from: new Date("2014-09-01"),  // Период с/по -- Живёт со 2 курса, то есть 01.09.2001-31.08.2002 2 курс
         to: new Date("2015-05-31"),
         exemption: false,              // льготы -- Y/N
         warnings: [                    // Предупреждения -- 1, 2, ...
             {
-                id: 111,
+                warning_id: 111,
                 date: new Date("2014-12-31"),
                 text: "хулиганил"
             },
             {
-                id: 112,
+                warning_id: 112,
                 date: new Date("2015-01-01"),
                 text: "состояние алкогольного опьянения"
             },
         ],
     },
-    {person_id: 191951, room_no: 309, from: new Date("2014-09-01"), to: null, exemption: false, warnings: []},
-    {person_id: 191952, room_no: 309, from: new Date("2014-09-01"), to: null, exemption: false, warnings: []},
+    {id: 201, person_id: 191951, room_id: 309, from: new Date("2014-09-01"), to: null, exemption: false, warnings: []},
+    {id: 202, person_id: 191952, room_id: 309, from: new Date("2014-09-01"), to: null, exemption: false, warnings: []},
 ]);
 
 // посещение -- зашёл в общежитие/вышел из общежития
