@@ -82,14 +82,14 @@ db.visit.insertMany([
     {
         id: 400,
         person_id: 191950,  /* -> person */
-        hostel_id: 6,       /* -> hostel */
+        hostel_id: 4,       /* -> hostel */
         inside: new Date("2014-09-01"),
         outside: null
     },
     {
         id: 401,
         person_id: 191950,
-        hostel_id: 6,
+        hostel_id: 4,
         inside: null,
         outside: new Date("2014-09-03")
     }
