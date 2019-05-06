@@ -21,8 +21,14 @@ import javax.sql.DataSource;
 @EnableTransactionManagement
 @EnableJpaRepositories(
         basePackageClasses = {
+                UnionDepartmentRepository.class,
+                UnionDisciplineRepository.class,
+                UnionEducationRepository.class,
+                UnionGradeRepository.class,
                 UnionPersonRepository.class,
-                UnionUniversityRepository.class
+                UnionSpecialityRepository.class,
+                UnionUniversityRepository.class,
+                UnionWorkRepository.class
         }
         ,
         entityManagerFactoryRef = "unionDSEmFactory",
