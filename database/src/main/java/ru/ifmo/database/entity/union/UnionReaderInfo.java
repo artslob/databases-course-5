@@ -3,7 +3,7 @@ package ru.ifmo.database.entity.union;
 import lombok.*;
 
 import javax.persistence.*;
-import java.sql.Time;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -18,10 +18,10 @@ public class UnionReaderInfo {
     private int infoId;
     @Basic
     @Column(name = "OBTAIN_DATE", nullable = false)
-    private Time obtainDate;
+    private Date obtainDate;
     @Basic
     @Column(name = "RETURNED")
-    private Time returned;
+    private Date returned;
     @Column(name = "reader_id")
     private int readerId;
     @Column(name = "book_id")

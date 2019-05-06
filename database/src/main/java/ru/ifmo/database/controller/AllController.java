@@ -24,6 +24,7 @@ public class AllController {
     private final MergeScheduleService mergeScheduleService;
     private final MergeReaderListService mergeReaderListService;
     private final MergeBookService mergeBookService;
+    private final MergeReaderInfoService mergeReaderInfoService;
 
     public AllController(MergePersonService mergePersonService,
                          MergeUniversityService mergeUniversityService,
@@ -35,7 +36,9 @@ public class AllController {
                          MergeWorkService mergeWorkService,
                          MergeWorkDisciplineService mergeWorkDisciplineService,
                          MergeScheduleService mergeScheduleService,
-                         MergeReaderListService mergeReaderListService, MergeBookService mergeBookService) {
+                         MergeReaderListService mergeReaderListService,
+                         MergeBookService mergeBookService,
+                         MergeReaderInfoService mergeReaderInfoService) {
         this.mergePersonService = mergePersonService;
         this.mergeUniversityService = mergeUniversityService;
         this.mergeDepartmentService = mergeDepartmentService;
@@ -48,6 +51,7 @@ public class AllController {
         this.mergeScheduleService = mergeScheduleService;
         this.mergeReaderListService = mergeReaderListService;
         this.mergeBookService = mergeBookService;
+        this.mergeReaderInfoService = mergeReaderInfoService;
     }
 
     @PostMapping("/merge/all")
@@ -65,6 +69,7 @@ public class AllController {
             mergeSchedule();
             mergeReaderList();
             mergeUnionBook();
+            mergeUnionReaderInfo();
             return "Success";
         } catch (Exception ex) {
             ex.getStackTrace();
@@ -130,6 +135,11 @@ public class AllController {
     @PostMapping("/merge/book")
     public List<UnionBook> mergeUnionBook() {
         return mergeBookService.merge();
+    }
+
+    @PostMapping("/merge/reader-info")
+    public List<UnionReaderInfo> mergeUnionReaderInfo() {
+        return mergeReaderInfoService.merge();
     }
 
 }
