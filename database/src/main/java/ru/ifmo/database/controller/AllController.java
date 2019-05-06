@@ -37,6 +37,7 @@ public class AllController {
     private final MergeDisinfectionService mergeDisinfectionService;
     private final MergeAccommodationService mergeAccommodationService;
     private final MergeWarningService mergeWarningService;
+    private final MergeVisitService mergeVisitService;
 
     public AllController(MergePersonService mergePersonService,
                          MergeUniversityService mergeUniversityService,
@@ -62,7 +63,8 @@ public class AllController {
                          MergeRoomService mergeRoomService,
                          MergeDisinfectionService mergeDisinfectionService,
                          MergeAccommodationService mergeAccommodationService,
-                         MergeWarningService mergeWarningService) {
+                         MergeWarningService mergeWarningService,
+                         MergeVisitService mergeVisitService) {
         this.mergePersonService = mergePersonService;
         this.mergeUniversityService = mergeUniversityService;
         this.mergeDepartmentService = mergeDepartmentService;
@@ -88,6 +90,7 @@ public class AllController {
         this.mergeDisinfectionService = mergeDisinfectionService;
         this.mergeAccommodationService = mergeAccommodationService;
         this.mergeWarningService = mergeWarningService;
+        this.mergeVisitService = mergeVisitService;
     }
 
     @PostMapping("/merge/all")
@@ -115,6 +118,10 @@ public class AllController {
             mergeEdition();
             mergeHostel();
             mergeRoom();
+            mergeDisinfection();
+            mergeAccommodation();
+            mergeWarning();
+            mergeVisit();
             return "Success";
         } catch (Exception ex) {
             ex.getStackTrace();
@@ -245,6 +252,11 @@ public class AllController {
     @PostMapping("/merge/warning")
     public List<UnionWarning> mergeWarning() {
         return mergeWarningService.merge();
+    }
+
+    @PostMapping("/merge/visit")
+    public List<UnionVisit> mergeVisit() {
+        return mergeVisitService.merge();
     }
 
 }

@@ -20,6 +20,8 @@ public class MongoVisit {
     @Id
     @JsonIgnore
     private String id;
+    @Field("id")
+    private int visitId;
     @Field("person_id")
     private int personId;
     @Field("hostel_id")

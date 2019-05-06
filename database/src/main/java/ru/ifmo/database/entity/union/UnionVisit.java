@@ -3,7 +3,7 @@ package ru.ifmo.database.entity.union;
 import lombok.*;
 
 import javax.persistence.*;
-import java.sql.Time;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -18,10 +18,10 @@ public class UnionVisit {
     private int visitId;
     @Basic
     @Column(name = "INSIDE")
-    private Time inside;
+    private Date inside;
     @Basic
     @Column(name = "OUTSIDE")
-    private Time outside;
+    private Date outside;
     @Column(name = "person_id")
     private int personId;
     @Column(name = "hostel_id")
