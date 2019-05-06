@@ -30,5 +30,5 @@ public class MongoRoom {
     private int capacity;
     private int payment;
     private Boolean insects;
-    private List<Date> disinfection;
+    private List<Disinfection> disinfection;
 }
