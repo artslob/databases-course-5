@@ -30,7 +30,8 @@ import javax.sql.DataSource;
                 UnionUniversityRepository.class,
                 UnionWorkRepository.class,
                 UnionWorkDisciplineRepository.class,
-                UnionScheduleRepository.class
+                UnionScheduleRepository.class,
+                UnionReaderListRepository.class
         },
         entityManagerFactoryRef = "unionDSEmFactory",
         transactionManagerRef = "unionDSTransactionManager"
