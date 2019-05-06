@@ -71,13 +71,6 @@ public class MergePersonService extends AbstractMergeService<ExtractDataAll<Post
     }
 
     public List<UnionPerson> load(List<UnionPerson> unionList) {
-//        List<UnionPerson> unionPersonFromDB = (List<UnionPerson>) unionPersonRepository.findAll();
-//        unionPersonFromDB.forEach(p -> {
-//            if (!unionList.contains(p)) {
-//                unionPersonRepository.deleteById(p.getPersonId());
-//            }
-//        });
-
         return (List<UnionPerson>) unionPersonRepository.saveAll(unionList);
     }
 }

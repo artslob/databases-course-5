@@ -3,6 +3,7 @@ package ru.ifmo.database.etl.impl;
 import org.springframework.stereotype.Service;
 import ru.ifmo.database.entity.oracle.OracleWork;
 import ru.ifmo.database.entity.postgres.PostgresWork;
+import ru.ifmo.database.entity.union.UnionUniversity;
 import ru.ifmo.database.entity.union.UnionWork;
 import ru.ifmo.database.etl.api.AbstractMergeService;
 import ru.ifmo.database.etl.datamodel.ExtractTwoData;
@@ -51,6 +52,12 @@ public class MergeWorkService extends AbstractMergeService<ExtractTwoData<Postgr
     }
 
     public List<UnionWork> load(List<UnionWork> unionList) {
+        List<UnionWork> unionFromDB = (List<UnionWork>) unionRepository.findAll();
+        unionFromDB.forEach(p -> {
+            if (!unionList.contains(p)) {
+                unionRepository.deleteById(p.getWorkId());
+            }
+        });
         return (List<UnionWork>) unionRepository.saveAll(unionList);
     }
 }
