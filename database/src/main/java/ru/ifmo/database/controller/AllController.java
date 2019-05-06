@@ -18,14 +18,22 @@ public class AllController {
     private final MergeSpecialityService mergeSpecialityService;
     private final MergeDisciplineService mergeDisciplineService;
     private final MergeGradeService mergeGradeService;
+    private final MergeEducationService mergeEducationService;
 
-    public AllController(MergePersonService mergePersonService, MergeUniversityService mergeUniversityService, MergeDepartmentService mergeDepartmentService, MergeSpecialityService mergeSpecialityService, MergeDisciplineService mergeDisciplineService, MergeGradeService mergeGradeService) {
+    public AllController(MergePersonService mergePersonService,
+                         MergeUniversityService mergeUniversityService,
+                         MergeDepartmentService mergeDepartmentService,
+                         MergeSpecialityService mergeSpecialityService,
+                         MergeDisciplineService mergeDisciplineService,
+                         MergeGradeService mergeGradeService,
+                         MergeEducationService mergeEducationService) {
         this.mergePersonService = mergePersonService;
         this.mergeUniversityService = mergeUniversityService;
         this.mergeDepartmentService = mergeDepartmentService;
         this.mergeSpecialityService = mergeSpecialityService;
         this.mergeDisciplineService = mergeDisciplineService;
         this.mergeGradeService = mergeGradeService;
+        this.mergeEducationService = mergeEducationService;
     }
 
     @PostMapping("/merge/all")
@@ -37,6 +45,7 @@ public class AllController {
             mergeSpeciality();
             mergeDiscipline();
             mergeGrade();
+            mergeEducation();
             return "Success";
         } catch (Exception ex) {
             ex.getStackTrace();
@@ -72,5 +81,10 @@ public class AllController {
     @PostMapping("/merge/grade")
     public List<UnionGrade> mergeGrade() {
         return mergeGradeService.merge();
+    }
+
+    @PostMapping("/merge/education")
+    public List<UnionEducation> mergeEducation() {
+        return mergeEducationService.merge();
     }
 }
