@@ -35,6 +35,7 @@ public class AllController {
     private final MergeHostelService mergeHostelService;
     private final MergeRoomService mergeRoomService;
     private final MergeDisinfectionService mergeDisinfectionService;
+    private final MergeAccommodationService mergeAccommodationService;
 
     public AllController(MergePersonService mergePersonService,
                          MergeUniversityService mergeUniversityService,
@@ -57,7 +58,9 @@ public class AllController {
                          MergePublicationCoauthorsService mergePublicationCoauthorsService,
                          MergeEditionService mergeEditionService,
                          MergeHostelService mergeHostelService,
-                         MergeRoomService mergeRoomService, MergeDisinfectionService mergeDisinfectionService) {
+                         MergeRoomService mergeRoomService,
+                         MergeDisinfectionService mergeDisinfectionService,
+                         MergeAccommodationService mergeAccommodationService) {
         this.mergePersonService = mergePersonService;
         this.mergeUniversityService = mergeUniversityService;
         this.mergeDepartmentService = mergeDepartmentService;
@@ -81,6 +84,7 @@ public class AllController {
         this.mergeHostelService = mergeHostelService;
         this.mergeRoomService = mergeRoomService;
         this.mergeDisinfectionService = mergeDisinfectionService;
+        this.mergeAccommodationService = mergeAccommodationService;
     }
 
     @PostMapping("/merge/all")
@@ -228,6 +232,11 @@ public class AllController {
     @PostMapping("/merge/disinfection")
     public List<UnionDisinfection> mergeDisinfection() {
         return mergeDisinfectionService.merge();
+    }
+
+    @PostMapping("/merge/accommodation")
+    public List<UnionAccommodation> mergeAccommodation() {
+        return mergeAccommodationService.merge();
     }
 
 }
