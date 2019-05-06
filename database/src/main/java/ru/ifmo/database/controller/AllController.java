@@ -32,6 +32,7 @@ public class AllController {
     private final MergePublicationService mergePublicationService;
     private final MergePublicationCoauthorsService mergePublicationCoauthorsService;
     private final MergeEditionService mergeEditionService;
+    private final MergeHostelService mergeHostelService;
 
     public AllController(MergePersonService mergePersonService,
                          MergeUniversityService mergeUniversityService,
@@ -52,7 +53,7 @@ public class AllController {
                          MergeProjectParticipantsService mergeProjectParticipantsService,
                          MergePublicationService mergePublicationService,
                          MergePublicationCoauthorsService mergePublicationCoauthorsService,
-                         MergeEditionService mergeEditionService) {
+                         MergeEditionService mergeEditionService, MergeHostelService mergeHostelService) {
         this.mergePersonService = mergePersonService;
         this.mergeUniversityService = mergeUniversityService;
         this.mergeDepartmentService = mergeDepartmentService;
@@ -73,6 +74,7 @@ public class AllController {
         this.mergePublicationService = mergePublicationService;
         this.mergePublicationCoauthorsService = mergePublicationCoauthorsService;
         this.mergeEditionService = mergeEditionService;
+        this.mergeHostelService = mergeHostelService;
     }
 
     @PostMapping("/merge/all")
@@ -98,6 +100,7 @@ public class AllController {
             mergePublication();
             mergePublicationCoauthors();
             mergeEdition();
+            mergeHostel();
             return "Success";
         } catch (Exception ex) {
             ex.getStackTrace();
@@ -203,6 +206,11 @@ public class AllController {
     @PostMapping("/merge/edition")
     public List<UnionEdition> mergeEdition() {
         return mergeEditionService.merge();
+    }
+
+    @PostMapping("/merge/hostel")
+    public List<UnionHostel> mergeHostel() {
+        return mergeHostelService.merge();
     }
 
 }
