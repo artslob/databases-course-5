@@ -32,45 +32,45 @@ INSERT INTO birthplace (birthplace_id, country_key, country_name, region_key, re
 VALUES (38, 25, 'Belarus', 33, 'Minsk Region', 39, 'Slutsk');
 
 INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)
-VALUES (1, 1990, '1990', 1, '1');
+VALUES (1, 1990, '1990 year', 1, 'first term');
 INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)
-VALUES (2, 1990, '1990', 2, '2');
+VALUES (2, 1990, '1990 year', 2, 'second term');
 INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)
-VALUES (3, 1991, '1991', 1, '1');
+VALUES (3, 1991, '1991 year', 3, 'first term');
 INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)
-VALUES (4, 1991, '1991', 2, '2');
+VALUES (4, 1991, '1991 year', 4, 'second term');
 INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)
-VALUES (5, 1992, '1992', 1, '1');
+VALUES (5, 1992, '1992 year', 5, 'first term');
 INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)
-VALUES (6, 1992, '1992', 2, '2');
+VALUES (6, 1992, '1992 year', 6, 'second term');
 INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)
-VALUES (7, 1993, '1993', 1, '1');
+VALUES (7, 1993, '1993 year', 7, 'first term');
 INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)
-VALUES (8, 1993, '1993', 2, '2');
+VALUES (8, 1993, '1993 year', 8, 'second term');
 INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)
-VALUES (9, 1994, '1994', 1, '1');
+VALUES (9, 1994, '1994 year', 9, 'first term');
 INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)
-VALUES (10, 1994, '1994', 2, '2');
+VALUES (10, 1994, '1994 year', 10, 'second term');
 INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)
-VALUES (11, 1995, '1995', 1, '1');
+VALUES (11, 1995, '1995 year', 11, 'first term');
 INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)
-VALUES (12, 1995, '1995', 2, '2');
+VALUES (12, 1995, '1995 year', 12, 'second term');
 INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)
-VALUES (13, 1996, '1996', 1, '1');
+VALUES (13, 1996, '1996 year', 13, 'first term');
 INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)
-VALUES (14, 1996, '1996', 2, '2');
+VALUES (14, 1996, '1996 year', 14, 'second term');
 INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)
-VALUES (15, 1997, '1997', 1, '1');
+VALUES (15, 1997, '1997 year', 15, 'first term');
 INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)
-VALUES (16, 1997, '1997', 2, '2');
+VALUES (16, 1997, '1997 year', 16, 'second term');
 INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)
-VALUES (17, 1998, '1998', 1, '1');
+VALUES (17, 1998, '1998 year', 17, 'first term');
 INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)
-VALUES (18, 1998, '1998', 2, '2');
+VALUES (18, 1998, '1998 year', 18, 'second term');
 INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)
-VALUES (19, 1999, '1999', 1, '1');
+VALUES (19, 1999, '1999 year', 19, 'first term');
 INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)
-VALUES (20, 1999, '1999', 2, '2');
+VALUES (20, 1999, '1999 year', 20, 'second term');
 
 INSERT INTO fact2 (fact2_id, people_count, birthplace_id, time_id)
 VALUES (1, 2824, 3, 1);

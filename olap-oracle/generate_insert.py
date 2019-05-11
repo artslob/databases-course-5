@@ -63,10 +63,11 @@ class Time:
 
 def generate_times():
     time_table = []
+    get_key = count(1)
     t_id = 1
     for year in range(1990, 2000):
-        for j in range(1, 3):
-            time_table.append(Time(t_id, year, year, j, j))
+        for term_name in ('first', 'second'):
+            time_table.append(Time(t_id, year, f'{year} year', next(get_key), term_name + ' term'))
             t_id += 1
     return time_table
 
