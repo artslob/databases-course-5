@@ -30,3 +30,44 @@ INSERT INTO birthplace (country_key, country_name, region_key, region_name, city
 VALUES (2, 'Belarus', 2, 'Minsk Region', 2, 'Salihorsk');
 INSERT INTO birthplace (country_key, country_name, region_key, region_name, city_key, city_name)
 VALUES (2, 'Belarus', 2, 'Minsk Region', 3, 'Slutsk');
+
+INSERT INTO time_t (year_key, year_name, term_key, term_name)
+VALUES (1990, '1990', 1, '1');
+INSERT INTO time_t (year_key, year_name, term_key, term_name)
+VALUES (1990, '1990', 2, '2');
+INSERT INTO time_t (year_key, year_name, term_key, term_name)
+VALUES (1991, '1991', 1, '1');
+INSERT INTO time_t (year_key, year_name, term_key, term_name)
+VALUES (1991, '1991', 2, '2');
+INSERT INTO time_t (year_key, year_name, term_key, term_name)
+VALUES (1992, '1992', 1, '1');
+INSERT INTO time_t (year_key, year_name, term_key, term_name)
+VALUES (1992, '1992', 2, '2');
+INSERT INTO time_t (year_key, year_name, term_key, term_name)
+VALUES (1993, '1993', 1, '1');
+INSERT INTO time_t (year_key, year_name, term_key, term_name)
+VALUES (1993, '1993', 2, '2');
+INSERT INTO time_t (year_key, year_name, term_key, term_name)
+VALUES (1994, '1994', 1, '1');
+INSERT INTO time_t (year_key, year_name, term_key, term_name)
+VALUES (1994, '1994', 2, '2');
+INSERT INTO time_t (year_key, year_name, term_key, term_name)
+VALUES (1995, '1995', 1, '1');
+INSERT INTO time_t (year_key, year_name, term_key, term_name)
+VALUES (1995, '1995', 2, '2');
+INSERT INTO time_t (year_key, year_name, term_key, term_name)
+VALUES (1996, '1996', 1, '1');
+INSERT INTO time_t (year_key, year_name, term_key, term_name)
+VALUES (1996, '1996', 2, '2');
+INSERT INTO time_t (year_key, year_name, term_key, term_name)
+VALUES (1997, '1997', 1, '1');
+INSERT INTO time_t (year_key, year_name, term_key, term_name)
+VALUES (1997, '1997', 2, '2');
+INSERT INTO time_t (year_key, year_name, term_key, term_name)
+VALUES (1998, '1998', 1, '1');
+INSERT INTO time_t (year_key, year_name, term_key, term_name)
+VALUES (1998, '1998', 2, '2');
+INSERT INTO time_t (year_key, year_name, term_key, term_name)
+VALUES (1999, '1999', 1, '1');
+INSERT INTO time_t (year_key, year_name, term_key, term_name)
+VALUES (1999, '1999', 2, '2');

@@ -25,6 +25,17 @@ def generate_birthplaces():
     return '\n'.join(lines)
 
 
+def generate_times():
+    lines = []
+    for year in range(1990, 2000):
+        for j in range(1, 3):
+            lines.extend([
+                f'INSERT INTO time_t (year_key, year_name, term_key, term_name)',
+                f"VALUES ({year}, '{year}', {j}, '{j}');"
+            ])
+    return '\n'.join(lines)
+
+
 cwd = Path().absolute()
 target_file = cwd / 'scripts' / 'insert.sql'
 
@@ -35,10 +46,13 @@ def write_to_file():
 
     with open(target_file, 'w') as f:
         f.write(generate_birthplaces())
+        f.write('\n\n')
+        f.write(generate_times())
         f.write('\n')
 
 
 if __name__ == '__main__':
     print(f"target file is: '{target_file}'")
     print(generate_birthplaces())
+    print(generate_times())
     write_to_file()
