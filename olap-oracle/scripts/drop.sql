@@ -1,0 +1,3 @@
+DROP TABLE fact2 PURGE;
+DROP TABLE time_t PURGE;
+DROP TABLE birthplace PURGE;
