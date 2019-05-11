@@ -1,4 +1,5 @@
 import random
+from itertools import count
 from pathlib import Path
 
 birthplaces_dict = {
@@ -33,17 +34,14 @@ class Birthplace:
 
 def generate_birthplaces():
     table = []
-    birthplace_id = 0
-    country_key = 0
-    region_key = 0
-    city_key = 0
+    get_key = count(1)
     for country in birthplaces_dict.keys():
-        country_key += 1
+        country_key = next(get_key)
         for region in birthplaces_dict[country].keys():
-            region_key += 1
+            region_key = next(get_key)
             for city in birthplaces_dict[country][region]:
-                birthplace_id += 1
-                city_key += 1
+                birthplace_id = next(get_key)
+                city_key = next(get_key)
                 table.append(Birthplace(birthplace_id, country_key, country, region_key, region, city_key, city))
     return table
 
