@@ -32,19 +32,19 @@ class Birthplace:
             f"VALUES ({self.birthplace_id}, {self.country_key}, '{self.country_name}', {self.region_key}, '{self.region_name}', {self.city_key}, '{self.city_name}');"
         ])
 
-
-def generate_birthplaces():
-    table = []
-    get_key = count(1)
-    for country in birthplaces_dict.keys():
-        country_key = next(get_key)
-        for region in birthplaces_dict[country].keys():
-            region_key = next(get_key)
-            for city in birthplaces_dict[country][region]:
-                birthplace_id = next(get_key)
-                city_key = next(get_key)
-                table.append(Birthplace(birthplace_id, country_key, country, region_key, region, city_key, city))
-    return table
+    @staticmethod
+    def create_table():
+        table = []
+        get_key = count(1)
+        for country in birthplaces_dict.keys():
+            country_key = next(get_key)
+            for region in birthplaces_dict[country].keys():
+                region_key = next(get_key)
+                for city in birthplaces_dict[country][region]:
+                    birthplace_id = next(get_key)
+                    city_key = next(get_key)
+                    table.append(Birthplace(birthplace_id, country_key, country, region_key, region, city_key, city))
+        return table
 
 
 class Time:
@@ -61,16 +61,16 @@ class Time:
             f"VALUES ({self.time_id}, {self.year_key}, '{self.year_name}', {self.term_key}, '{self.term_name}');"
         ])
 
-
-def generate_times():
-    time_table = []
-    get_key = count(1)
-    t_id = 1
-    for year in range(1990, 2000):
-        for term_name in ('first', 'second'):
-            time_table.append(Time(t_id, year, f'{year} year', next(get_key), term_name + ' term'))
-            t_id += 1
-    return time_table
+    @staticmethod
+    def create_table():
+        table = []
+        get_key = count(1)
+        t_id = 1
+        for year in range(1990, 2000):
+            for term_name in ('first', 'second'):
+                table.append(Time(t_id, year, f'{year} year', next(get_key), term_name + ' term'))
+                t_id += 1
+        return table
 
 
 class Fact2:
@@ -86,16 +86,16 @@ class Fact2:
             f"VALUES ({self.fact2_id}, {self.people_count}, {self.birthplace_id}, {self.time_id});"
         ])
 
-
-def generate_fact2(birthplaces, times):
-    """before call this function recommended to seed generator"""
-    table = []
-    t_id = 1
-    for b in birthplaces:
-        for t in times:
-            table.append(Fact2(t_id, random.randint(1_000, 10_000), b.birthplace_id, t.time_id))
-            t_id += 1
-    return table
+    @staticmethod
+    def create_table(birthplaces, times):
+        """before call this function recommended to seed generator"""
+        table = []
+        t_id = 1
+        for b in birthplaces:
+            for t in times:
+                table.append(Fact2(t_id, random.randint(1_000, 10_000), b.birthplace_id, t.time_id))
+                t_id += 1
+        return table
 
 
 def write_to_file(target, *strings):
@@ -122,9 +122,9 @@ def main():
     target = cwd / 'scripts' / 'insert.sql'
     print(f"target file is: '{target}'")
 
-    birthplaces = generate_birthplaces()
-    times = generate_times()
-    fact2 = generate_fact2(birthplaces, times)
+    birthplaces = Birthplace.create_table()
+    times = Time.create_table()
+    fact2 = Fact2.create_table(birthplaces, times)
 
     birthplaces_insert = '\n'.join(str(i) for i in birthplaces)
     times_insert = '\n'.join(str(i) for i in times)
