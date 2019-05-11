@@ -121,8 +121,8 @@ def main():
     times_insert = '\n'.join(str(i) for i in times)
     fact2_insert = '\n'.join(str(i) for i in fact2)
 
-    nn = '\n\n'
-    print('\n', birthplaces_insert, nn, times_insert, nn, fact2_insert, sep='')
+    if not args.no_print:
+        print('\n', '\n\n'.join([birthplaces_insert, times_insert, fact2_insert]), sep='')
 
     if args.write:
         write_to_file(target, birthplaces_insert, '', times_insert, '', fact2_insert)
@@ -134,6 +134,8 @@ def main():
 def parse_args():
     parser = argparse.ArgumentParser(description='Generate sql inserts.')
     parser.add_argument('-w', '--write', action='store_true', help='need to write to file. default: %(default)s')
+    parser.add_argument('-np', '--no-print', action='store_true',
+                        help='no need to print inserts to stdout. default: %(default)s')
     return parser.parse_args()
 
 
