@@ -1,3 +1,4 @@
+import random
 from pathlib import Path
 
 birthplaces_dict = {
@@ -66,6 +67,31 @@ def generate_times():
     return time_table
 
 
+class Fact2:
+    def __init__(self, fact2_id, people_count, birthplace_id, time_id):
+        self.fact2_id = fact2_id
+        self.people_count = people_count
+        self.birthplace_id = birthplace_id
+        self.time_id = time_id
+
+    def __str__(self):
+        return '\n'.join([
+            f'INSERT INTO fact2 (fact2_id, people_count, birthplace_id, time_id)',
+            f"VALUES ({self.fact2_id}, {self.people_count}, {self.birthplace_id}, {self.time_id});"
+        ])
+
+
+def generate_fact2(birthplaces, times):
+    """before call this function recommended to seed generator"""
+    table = []
+    t_id = 1
+    for b in birthplaces:
+        for t in times:
+            table.append(Fact2(t_id, random.randint(1_000, 10_000), b.birthplace_id, t.time_id))
+            t_id += 1
+    return table
+
+
 def write_to_file(target, *strings):
     if not target.exists():
         raise ValueError(f"target file '{target}' not exist!")
@@ -75,22 +101,23 @@ def write_to_file(target, *strings):
 
 
 def main():
+    random.seed(42)
     cwd = Path().absolute()
     target = cwd / 'scripts' / 'insert.sql'
     print(f"target file is: '{target}'")
 
     birthplaces = generate_birthplaces()
     times = generate_times()
+    fact2 = generate_fact2(birthplaces, times)
 
     birthplaces_insert = '\n'.join(str(i) for i in birthplaces)
     times_insert = '\n'.join(str(i) for i in times)
+    fact2_insert = '\n'.join(str(i) for i in fact2)
 
-    print()
-    print(birthplaces_insert)
-    print()
-    print(times_insert)
+    nn = '\n\n'
+    print('\n', birthplaces_insert, nn, times_insert, nn, fact2_insert, sep='')
 
-    write_to_file(target, birthplaces_insert, '', times_insert)
+    write_to_file(target, birthplaces_insert, '', times_insert, '', fact2_insert)
 
 
 if __name__ == '__main__':
