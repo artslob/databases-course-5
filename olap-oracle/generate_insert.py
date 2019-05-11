@@ -1,3 +1,4 @@
+import argparse
 import random
 from itertools import count
 from pathlib import Path
@@ -106,6 +107,7 @@ def write_to_file(target, *strings):
 
 
 def main():
+    args = parse_args()
     random.seed(42)
     cwd = Path().absolute()
     target = cwd / 'scripts' / 'insert.sql'
@@ -122,7 +124,17 @@ def main():
     nn = '\n\n'
     print('\n', birthplaces_insert, nn, times_insert, nn, fact2_insert, sep='')
 
-    write_to_file(target, birthplaces_insert, '', times_insert, '', fact2_insert)
+    if args.write:
+        write_to_file(target, birthplaces_insert, '', times_insert, '', fact2_insert)
+        print(f'successful write to {target}')
+        return
+    print('write operation was not performed')
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description='Generate sql inserts.')
+    parser.add_argument('-w', '--write', action='store_true', help='need to write to file. default: %(default)s')
+    return parser.parse_args()
 
 
 if __name__ == '__main__':
