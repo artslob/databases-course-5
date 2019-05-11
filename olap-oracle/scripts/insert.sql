@@ -5,31 +5,31 @@ VALUES (2, 1, 'Russia', 1, 'Vologda Oblast', 2, 'Cherepovets');
 INSERT INTO birthplace (birthplace_id, country_key, country_name, region_key, region_name, city_key, city_name)
 VALUES (3, 1, 'Russia', 1, 'Vologda Oblast', 3, 'Sokol');
 INSERT INTO birthplace (birthplace_id, country_key, country_name, region_key, region_name, city_key, city_name)
-VALUES (4, 1, 'Russia', 2, 'Yaroslavl Oblast', 1, 'Yaroslavl');
+VALUES (4, 1, 'Russia', 2, 'Yaroslavl Oblast', 4, 'Yaroslavl');
 INSERT INTO birthplace (birthplace_id, country_key, country_name, region_key, region_name, city_key, city_name)
-VALUES (5, 1, 'Russia', 2, 'Yaroslavl Oblast', 2, 'Rostov');
+VALUES (5, 1, 'Russia', 2, 'Yaroslavl Oblast', 5, 'Rostov');
 INSERT INTO birthplace (birthplace_id, country_key, country_name, region_key, region_name, city_key, city_name)
-VALUES (6, 1, 'Russia', 2, 'Yaroslavl Oblast', 3, 'Rybinsk');
+VALUES (6, 1, 'Russia', 2, 'Yaroslavl Oblast', 6, 'Rybinsk');
 INSERT INTO birthplace (birthplace_id, country_key, country_name, region_key, region_name, city_key, city_name)
-VALUES (7, 1, 'Russia', 2, 'Yaroslavl Oblast', 4, 'Uglich');
+VALUES (7, 1, 'Russia', 2, 'Yaroslavl Oblast', 7, 'Uglich');
 INSERT INTO birthplace (birthplace_id, country_key, country_name, region_key, region_name, city_key, city_name)
-VALUES (8, 1, 'Russia', 3, 'Krasnoyarsk Krai', 1, 'Krasnoyarsk');
+VALUES (8, 1, 'Russia', 3, 'Krasnoyarsk Krai', 8, 'Krasnoyarsk');
 INSERT INTO birthplace (birthplace_id, country_key, country_name, region_key, region_name, city_key, city_name)
-VALUES (9, 1, 'Russia', 3, 'Krasnoyarsk Krai', 2, 'Norilsk');
+VALUES (9, 1, 'Russia', 3, 'Krasnoyarsk Krai', 9, 'Norilsk');
 INSERT INTO birthplace (birthplace_id, country_key, country_name, region_key, region_name, city_key, city_name)
-VALUES (10, 1, 'Russia', 3, 'Krasnoyarsk Krai', 3, 'Zelenogorsk');
+VALUES (10, 1, 'Russia', 3, 'Krasnoyarsk Krai', 10, 'Zelenogorsk');
 INSERT INTO birthplace (birthplace_id, country_key, country_name, region_key, region_name, city_key, city_name)
-VALUES (11, 2, 'Belarus', 1, 'Gomel Region', 1, 'Gomel');
+VALUES (11, 2, 'Belarus', 4, 'Gomel Region', 11, 'Gomel');
 INSERT INTO birthplace (birthplace_id, country_key, country_name, region_key, region_name, city_key, city_name)
-VALUES (12, 2, 'Belarus', 1, 'Gomel Region', 2, 'Zhlobin');
+VALUES (12, 2, 'Belarus', 4, 'Gomel Region', 12, 'Zhlobin');
 INSERT INTO birthplace (birthplace_id, country_key, country_name, region_key, region_name, city_key, city_name)
-VALUES (13, 2, 'Belarus', 1, 'Gomel Region', 3, 'Dobrush');
+VALUES (13, 2, 'Belarus', 4, 'Gomel Region', 13, 'Dobrush');
 INSERT INTO birthplace (birthplace_id, country_key, country_name, region_key, region_name, city_key, city_name)
-VALUES (14, 2, 'Belarus', 2, 'Minsk Region', 1, 'Minsk');
+VALUES (14, 2, 'Belarus', 5, 'Minsk Region', 14, 'Minsk');
 INSERT INTO birthplace (birthplace_id, country_key, country_name, region_key, region_name, city_key, city_name)
-VALUES (15, 2, 'Belarus', 2, 'Minsk Region', 2, 'Salihorsk');
+VALUES (15, 2, 'Belarus', 5, 'Minsk Region', 15, 'Salihorsk');
 INSERT INTO birthplace (birthplace_id, country_key, country_name, region_key, region_name, city_key, city_name)
-VALUES (16, 2, 'Belarus', 2, 'Minsk Region', 3, 'Slutsk');
+VALUES (16, 2, 'Belarus', 5, 'Minsk Region', 16, 'Slutsk');
 
 INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)
 VALUES (1, 1990, '1990', 1, '1');

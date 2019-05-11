@@ -32,14 +32,20 @@ class Birthplace:
 
 
 def generate_birthplaces():
-    birthplaces_table = []
-    birthplace_id = 1
-    for i, county in enumerate(birthplaces_dict.keys(), 1):
-        for j, region in enumerate(birthplaces_dict[county].keys(), 1):
-            for k, city in enumerate(birthplaces_dict[county][region], 1):
-                birthplaces_table.append(Birthplace(birthplace_id, i, county, j, region, k, city))
+    table = []
+    birthplace_id = 0
+    country_key = 0
+    region_key = 0
+    city_key = 0
+    for country in birthplaces_dict.keys():
+        country_key += 1
+        for region in birthplaces_dict[country].keys():
+            region_key += 1
+            for city in birthplaces_dict[country][region]:
                 birthplace_id += 1
-    return birthplaces_table
+                city_key += 1
+                table.append(Birthplace(birthplace_id, country_key, country, region_key, region, city_key, city))
+    return table
 
 
 class Time:
