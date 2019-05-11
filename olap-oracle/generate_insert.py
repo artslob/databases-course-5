@@ -102,8 +102,17 @@ def write_to_file(target, *strings):
     if not target.exists():
         raise ValueError(f"target file '{target}' not exist!")
 
+    output = '\n\n'.join(strings) + '\n'
+
+    with open(target, 'r') as f:
+        content = f.read()
+
+    if output == content:
+        print('files content equals to output')
+        return
+
     with open(target, 'w') as f:
-        f.write('\n'.join(strings) + '\n')
+        f.write(output)
 
 
 def main():
@@ -124,9 +133,10 @@ def main():
     if not args.no_print:
         print('\n', '\n\n'.join([birthplaces_insert, times_insert, fact2_insert]), sep='')
 
+    print()
     if args.write:
-        write_to_file(target, birthplaces_insert, '', times_insert, '', fact2_insert)
-        print(f'successful write to {target}')
+        write_to_file(target, birthplaces_insert, times_insert, fact2_insert)
+        print(f'successful write')
         return
     print('write operation was not performed')
 
