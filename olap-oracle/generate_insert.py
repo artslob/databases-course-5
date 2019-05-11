@@ -16,6 +16,17 @@ birthplaces_dict = {
 }
 
 
+class Table:
+    def __init__(self):
+        self.rows = []
+
+    def append(self, *items):
+        self.rows.append(*items)
+
+    def __str__(self):
+        return '\n'.join(str(i) for i in self.rows)
+
+
 class Birthplace:
     def __init__(self, birthplace_id, country_key, country_name, region_key, region_name, city_key, city_name):
         self.birthplace_id = birthplace_id
@@ -34,7 +45,7 @@ class Birthplace:
 
     @staticmethod
     def create_table():
-        table = []
+        table = Table()
         get_key = count(1)
         for country in birthplaces_dict.keys():
             country_key = next(get_key)
@@ -63,7 +74,7 @@ class Time:
 
     @staticmethod
     def create_table():
-        table = []
+        table = Table()
         get_key = count(1)
         t_id = 1
         for year in range(1990, 2000):
@@ -88,11 +99,11 @@ class Fact2:
 
     @staticmethod
     def create_table(birthplaces, times):
-        """before call this function recommended to seed generator"""
-        table = []
+        """before call this function recommended step is to seed generator"""
+        table = Table()
         t_id = 1
-        for b in birthplaces:
-            for t in times:
+        for b in birthplaces.rows:
+            for t in times.rows:
                 table.append(Fact2(t_id, random.randint(1_000, 10_000), b.birthplace_id, t.time_id))
                 t_id += 1
         return table
@@ -126,9 +137,9 @@ def main():
     times = Time.create_table()
     fact2 = Fact2.create_table(birthplaces, times)
 
-    birthplaces_insert = '\n'.join(str(i) for i in birthplaces)
-    times_insert = '\n'.join(str(i) for i in times)
-    fact2_insert = '\n'.join(str(i) for i in fact2)
+    birthplaces_insert = str(birthplaces)
+    times_insert = str(times)
+    fact2_insert = str(fact2)
 
     if not args.no_print:
         print('\n', '\n\n'.join([birthplaces_insert, times_insert, fact2_insert]), sep='')
