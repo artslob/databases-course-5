@@ -45,10 +45,14 @@ def write_to_file():
         raise ValueError(f"target file '{target_file}' not exist!")
 
     with open(target_file, 'w') as f:
-        f.write(generate_birthplaces())
-        f.write('\n\n')
-        f.write(generate_times())
-        f.write('\n')
+        f.write(
+            '\n'.join([
+                generate_birthplaces(),
+                '',
+                generate_times(),
+            ])
+            + '\n'
+        )
 
 
 if __name__ == '__main__':
