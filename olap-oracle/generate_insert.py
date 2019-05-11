@@ -15,24 +15,28 @@ birthplaces = {
 
 def generate_birthplaces():
     lines = []
+    t_id = 1
     for i, county in enumerate(birthplaces.keys(), 1):
         for j, region in enumerate(birthplaces[county].keys(), 1):
             for k, city in enumerate(birthplaces[county][region], 1):
                 lines.extend([
-                    f'INSERT INTO birthplace (country_key, country_name, region_key, region_name, city_key, city_name)',
-                    f"VALUES ({i}, '{county}', {j}, '{region}', {k}, '{city}');"
+                    f'INSERT INTO birthplace (birthplace_id, country_key, country_name, region_key, region_name, city_key, city_name)',
+                    f"VALUES ({t_id}, {i}, '{county}', {j}, '{region}', {k}, '{city}');"
                 ])
+                t_id += 1
     return '\n'.join(lines)
 
 
 def generate_times():
     lines = []
+    t_id = 1
     for year in range(1990, 2000):
         for j in range(1, 3):
             lines.extend([
-                f'INSERT INTO time_t (year_key, year_name, term_key, term_name)',
-                f"VALUES ({year}, '{year}', {j}, '{j}');"
+                f'INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)',
+                f"VALUES ({t_id}, {year}, '{year}', {j}, '{j}');"
             ])
+            t_id += 1
     return '\n'.join(lines)
 
 
