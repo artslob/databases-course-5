@@ -38,10 +38,9 @@ class Birthplace:
         self.city_name = city_name
 
     def __str__(self):
-        return '\n'.join([
-            f'INSERT INTO birthplace (birthplace_id, country_key, country_name, region_key, region_name, city_key, city_name)',
-            f"VALUES ({self.birthplace_id}, {self.country_key}, '{self.country_name}', {self.region_key}, '{self.region_name}', {self.city_key}, '{self.city_name}');"
-        ])
+        return (
+            f"INSERT INTO birthplace (birthplace_id, country_key, country_name, region_key, region_name, city_key, city_name)\n"
+            f"VALUES ({self.birthplace_id}, {self.country_key}, '{self.country_name}', {self.region_key}, '{self.region_name}', {self.city_key}, '{self.city_name}');")
 
     @staticmethod
     def create_table():
@@ -67,10 +66,8 @@ class Time:
         self.term_name = term_name
 
     def __str__(self):
-        return '\n'.join([
-            f'INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)',
-            f"VALUES ({self.time_id}, {self.year_key}, '{self.year_name}', {self.term_key}, '{self.term_name}');"
-        ])
+        return (f"INSERT INTO time_t (time_id, year_key, year_name, term_key, term_name)\n"
+                f"VALUES ({self.time_id}, {self.year_key}, '{self.year_name}', {self.term_key}, '{self.term_name}');")
 
     @staticmethod
     def create_table():
@@ -92,10 +89,8 @@ class Fact2:
         self.time_id = time_id
 
     def __str__(self):
-        return '\n'.join([
-            f'INSERT INTO fact2 (fact2_id, people_count, birthplace_id, time_id)',
-            f"VALUES ({self.fact2_id}, {self.people_count}, {self.birthplace_id}, {self.time_id});"
-        ])
+        return (f"INSERT INTO fact2 (fact2_id, people_count, birthplace_id, time_id)\n"
+                f"VALUES ({self.fact2_id}, {self.people_count}, {self.birthplace_id}, {self.time_id});")
 
     @staticmethod
     def create_table(birthplaces, times):
@@ -133,10 +128,9 @@ class Publishers:
         self.publisher_name = publisher_name
 
     def __str__(self):
-        return '\n'.join([
-            f'INSERT INTO publishers (publisher_id, country_key, country_name, city_key, city_name, publisher_key, publisher_name)',
-            f"VALUES ({self.publisher_id}, {self.country_key}, '{self.country_name}', {self.city_key}, '{self.city_name}', {self.publisher_key}, '{self.publisher_name}');"
-        ])
+        return (
+            f"INSERT INTO publishers (publisher_id, country_key, country_name, city_key, city_name, publisher_key, publisher_name)\n"
+            f"VALUES ({self.publisher_id}, {self.country_key}, '{self.country_name}', {self.city_key}, '{self.city_name}', {self.publisher_key}, '{self.publisher_name}');")
 
     @staticmethod
     def create_table():
@@ -149,7 +143,8 @@ class Publishers:
                 for publisher_name in publishers_dict[country_name][city_name]:
                     publisher_id = next(get_key)
                     publisher_key = next(get_key)
-                    table.append(Publishers(publisher_id, country_key, country_name, city_key, city_name, publisher_key, publisher_name))
+                    table.append(Publishers(publisher_id, country_key, country_name, city_key, city_name, publisher_key,
+                                            publisher_name))
         return table
 
 
