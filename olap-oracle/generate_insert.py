@@ -220,6 +220,37 @@ class Fact4:
         return table
 
 
+class Fact1:
+    def __init__(self, fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count,
+                 conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id):
+        self.fact1_id = fact1_id
+        self.honor_diplomas = honor_diplomas
+        self.usual_diplomas = usual_diplomas
+        self.publication_count = publication_count
+        self.student_cards_count = student_cards_count
+        self.conference_count = conference_count
+        self.employee_cards_count = employee_cards_count
+        self.live_campus_count = live_campus_count
+        self.not_live_campus_count = not_live_campus_count
+        self.time_id = time_id
+
+    def __str__(self):
+        return (
+            f"INSERT INTO fact1 (fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count, conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id)\n"
+            f"VALUES ({self.fact1_id}, {self.honor_diplomas}, {self.usual_diplomas}, {self.publication_count}, {self.student_cards_count}, {self.conference_count}, {self.employee_cards_count}, {self.live_campus_count}, {self.not_live_campus_count}, {self.time_id});")
+
+    @staticmethod
+    def create_table(times):
+        """before call this function recommended step is to seed generator"""
+        table = Table()
+        t_id = count(1)
+        for t in times.rows:
+            table.append(Fact1(next(t_id), random.randint(20, 60), random.randint(200, 600), random.randint(50, 100),
+                               random.randint(500, 1000), random.randint(50, 150), random.randint(500, 1000),
+                               random.randint(5_000, 10_000), random.randint(2_000, 3_000), t.time_id))
+        return table
+
+
 def write_to_file(target, *strings):
     if not target.exists():
         raise ValueError(f"target file '{target}' not exist!")
@@ -251,6 +282,7 @@ def main():
     fact3 = Fact3.create_table(publishers, times)
     campus = Campus.create_table()
     fact4 = Fact4.create_table(campus, times)
+    fact1 = Fact1.create_table(times)
 
     birthplaces_insert = str(birthplaces)
     times_insert = str(times)
@@ -259,9 +291,10 @@ def main():
     fact3_insert = str(fact3)
     campus_insert = str(campus)
     fact4_insert = str(fact4)
+    fact1_insert = str(fact1)
 
     inserts = [birthplaces_insert, times_insert, fact2_insert, publishers_insert, fact3_insert, campus_insert,
-               fact4_insert]
+               fact4_insert, fact1_insert]
 
     if not args.no_print:
         print('\n', '\n\n'.join(inserts), sep='')

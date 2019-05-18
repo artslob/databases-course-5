@@ -1304,3 +1304,44 @@ INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count
 VALUES (119, 4, 991, 3529, 6225, 8692, 6, 19);
 INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
 VALUES (120, 3, 446, 7512, 6315, 6383, 6, 20);
+
+INSERT INTO fact1 (fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count, conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id)
+VALUES (1, 54, 394, 70, 820, 141, 954, 8997, 2893, 1);
+INSERT INTO fact1 (fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count, conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id)
+VALUES (2, 54, 218, 89, 535, 80, 823, 7354, 2232, 2);
+INSERT INTO fact1 (fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count, conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id)
+VALUES (3, 25, 422, 56, 889, 131, 860, 5823, 2454, 3);
+INSERT INTO fact1 (fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count, conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id)
+VALUES (4, 30, 555, 69, 962, 53, 523, 7657, 2815, 4);
+INSERT INTO fact1 (fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count, conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id)
+VALUES (5, 23, 350, 72, 691, 105, 574, 7000, 2543, 5);
+INSERT INTO fact1 (fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count, conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id)
+VALUES (6, 46, 489, 93, 905, 73, 587, 6434, 2080, 6);
+INSERT INTO fact1 (fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count, conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id)
+VALUES (7, 59, 395, 89, 849, 80, 754, 9777, 2146, 7);
+INSERT INTO fact1 (fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count, conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id)
+VALUES (8, 34, 436, 90, 630, 108, 630, 5076, 2920, 8);
+INSERT INTO fact1 (fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count, conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id)
+VALUES (9, 49, 347, 93, 779, 70, 537, 8618, 2967, 9);
+INSERT INTO fact1 (fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count, conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id)
+VALUES (10, 42, 500, 69, 827, 104, 853, 7048, 2467, 10);
+INSERT INTO fact1 (fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count, conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id)
+VALUES (11, 39, 301, 74, 936, 111, 554, 6943, 2390, 11);
+INSERT INTO fact1 (fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count, conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id)
+VALUES (12, 56, 383, 86, 651, 139, 651, 5179, 2849, 12);
+INSERT INTO fact1 (fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count, conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id)
+VALUES (13, 45, 340, 50, 789, 137, 898, 5401, 2932, 13);
+INSERT INTO fact1 (fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count, conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id)
+VALUES (14, 58, 581, 81, 926, 86, 897, 6885, 2621, 14);
+INSERT INTO fact1 (fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count, conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id)
+VALUES (15, 42, 312, 90, 597, 129, 628, 6120, 2643, 15);
+INSERT INTO fact1 (fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count, conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id)
+VALUES (16, 26, 521, 91, 520, 89, 903, 8611, 2034, 16);
+INSERT INTO fact1 (fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count, conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id)
+VALUES (17, 57, 386, 96, 567, 61, 965, 7417, 2334, 17);
+INSERT INTO fact1 (fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count, conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id)
+VALUES (18, 46, 289, 62, 567, 150, 776, 7997, 2543, 18);
+INSERT INTO fact1 (fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count, conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id)
+VALUES (19, 52, 339, 60, 631, 111, 995, 7417, 2764, 19);
+INSERT INTO fact1 (fact1_id, honor_diplomas, usual_diplomas, publication_count, student_cards_count, conference_count, employee_cards_count, live_campus_count, not_live_campus_count, time_id)
+VALUES (20, 41, 258, 79, 993, 59, 572, 6848, 2880, 20);
