@@ -1063,3 +1063,244 @@ INSERT INTO campus (campus_id, address_key, address_name)
 VALUES (5, 5, 'Novoizmajlovskij pr., 16');
 INSERT INTO campus (campus_id, address_key, address_name)
 VALUES (6, 6, 'ul. Vavilovyh, d. 12');
+
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (1, 6, 518, 6344, 11592, 5844, 1, 1);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (2, 5, 230, 4143, 11888, 7211, 1, 2);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (3, 6, 866, 3851, 14324, 5930, 1, 3);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (4, 4, 661, 1006, 9978, 5700, 1, 4);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (5, 2, 540, 6279, 12618, 8238, 1, 5);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (6, 4, 791, 4501, 13375, 8752, 1, 6);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (7, 6, 273, 2389, 9649, 9445, 1, 7);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (8, 6, 748, 6491, 6530, 4848, 1, 8);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (9, 6, 417, 4680, 8262, 3414, 1, 9);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (10, 1, 147, 5011, 12784, 2193, 1, 10);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (11, 4, 524, 4185, 11291, 9099, 1, 11);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (12, 4, 349, 3417, 5090, 2746, 1, 12);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (13, 4, 324, 3881, 13486, 8611, 1, 13);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (14, 1, 670, 5082, 6988, 8478, 1, 14);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (15, 2, 920, 8612, 13702, 6198, 1, 15);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (16, 4, 727, 9270, 11991, 9976, 1, 16);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (17, 4, 262, 8777, 12373, 5246, 1, 17);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (18, 2, 960, 5543, 13540, 8939, 1, 18);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (19, 6, 344, 5499, 12206, 2269, 1, 19);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (20, 6, 392, 4841, 9451, 6502, 1, 20);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (21, 3, 653, 2320, 7267, 3471, 2, 1);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (22, 2, 492, 3503, 8505, 2052, 2, 2);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (23, 4, 517, 6421, 13890, 8633, 2, 3);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (24, 4, 163, 4388, 11883, 7381, 2, 4);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (25, 5, 812, 1320, 14432, 7232, 2, 5);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (26, 4, 106, 6763, 9892, 7389, 2, 6);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (27, 4, 651, 9947, 14883, 4613, 2, 7);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (28, 4, 324, 5471, 12140, 8956, 2, 8);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (29, 1, 498, 6507, 11624, 3704, 2, 9);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (30, 4, 230, 9751, 5441, 7455, 2, 10);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (31, 5, 677, 1444, 6375, 8022, 2, 11);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (32, 2, 987, 8564, 7977, 1823, 2, 12);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (33, 3, 488, 6363, 8467, 8449, 2, 13);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (34, 3, 445, 7211, 9558, 7906, 2, 14);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (35, 3, 954, 2341, 12705, 1317, 2, 15);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (36, 6, 652, 1853, 10733, 4673, 2, 16);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (37, 6, 170, 1659, 5508, 5051, 2, 17);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (38, 2, 959, 1333, 7496, 4908, 2, 18);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (39, 2, 584, 2874, 14240, 4571, 2, 19);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (40, 4, 816, 5198, 11043, 3749, 2, 20);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (41, 5, 721, 2876, 7683, 6096, 3, 1);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (42, 1, 692, 1420, 10111, 7149, 3, 2);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (43, 4, 832, 4249, 6245, 4978, 3, 3);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (44, 1, 813, 5941, 14837, 2983, 3, 4);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (45, 5, 901, 1672, 10688, 9728, 3, 5);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (46, 4, 777, 7071, 6129, 9289, 3, 6);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (47, 6, 449, 1207, 11882, 9031, 3, 7);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (48, 1, 543, 6934, 12532, 3506, 3, 8);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (49, 4, 280, 9548, 9425, 9817, 3, 9);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (50, 4, 576, 8136, 14707, 5397, 3, 10);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (51, 3, 972, 5022, 6419, 5569, 3, 11);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (52, 4, 349, 8613, 14336, 7209, 3, 12);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (53, 3, 129, 9098, 10325, 3979, 3, 13);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (54, 4, 317, 6813, 9232, 6576, 3, 14);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (55, 3, 710, 5526, 14106, 1166, 3, 15);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (56, 5, 295, 2402, 8954, 7658, 3, 16);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (57, 4, 668, 4937, 12800, 9041, 3, 17);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (58, 4, 911, 1282, 6524, 5820, 3, 18);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (59, 2, 514, 4986, 10016, 7046, 3, 19);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (60, 4, 666, 9698, 10632, 7971, 3, 20);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (61, 6, 663, 6419, 10764, 8434, 4, 1);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (62, 3, 413, 5118, 8777, 2976, 4, 2);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (63, 6, 297, 6169, 6958, 9779, 4, 3);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (64, 6, 289, 4138, 8545, 8933, 4, 4);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (65, 3, 841, 9595, 14777, 5636, 4, 5);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (66, 1, 952, 4180, 9853, 4727, 4, 6);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (67, 3, 283, 5952, 5231, 9751, 4, 7);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (68, 2, 380, 1745, 5893, 5786, 4, 8);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (69, 6, 229, 9042, 6680, 1200, 4, 9);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (70, 5, 391, 8690, 12843, 8216, 4, 10);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (71, 3, 288, 1841, 9136, 8827, 4, 11);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (72, 1, 941, 2070, 11565, 9056, 4, 12);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (73, 1, 690, 1878, 7485, 3444, 4, 13);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (74, 5, 411, 2395, 9066, 2940, 4, 14);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (75, 5, 882, 7818, 14933, 4697, 4, 15);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (76, 5, 489, 8381, 12253, 5871, 4, 16);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (77, 5, 539, 6003, 14316, 1986, 4, 17);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (78, 5, 857, 2625, 8404, 4457, 4, 18);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (79, 3, 776, 2330, 7573, 4929, 4, 19);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (80, 2, 665, 2229, 7564, 1043, 4, 20);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (81, 4, 561, 8699, 9771, 1534, 5, 1);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (82, 2, 395, 5632, 12438, 2166, 5, 2);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (83, 6, 339, 5334, 14663, 4241, 5, 3);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (84, 4, 217, 9922, 8683, 3441, 5, 4);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (85, 3, 946, 3330, 6169, 1977, 5, 5);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (86, 2, 911, 6039, 14749, 5728, 5, 6);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (87, 4, 227, 8679, 9982, 7594, 5, 7);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (88, 3, 612, 9847, 13090, 8172, 5, 8);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (89, 1, 712, 1653, 12078, 6280, 5, 9);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (90, 5, 356, 1423, 6496, 4750, 5, 10);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (91, 6, 956, 1339, 9415, 1659, 5, 11);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (92, 2, 581, 9502, 12245, 5557, 5, 12);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (93, 2, 699, 8141, 13056, 2494, 5, 13);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (94, 4, 456, 7690, 10460, 6260, 5, 14);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (95, 6, 207, 3634, 10403, 7744, 5, 15);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (96, 6, 607, 5722, 11561, 1601, 5, 16);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (97, 4, 190, 6153, 9135, 6296, 5, 17);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (98, 1, 891, 7622, 13431, 1018, 5, 18);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (99, 6, 990, 9889, 12569, 7770, 5, 19);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (100, 1, 292, 9494, 10927, 9167, 5, 20);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (101, 6, 552, 1845, 8335, 5375, 6, 1);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (102, 5, 234, 5719, 12178, 8941, 6, 2);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (103, 1, 129, 4920, 7594, 6091, 6, 3);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (104, 5, 114, 7684, 6527, 4681, 6, 4);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (105, 1, 572, 2924, 7522, 9165, 6, 5);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (106, 6, 398, 9337, 9479, 7807, 6, 6);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (107, 4, 583, 4993, 12483, 3369, 6, 7);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (108, 4, 295, 9327, 7236, 2143, 6, 8);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (109, 3, 891, 7798, 10568, 9318, 6, 9);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (110, 3, 940, 1042, 9634, 5891, 6, 10);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (111, 5, 693, 9022, 7434, 8316, 6, 11);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (112, 5, 595, 6654, 10446, 9903, 6, 12);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (113, 4, 566, 6272, 8090, 4912, 6, 13);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (114, 5, 492, 4826, 11730, 1715, 6, 14);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (115, 3, 862, 8749, 11246, 7325, 6, 15);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (116, 6, 911, 3492, 13115, 1606, 6, 16);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (117, 2, 614, 6439, 6644, 8213, 6, 17);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (118, 1, 638, 8486, 5251, 3361, 6, 18);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (119, 4, 991, 3529, 6225, 8692, 6, 19);
+INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)
+VALUES (120, 3, 446, 7512, 6315, 6383, 6, 20);

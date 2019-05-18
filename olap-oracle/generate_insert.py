@@ -191,6 +191,35 @@ class Campus:
         return table
 
 
+class Fact4:
+    def __init__(self, fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id):
+        self.fact4_id = fact4_id
+        self.room_count = room_count
+        self.a_mark = a_mark
+        self.a_b_mark = a_b_mark
+        self.a_e_mark = a_e_mark
+        self.debts_count = debts_count
+        self.campus_id = campus_id
+        self.time_id = time_id
+
+    def __str__(self):
+        return (
+            f"INSERT INTO fact4 (fact4_id, room_count, a_mark, a_b_mark, a_e_mark, debts_count, campus_id, time_id)\n"
+            f"VALUES ({self.fact4_id}, {self.room_count}, {self.a_mark}, {self.a_b_mark}, {self.a_e_mark}, {self.debts_count}, {self.campus_id}, {self.time_id});")
+
+    @staticmethod
+    def create_table(campus, times):
+        """before call this function recommended step is to seed generator"""
+        table = Table()
+        t_id = count(1)
+        for c in campus.rows:
+            for t in times.rows:
+                table.append(
+                    Fact4(next(t_id), random.randint(1, 6), random.randint(100, 1_000), random.randint(1_000, 10_000),
+                          random.randint(5_000, 15_000), random.randint(1_000, 10_000), c.campus_id, t.time_id))
+        return table
+
+
 def write_to_file(target, *strings):
     if not target.exists():
         raise ValueError(f"target file '{target}' not exist!")
@@ -221,6 +250,7 @@ def main():
     publishers = Publishers.create_table()
     fact3 = Fact3.create_table(publishers, times)
     campus = Campus.create_table()
+    fact4 = Fact4.create_table(campus, times)
 
     birthplaces_insert = str(birthplaces)
     times_insert = str(times)
@@ -228,8 +258,10 @@ def main():
     publishers_insert = str(publishers)
     fact3_insert = str(fact3)
     campus_insert = str(campus)
+    fact4_insert = str(fact4)
 
-    inserts = [birthplaces_insert, times_insert, fact2_insert, publishers_insert, fact3_insert, campus_insert]
+    inserts = [birthplaces_insert, times_insert, fact2_insert, publishers_insert, fact3_insert, campus_insert,
+               fact4_insert]
 
     if not args.no_print:
         print('\n', '\n\n'.join(inserts), sep='')
