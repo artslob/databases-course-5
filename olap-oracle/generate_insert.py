@@ -271,7 +271,7 @@ def write_to_file(target, *strings):
 def main():
     args = parse_args()
     random.seed(42)
-    cwd = Path().absolute()
+    cwd = Path(__file__).parent.absolute()
     target = cwd / 'scripts' / 'insert.sql'
     print(f"target file is: '{target}'")
 
