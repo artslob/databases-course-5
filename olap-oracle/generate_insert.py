@@ -170,6 +170,27 @@ class Fact3:
         return table
 
 
+class Campus:
+    addresses = ["per. Vyazemskij, d. 5/7", "ul. Lensoveta, d. 23", "Alpijskij per., d.15",
+                 "ul. Belorusskaya, d. 6", "Novoizmajlovskij pr., 16", "ul. Vavilovyh, d. 12"]
+
+    def __init__(self, campus_id, address_key, address_name):
+        self.campus_id = campus_id
+        self.address_key = address_key
+        self.address_name = address_name
+
+    def __str__(self):
+        return (f"INSERT INTO campus (campus_id, address_key, address_name)\n"
+                f"VALUES ({self.campus_id}, {self.address_key}, '{self.address_name}');")
+
+    @classmethod
+    def create_table(cls):
+        table = Table()
+        for t_id, addr in enumerate(cls.addresses, 1):
+            table.append(Campus(t_id, t_id, addr))
+        return table
+
+
 def write_to_file(target, *strings):
     if not target.exists():
         raise ValueError(f"target file '{target}' not exist!")
@@ -199,14 +220,16 @@ def main():
     fact2 = Fact2.create_table(birthplaces, times)
     publishers = Publishers.create_table()
     fact3 = Fact3.create_table(publishers, times)
+    campus = Campus.create_table()
 
     birthplaces_insert = str(birthplaces)
     times_insert = str(times)
     fact2_insert = str(fact2)
     publishers_insert = str(publishers)
     fact3_insert = str(fact3)
+    campus_insert = str(campus)
 
-    inserts = [birthplaces_insert, times_insert, fact2_insert, publishers_insert, fact3_insert]
+    inserts = [birthplaces_insert, times_insert, fact2_insert, publishers_insert, fact3_insert, campus_insert]
 
     if not args.no_print:
         print('\n', '\n\n'.join(inserts), sep='')

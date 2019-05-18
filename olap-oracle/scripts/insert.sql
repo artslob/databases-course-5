@@ -1050,3 +1050,16 @@ INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
 VALUES (159, 619, 22, 19);
 INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
 VALUES (160, 416, 22, 20);
+
+INSERT INTO campus (campus_id, address_key, address_name)
+VALUES (1, 1, 'per. Vyazemskij, d. 5/7');
+INSERT INTO campus (campus_id, address_key, address_name)
+VALUES (2, 2, 'ul. Lensoveta, d. 23');
+INSERT INTO campus (campus_id, address_key, address_name)
+VALUES (3, 3, 'Alpijskij per., d.15');
+INSERT INTO campus (campus_id, address_key, address_name)
+VALUES (4, 4, 'ul. Belorusskaya, d. 6');
+INSERT INTO campus (campus_id, address_key, address_name)
+VALUES (5, 5, 'Novoizmajlovskij pr., 16');
+INSERT INTO campus (campus_id, address_key, address_name)
+VALUES (6, 6, 'ul. Vavilovyh, d. 12');
