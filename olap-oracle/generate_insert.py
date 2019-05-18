@@ -109,6 +109,50 @@ class Fact2:
         return table
 
 
+publishers_dict = {
+    'Russia': {
+        'Vologda': ['Eksmo', 'AST'],
+        'Yaroslavl': ['ROSMAN', 'ALFA'],
+        'Krasnoyarsk': ['OLMA'],
+    },
+    'Belarus': {
+        'Gomel': ['CENTRPOLIGRAF', 'AZBUKA'],
+        'Minsk': ['ATTIKUS'],
+    }
+}
+
+
+class Publishers:
+    def __init__(self, publisher_id, country_key, country_name, city_key, city_name, publisher_key, publisher_name):
+        self.publisher_id = publisher_id
+        self.country_key = country_key
+        self.country_name = country_name
+        self.city_key = city_key
+        self.city_name = city_name
+        self.publisher_key = publisher_key
+        self.publisher_name = publisher_name
+
+    def __str__(self):
+        return '\n'.join([
+            f'INSERT INTO publishers (publisher_id, country_key, country_name, city_key, city_name, publisher_key, publisher_name)',
+            f"VALUES ({self.publisher_id}, {self.country_key}, '{self.country_name}', {self.city_key}, '{self.city_name}', {self.publisher_key}, '{self.publisher_name}');"
+        ])
+
+    @staticmethod
+    def create_table():
+        table = Table()
+        get_key = count(1)
+        for country_name in publishers_dict.keys():
+            country_key = next(get_key)
+            for city_name in publishers_dict[country_name].keys():
+                city_key = next(get_key)
+                for publisher_name in publishers_dict[country_name][city_name]:
+                    publisher_id = next(get_key)
+                    publisher_key = next(get_key)
+                    table.append(Publishers(publisher_id, country_key, country_name, city_key, city_name, publisher_key, publisher_name))
+        return table
+
+
 def write_to_file(target, *strings):
     if not target.exists():
         raise ValueError(f"target file '{target}' not exist!")
@@ -136,17 +180,19 @@ def main():
     birthplaces = Birthplace.create_table()
     times = Time.create_table()
     fact2 = Fact2.create_table(birthplaces, times)
+    publishers = Publishers.create_table()
 
     birthplaces_insert = str(birthplaces)
     times_insert = str(times)
     fact2_insert = str(fact2)
+    publishers_insert = str(publishers)
 
     if not args.no_print:
-        print('\n', '\n\n'.join([birthplaces_insert, times_insert, fact2_insert]), sep='')
+        print('\n', '\n\n'.join([birthplaces_insert, times_insert, fact2_insert, publishers_insert]), sep='')
 
     print()
     if args.write:
-        write_to_file(target, birthplaces_insert, times_insert, fact2_insert)
+        write_to_file(target, birthplaces_insert, times_insert, fact2_insert, publishers_insert)
         print(f'successful write')
         return
     print('write operation was not performed')

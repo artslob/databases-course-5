@@ -712,3 +712,20 @@ INSERT INTO fact2 (fact2_id, people_count, birthplace_id, time_id)
 VALUES (319, 1832, 38, 19);
 INSERT INTO fact2 (fact2_id, people_count, birthplace_id, time_id)
 VALUES (320, 2512, 38, 20);
+
+INSERT INTO publishers (publisher_id, country_key, country_name, city_key, city_name, publisher_key, publisher_name)
+VALUES (3, 1, 'Russia', 2, 'Vologda', 4, 'Eksmo');
+INSERT INTO publishers (publisher_id, country_key, country_name, city_key, city_name, publisher_key, publisher_name)
+VALUES (5, 1, 'Russia', 2, 'Vologda', 6, 'AST');
+INSERT INTO publishers (publisher_id, country_key, country_name, city_key, city_name, publisher_key, publisher_name)
+VALUES (8, 1, 'Russia', 7, 'Yaroslavl', 9, 'ROSMAN');
+INSERT INTO publishers (publisher_id, country_key, country_name, city_key, city_name, publisher_key, publisher_name)
+VALUES (10, 1, 'Russia', 7, 'Yaroslavl', 11, 'ALFA');
+INSERT INTO publishers (publisher_id, country_key, country_name, city_key, city_name, publisher_key, publisher_name)
+VALUES (13, 1, 'Russia', 12, 'Krasnoyarsk', 14, 'OLMA');
+INSERT INTO publishers (publisher_id, country_key, country_name, city_key, city_name, publisher_key, publisher_name)
+VALUES (17, 15, 'Belarus', 16, 'Gomel', 18, 'CENTRPOLIGRAF');
+INSERT INTO publishers (publisher_id, country_key, country_name, city_key, city_name, publisher_key, publisher_name)
+VALUES (19, 15, 'Belarus', 16, 'Gomel', 20, 'AZBUKA');
+INSERT INTO publishers (publisher_id, country_key, country_name, city_key, city_name, publisher_key, publisher_name)
+VALUES (22, 15, 'Belarus', 21, 'Minsk', 23, 'ATTIKUS');

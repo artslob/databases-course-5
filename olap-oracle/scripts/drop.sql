@@ -1,3 +1,5 @@
+DROP TABLE fact3 PURGE;
+DROP TABLE publishers PURGE;
 DROP TABLE fact2 PURGE;
 DROP TABLE time_t PURGE;
 DROP TABLE birthplace PURGE;
