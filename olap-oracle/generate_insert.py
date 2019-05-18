@@ -187,12 +187,14 @@ def main():
     fact2_insert = str(fact2)
     publishers_insert = str(publishers)
 
+    inserts = [birthplaces_insert, times_insert, fact2_insert, publishers_insert]
+
     if not args.no_print:
-        print('\n', '\n\n'.join([birthplaces_insert, times_insert, fact2_insert, publishers_insert]), sep='')
+        print('\n', '\n\n'.join(inserts), sep='')
 
     print()
     if args.write:
-        write_to_file(target, birthplaces_insert, times_insert, fact2_insert, publishers_insert)
+        write_to_file(target, *inserts)
         print(f'successful write')
         return
     print('write operation was not performed')
