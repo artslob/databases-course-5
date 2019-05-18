@@ -3,18 +3,6 @@ import random
 from itertools import count
 from pathlib import Path
 
-birthplaces_dict = {
-    'Russia': {
-        'Vologda Oblast': ['Vologda', 'Cherepovets', 'Sokol'],
-        'Yaroslavl Oblast': ['Yaroslavl', 'Rostov', 'Rybinsk', 'Uglich'],
-        'Krasnoyarsk Krai': ['Krasnoyarsk', 'Norilsk', 'Zelenogorsk'],
-    },
-    'Belarus': {
-        'Gomel Region': ['Gomel', 'Zhlobin', 'Dobrush'],
-        'Minsk Region': ['Minsk', 'Salihorsk', 'Slutsk'],
-    }
-}
-
 
 class Table:
     def __init__(self):
@@ -28,6 +16,18 @@ class Table:
 
 
 class Birthplace:
+    birthplaces_dict = {
+        'Russia': {
+            'Vologda Oblast': ['Vologda', 'Cherepovets', 'Sokol'],
+            'Yaroslavl Oblast': ['Yaroslavl', 'Rostov', 'Rybinsk', 'Uglich'],
+            'Krasnoyarsk Krai': ['Krasnoyarsk', 'Norilsk', 'Zelenogorsk'],
+        },
+        'Belarus': {
+            'Gomel Region': ['Gomel', 'Zhlobin', 'Dobrush'],
+            'Minsk Region': ['Minsk', 'Salihorsk', 'Slutsk'],
+        }
+    }
+
     def __init__(self, birthplace_id, country_key, country_name, region_key, region_name, city_key, city_name):
         self.birthplace_id = birthplace_id
         self.country_key = country_key
@@ -42,15 +42,15 @@ class Birthplace:
             f"INSERT INTO birthplace (birthplace_id, country_key, country_name, region_key, region_name, city_key, city_name)\n"
             f"VALUES ({self.birthplace_id}, {self.country_key}, '{self.country_name}', {self.region_key}, '{self.region_name}', {self.city_key}, '{self.city_name}');")
 
-    @staticmethod
-    def create_table():
+    @classmethod
+    def create_table(cls):
         table = Table()
         get_key = count(1)
-        for country in birthplaces_dict.keys():
+        for country in cls.birthplaces_dict.keys():
             country_key = next(get_key)
-            for region in birthplaces_dict[country].keys():
+            for region in cls.birthplaces_dict[country].keys():
                 region_key = next(get_key)
-                for city in birthplaces_dict[country][region]:
+                for city in cls.birthplaces_dict[country][region]:
                     birthplace_id = next(get_key)
                     city_key = next(get_key)
                     table.append(Birthplace(birthplace_id, country_key, country, region_key, region, city_key, city))
@@ -104,20 +104,19 @@ class Fact2:
         return table
 
 
-publishers_dict = {
-    'Russia': {
-        'Vologda': ['Eksmo', 'AST'],
-        'Yaroslavl': ['ROSMAN', 'ALFA'],
-        'Krasnoyarsk': ['OLMA'],
-    },
-    'Belarus': {
-        'Gomel': ['CENTRPOLIGRAF', 'AZBUKA'],
-        'Minsk': ['ATTIKUS'],
-    }
-}
-
-
 class Publishers:
+    publishers_dict = {
+        'Russia': {
+            'Vologda': ['Eksmo', 'AST'],
+            'Yaroslavl': ['ROSMAN', 'ALFA'],
+            'Krasnoyarsk': ['OLMA'],
+        },
+        'Belarus': {
+            'Gomel': ['CENTRPOLIGRAF', 'AZBUKA'],
+            'Minsk': ['ATTIKUS'],
+        }
+    }
+
     def __init__(self, publisher_id, country_key, country_name, city_key, city_name, publisher_key, publisher_name):
         self.publisher_id = publisher_id
         self.country_key = country_key
@@ -132,15 +131,15 @@ class Publishers:
             f"INSERT INTO publishers (publisher_id, country_key, country_name, city_key, city_name, publisher_key, publisher_name)\n"
             f"VALUES ({self.publisher_id}, {self.country_key}, '{self.country_name}', {self.city_key}, '{self.city_name}', {self.publisher_key}, '{self.publisher_name}');")
 
-    @staticmethod
-    def create_table():
+    @classmethod
+    def create_table(cls):
         table = Table()
         get_key = count(1)
-        for country_name in publishers_dict.keys():
+        for country_name in cls.publishers_dict.keys():
             country_key = next(get_key)
-            for city_name in publishers_dict[country_name].keys():
+            for city_name in cls.publishers_dict[country_name].keys():
                 city_key = next(get_key)
-                for publisher_name in publishers_dict[country_name][city_name]:
+                for publisher_name in cls.publishers_dict[country_name][city_name]:
                     publisher_id = next(get_key)
                     publisher_key = next(get_key)
                     table.append(Publishers(publisher_id, country_key, country_name, city_key, city_name, publisher_key,
