@@ -729,3 +729,324 @@ INSERT INTO publishers (publisher_id, country_key, country_name, city_key, city_
 VALUES (19, 15, 'Belarus', 16, 'Gomel', 20, 'AZBUKA');
 INSERT INTO publishers (publisher_id, country_key, country_name, city_key, city_name, publisher_key, publisher_name)
 VALUES (22, 15, 'Belarus', 21, 'Minsk', 23, 'ATTIKUS');
+
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (1, 749, 3, 1);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (2, 533, 3, 2);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (3, 949, 3, 3);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (4, 383, 3, 4);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (5, 145, 3, 5);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (6, 103, 3, 6);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (7, 441, 3, 7);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (8, 889, 3, 8);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (9, 233, 3, 9);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (10, 752, 3, 10);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (11, 368, 3, 11);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (12, 265, 3, 12);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (13, 859, 3, 13);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (14, 552, 3, 14);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (15, 664, 3, 15);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (16, 822, 3, 16);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (17, 537, 3, 17);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (18, 674, 3, 18);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (19, 109, 3, 19);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (20, 214, 3, 20);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (21, 177, 5, 1);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (22, 807, 5, 2);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (23, 252, 5, 3);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (24, 658, 5, 4);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (25, 136, 5, 5);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (26, 954, 5, 6);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (27, 478, 5, 7);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (28, 696, 5, 8);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (29, 665, 5, 9);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (30, 251, 5, 10);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (31, 540, 5, 11);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (32, 230, 5, 12);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (33, 142, 5, 13);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (34, 415, 5, 14);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (35, 473, 5, 15);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (36, 915, 5, 16);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (37, 981, 5, 17);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (38, 140, 5, 18);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (39, 466, 5, 19);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (40, 315, 5, 20);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (41, 798, 8, 1);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (42, 355, 8, 2);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (43, 782, 8, 3);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (44, 205, 8, 4);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (45, 462, 8, 5);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (46, 898, 8, 6);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (47, 673, 8, 7);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (48, 995, 8, 8);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (49, 516, 8, 9);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (50, 735, 8, 10);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (51, 867, 8, 11);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (52, 258, 8, 12);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (53, 342, 8, 13);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (54, 985, 8, 14);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (55, 266, 8, 15);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (56, 919, 8, 16);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (57, 930, 8, 17);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (58, 281, 8, 18);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (59, 522, 8, 19);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (60, 125, 8, 20);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (61, 283, 10, 1);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (62, 854, 10, 2);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (63, 440, 10, 3);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (64, 901, 10, 4);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (65, 521, 10, 5);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (66, 921, 10, 6);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (67, 785, 10, 7);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (68, 984, 10, 8);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (69, 852, 10, 9);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (70, 930, 10, 10);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (71, 354, 10, 11);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (72, 373, 10, 12);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (73, 263, 10, 13);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (74, 906, 10, 14);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (75, 818, 10, 15);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (76, 210, 10, 16);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (77, 491, 10, 17);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (78, 993, 10, 18);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (79, 139, 10, 19);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (80, 979, 10, 20);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (81, 581, 13, 1);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (82, 327, 13, 2);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (83, 304, 13, 3);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (84, 936, 13, 4);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (85, 571, 13, 5);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (86, 458, 13, 6);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (87, 412, 13, 7);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (88, 940, 13, 8);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (89, 914, 13, 9);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (90, 992, 13, 10);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (91, 333, 13, 11);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (92, 328, 13, 12);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (93, 124, 13, 13);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (94, 775, 13, 14);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (95, 297, 13, 15);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (96, 508, 13, 16);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (97, 436, 13, 17);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (98, 385, 13, 18);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (99, 985, 13, 19);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (100, 171, 13, 20);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (101, 891, 17, 1);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (102, 385, 17, 2);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (103, 459, 17, 3);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (104, 756, 17, 4);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (105, 621, 17, 5);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (106, 509, 17, 6);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (107, 795, 17, 7);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (108, 963, 17, 8);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (109, 649, 17, 9);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (110, 439, 17, 10);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (111, 128, 17, 11);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (112, 218, 17, 12);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (113, 998, 17, 13);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (114, 367, 17, 14);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (115, 282, 17, 15);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (116, 694, 17, 16);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (117, 371, 17, 17);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (118, 139, 17, 18);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (119, 211, 17, 19);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (120, 710, 17, 20);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (121, 544, 19, 1);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (122, 453, 19, 2);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (123, 846, 19, 3);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (124, 905, 19, 4);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (125, 421, 19, 5);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (126, 546, 19, 6);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (127, 720, 19, 7);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (128, 623, 19, 8);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (129, 218, 19, 9);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (130, 494, 19, 10);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (131, 690, 19, 11);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (132, 294, 19, 12);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (133, 360, 19, 13);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (134, 145, 19, 14);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (135, 825, 19, 15);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (136, 546, 19, 16);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (137, 101, 19, 17);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (138, 632, 19, 18);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (139, 925, 19, 19);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (140, 651, 19, 20);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (141, 803, 22, 1);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (142, 836, 22, 2);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (143, 859, 22, 3);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (144, 854, 22, 4);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (145, 786, 22, 5);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (146, 301, 22, 6);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (147, 472, 22, 7);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (148, 541, 22, 8);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (149, 171, 22, 9);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (150, 780, 22, 10);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (151, 438, 22, 11);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (152, 738, 22, 12);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (153, 421, 22, 13);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (154, 779, 22, 14);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (155, 968, 22, 15);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (156, 227, 22, 16);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (157, 837, 22, 17);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (158, 407, 22, 18);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (159, 619, 22, 19);
+INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)
+VALUES (160, 416, 22, 20);

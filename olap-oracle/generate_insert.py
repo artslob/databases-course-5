@@ -148,6 +148,29 @@ class Publishers:
         return table
 
 
+class Fact3:
+    def __init__(self, fact3_id, people_count, publisher_id, time_id):
+        self.fact3_id = fact3_id
+        self.people_count = people_count
+        self.publisher_id = publisher_id
+        self.time_id = time_id
+
+    def __str__(self):
+        return (f"INSERT INTO fact3 (fact3_id, people_count, publisher_id, time_id)\n"
+                f"VALUES ({self.fact3_id}, {self.people_count}, {self.publisher_id}, {self.time_id});")
+
+    @staticmethod
+    def create_table(publishers, times):
+        """before call this function recommended step is to seed generator"""
+        table = Table()
+        t_id = 1
+        for p in publishers.rows:
+            for t in times.rows:
+                table.append(Fact3(t_id, random.randint(100, 1_000), p.publisher_id, t.time_id))
+                t_id += 1
+        return table
+
+
 def write_to_file(target, *strings):
     if not target.exists():
         raise ValueError(f"target file '{target}' not exist!")
@@ -176,13 +199,15 @@ def main():
     times = Time.create_table()
     fact2 = Fact2.create_table(birthplaces, times)
     publishers = Publishers.create_table()
+    fact3 = Fact3.create_table(publishers, times)
 
     birthplaces_insert = str(birthplaces)
     times_insert = str(times)
     fact2_insert = str(fact2)
     publishers_insert = str(publishers)
+    fact3_insert = str(fact3)
 
-    inserts = [birthplaces_insert, times_insert, fact2_insert, publishers_insert]
+    inserts = [birthplaces_insert, times_insert, fact2_insert, publishers_insert, fact3_insert]
 
     if not args.no_print:
         print('\n', '\n\n'.join(inserts), sep='')
